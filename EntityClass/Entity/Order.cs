@@ -42,14 +42,6 @@ namespace EntityClass.Entity
             set { name = value; }
             }
 
-        [Column("or_remise")]
-        [DataType(DataType.Currency)]
-        public float Remise
-            {
-            get { return remise; }
-            set { remise = value; }
-            }
-
         [Column("or_description")]
         [DataType(DataType.MultilineText)]
         public string Description
@@ -58,8 +50,22 @@ namespace EntityClass.Entity
             set { description = value; }
             }
 
+        [Column("or_remise")]
+        [DataType(DataType.Currency)]
+        public float Remise
+            {
+            get { return remise; }
+            set { remise = value; }
+            }
+
+        public DateTime DateOrder
+            {
+            get { return dateOrder; }
+            set { dateOrder = value; }
+            }
+
         public List<ProductOrder> ProductOrders
-        {
+            {
             get { return productOrders; }
             set { productOrders = value; }
             }
