@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityClass.Repository
     {
-    class RoleRepository: Repository<Role>
+    public class RoleRepository: Repository<Role>
         {
         #region StaticVariables
         #endregion

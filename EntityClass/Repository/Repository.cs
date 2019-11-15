@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityClass.Repository
     {
-    abstract class Repository <T>
+    public abstract class Repository <T>
         {
         #region StaticVariables
         #endregion

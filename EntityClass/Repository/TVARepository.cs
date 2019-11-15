@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityClass.Repository
     {
-    class TVARepository: Repository<TVA>
+    public class TVARepository: Repository<TVA>
         {
         #region StaticVariables
         #endregion

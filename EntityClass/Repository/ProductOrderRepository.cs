@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityClass.Repository
-{
-    class ProductOrderRepository: Repository<ProductOrder>
     {
+    public class ProductOrderRepository: Repository<ProductOrder>
+        {
         #region StaticVariables
         #endregion
 
@@ -38,5 +38,5 @@ namespace EntityClass.Repository
 
         #region Events
         #endregion
+        }
     }
-}

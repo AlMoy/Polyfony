@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityClass.Repository
     {
-    class ProductRepository : Repository<Product>
+    public class ProductRepository : Repository<Product>
         {
         #region StaticVariables
         #endregion
