@@ -34,7 +34,7 @@ namespace EntityClass.Repository
         #endregion
 
         #region Functions
-        public float percentageTVA(ProductOrder productOrder)
+        public float PercentageTVA(ProductOrder productOrder)
             {
             foreach (TVA item in productOrder.Product.ProductType.TVAS)
                 if (item.EndDate == null)
@@ -42,19 +42,19 @@ namespace EntityClass.Repository
             return 0;
             }
 
-        public double priceTVA(ProductOrder productOrder)
+        public double PriceTVA(ProductOrder productOrder)
             {
-            return productOrder.Product.ProductType.Price * productOrder.Quantity * this.percentageTVA(productOrder) / 100;
+            return productOrder.Product.ProductType.Price * productOrder.Quantity * this.PercentageTVA(productOrder) / 100;
             }
 
-        public double priceHT(ProductOrder productOrder)
+        public double PriceHT(ProductOrder productOrder)
             {
             return productOrder.Product.ProductType.Price * productOrder.Quantity;
             }
 
-        public double priceTTC(ProductOrder productOrder)
+        public double PriceTTC(ProductOrder productOrder)
             {
-            return this.priceHT(productOrder) + this.priceTVA(productOrder);
+            return this.PriceHT(productOrder) + this.PriceTVA(productOrder);
             }
         #endregion
 

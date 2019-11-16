@@ -34,48 +34,48 @@ namespace EntityClass.Repository
         #endregion
 
         #region Functions
-        public double percentageTVA(Order order)
+        public double PercentageTVA(Order order)
             {
             ProductOrderRepository productOrderRepository = new ProductOrderRepository();
             double percentage = 0;
 
             foreach (ProductOrder item in order.ProductOrders)
-                percentage += productOrderRepository.percentageTVA(item);
+                percentage += productOrderRepository.PercentageTVA(item);
 
             return percentage / order.ProductOrders.Count;
             }
 
-        public double priceTVA(Order order)
+        public double PriceTVA(Order order)
             {
             ProductOrderRepository productOrderRepository = new ProductOrderRepository();
             double price = 0;
             
             foreach (ProductOrder item in order.ProductOrders)
-                price += productOrderRepository.priceTVA(item);
+                price += productOrderRepository.PriceTVA(item);
 
             //return price;
-            return this.priceHT(order) * this.percentageTVA(order)/100;
+            return this.PriceHT(order) * this.PercentageTVA(order)/100;
             }
 
-        public double priceHT(Order order)
+        public double PriceHT(Order order)
             {
             ProductOrderRepository productOrderRepository = new ProductOrderRepository();
             double price = 0;
 
             foreach (ProductOrder item in order.ProductOrders)
-                price += productOrderRepository.priceHT(item);
+                price += productOrderRepository.PriceHT(item);
 
             return price;
             }
 
-        public double priceTTC(Order order)
+        public double PriceTTC(Order order)
             {
-            return this.priceHT(order) +this.priceTVA(order);
+            return this.PriceHT(order) +this.PriceTVA(order);
             }
 
-        public double finalPrice(Order order)
+        public double FinalPrice(Order order)
             {
-            return this.priceTTC(order) - order.Remise;
+            return this.PriceTTC(order) - order.Remise;
             }
         #endregion
 
