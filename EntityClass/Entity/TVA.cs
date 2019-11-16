@@ -38,7 +38,7 @@ namespace EntityClass.Entity
 
         [Required]
         [Column("tva_rate")]
-        [DataType(DataType.Currency)]
+        [Range(0,100)]
         public float Rate
             {
             get { return rate; }

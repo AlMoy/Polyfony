@@ -34,9 +34,52 @@ namespace EntityClass.Repository
         #endregion
 
         #region Functions
+        public double percentageTVA(Order order)
+            {
+            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
+            double percentage = 0;
+
+            foreach (ProductOrder item in order.ProductOrders)
+                percentage += productOrderRepository.percentageTVA(item);
+
+            return percentage / order.ProductOrders.Count;
+            }
+
+        public double priceTVA(Order order)
+            {
+            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
+            double price = 0;
+            
+            foreach (ProductOrder item in order.ProductOrders)
+                price += productOrderRepository.priceTVA(item);
+
+            //return price;
+            return this.priceHT(order) * this.percentageTVA(order)/100;
+            }
+
+        public double priceHT(Order order)
+            {
+            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
+            double price = 0;
+
+            foreach (ProductOrder item in order.ProductOrders)
+                price += productOrderRepository.priceHT(item);
+
+            return price;
+            }
+
+        public double priceTTC(Order order)
+            {
+            return this.priceHT(order) +this.priceTVA(order);
+            }
+
+        public double finalPrice(Order order)
+            {
+            return this.priceTTC(order) - order.Remise;
+            }
         #endregion
 
         #region Events
         #endregion
-        }
+    }
     }

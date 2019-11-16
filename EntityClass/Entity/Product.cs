@@ -16,7 +16,7 @@ namespace EntityClass.Entity
         private string name;
         private float weight;
         private string color;
-        private long quantity;
+        private ulong quantity;
         private List<StateProduct> stateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
@@ -70,7 +70,7 @@ namespace EntityClass.Entity
 
         [Required]
         [Column("pr_quantity")]
-        public long Quantity
+        public ulong Quantity
             {
             get { return quantity; }
             set { quantity = value; }

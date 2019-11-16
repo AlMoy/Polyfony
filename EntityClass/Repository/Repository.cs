@@ -34,7 +34,7 @@ namespace EntityClass.Repository
         #endregion
 
         #region Functions
-        public T Find(long id)
+        public T Find(ulong id)
             {
             T item=default; 
             
@@ -48,7 +48,7 @@ namespace EntityClass.Repository
             return items;
             }
 
-        public void Remove (long id)
+        public void Remove (ulong id)
             {
             
             }
@@ -60,7 +60,7 @@ namespace EntityClass.Repository
             return result;
             }
 
-        public T Update(long id, T item)
+        public T Update(ulong id, T item)
             {
             T result = default;
             

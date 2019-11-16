@@ -11,7 +11,7 @@ namespace EntityClass.Entity
     public class ProductOrder
         {
         #region Attributs
-        private long quantity;
+        private ulong quantity;
         private Product product;
         private Order order;
         #endregion
@@ -19,7 +19,7 @@ namespace EntityClass.Entity
         #region Properties
         [Required]
         [Column("po_quantity")]
-        public long Quantity
+        public ulong Quantity
             {
             get { return quantity; }
             set { quantity = value; }
