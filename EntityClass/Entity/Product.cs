@@ -17,6 +17,7 @@ namespace EntityClass.Entity
         private float weight;
         private string color;
         private ulong quantity;
+        private Boolean toValid;
         private List<StateProduct> stateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
@@ -76,6 +77,13 @@ namespace EntityClass.Entity
             set { quantity = value; }
             }
 
+        [Required]
+        [Column("pr_toValid")]
+        public Boolean ToValid
+            {
+            get { return toValid; }
+            set { toValid = value; }
+            }
         public List<StateProduct> StateProducts
             {
             get { return stateProducts; }
@@ -99,6 +107,7 @@ namespace EntityClass.Entity
         public Product()
             {
             this.stateProducts = new List<StateProduct>();
+            this.productOrders = new List<ProductOrder>();
             }
         #endregion
         }

@@ -15,7 +15,8 @@ namespace EntityClass.Entity
         private string name;
         private string description;
         private float remise;
-        private DateTime dateOrder;
+        private DateTime datePayment;
+        private DateTime dateCreation;
         private List<ProductOrder> productOrders;
         private Person client;
         private Person seller;
@@ -58,10 +59,21 @@ namespace EntityClass.Entity
             set { remise = value; }
             }
 
-        public DateTime DateOrder
+        [Column("or_datePayment")]
+        [DataType(DataType.Date)]
+        public DateTime DatePayment
             {
-            get { return dateOrder; }
-            set { dateOrder = value; }
+            get { return datePayment; }
+            set { datePayment = value; }
+            }
+
+        [Required]
+        [Column("or_dateCreation")]
+        [DataType(DataType.Date)]
+        public DateTime DateCreation
+            {
+            get { return dateCreation; }
+            set { dateCreation = value; }
             }
 
         public List<ProductOrder> ProductOrders
