@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EntityClass.Entity;
+using EntityASP.Entity;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass.Repository
+namespace EntityASP.Repository
     {
-    public class TVARepository: Repository<TVA>
+    public class ProductRepository : Repository<Product>
         {
         #region StaticVariables
         #endregion
@@ -25,7 +25,7 @@ namespace EntityClass.Repository
         #endregion
 
         #region Constructors 
-        public TVARepository()
+        public ProductRepository()
             {
             }
         #endregion

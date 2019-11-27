@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass.Repository
+namespace EntityASP.Repository
     {
     public abstract class Repository <T>
         {

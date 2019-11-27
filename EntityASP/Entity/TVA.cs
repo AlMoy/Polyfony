@@ -6,20 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass.Entity
+namespace EntityASP.Entity
     {
-    public class Role
+    public class TVA
         {
         #region Attributs
         private long id;
-        private string name;
-        private List<Person> people;
+        private float rate;
+        private DateTime endDate;
+        private ProductType productType;
         #endregion
 
         #region Properties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("ro_id")]
+        [Column("tva_id")]
         public long Id
             {
             get { return id; }
@@ -27,27 +28,33 @@ namespace EntityClass.Entity
             }
 
         [Required]
-        [Column("ro_name")]
-        [DataType(DataType.Text)]
-        [MinLength(4)]
-        [MaxLength(20)]
-        public string Name
+        [Column("tva_endDate")]
+        [DataType(DataType.Date)]
+        public DateTime EndDate
             {
-            get { return name; }
-            set { name = value; }
+            get { return endDate; }
+            set { endDate = value; }
             }
 
-        public List<Person> People
+        [Required]
+        [Column("tva_rate")]
+        [Range(0,100)]
+        public float Rate
             {
-            get { return people; }
-            set { people = value; }
+            get { return rate; }
+            set { rate = value; }
+            }
+
+        public ProductType ProductType
+            {
+            get { return productType; }
+            set { productType = value; }
             }
         #endregion
 
         #region Constructors
-        public Role()
+        public TVA()
             {
-            this.people = new List<Person>();
             }
         #endregion
         }

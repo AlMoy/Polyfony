@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using EntityASP.Entity;
 using System.Linq;
-using EntityClass.Entity;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass.Repository
+namespace EntityASP.Repository
     {
-    public class RoleRepository: Repository<Role>
+    public class StateProductRepository: Repository<StateProduct>
         {
         #region StaticVariables
         #endregion
@@ -25,7 +25,7 @@ namespace EntityClass.Repository
         #endregion
 
         #region Constructors 
-        public RoleRepository()
+        public StateProductRepository()
             {
             }
         #endregion

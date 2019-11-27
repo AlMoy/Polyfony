@@ -1,11 +1,11 @@
 ﻿using System;
-using EntityClass.Entity;
+using EntityASP.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass.Repository
+namespace EntityASP.Repository
     {
     public class OrderRepository : Repository<Order>
         {

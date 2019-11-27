@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EntityClass.Entity;
+using EntityASP.Entity;
 using System.Threading.Tasks;
 
-namespace EntityClass.Repository
+namespace EntityASP.Repository
     {
     public class ProductTypeRepository : Repository<ProductType>
         {

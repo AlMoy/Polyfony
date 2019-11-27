@@ -1,4 +1,4 @@
-﻿using EntityClass.Entity;
+﻿using EntityASP.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityClass
+namespace EntityASP
     {
      public class AppDbContext : DbContext
         {
