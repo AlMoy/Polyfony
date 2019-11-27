@@ -34,17 +34,6 @@ namespace EntityASP.Repository
         #endregion
 
         #region Functions
-        public double PercentageTVA(Order order)
-            {
-            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
-            double percentage = 0;
-
-            foreach (ProductOrder item in order.ProductOrders)
-                percentage += productOrderRepository.PercentageTVA(item);
-
-            return percentage / order.ProductOrders.Count;
-            }
-
         public double PriceTVA(Order order)
             {
             ProductOrderRepository productOrderRepository = new ProductOrderRepository();
@@ -53,8 +42,7 @@ namespace EntityASP.Repository
             foreach (ProductOrder item in order.ProductOrders)
                 price += productOrderRepository.PriceTVA(item);
 
-            //return price;
-            return this.PriceHT(order) * this.PercentageTVA(order)/100;
+            return price;
             }
 
         public double PriceHT(Order order)
