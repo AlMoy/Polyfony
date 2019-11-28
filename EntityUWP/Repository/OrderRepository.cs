@@ -1,11 +1,11 @@
-﻿using System;
-using EntityASP.Entity;
+﻿using EntityUWP.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityASP.Repository
+namespace EntityUWP.Repository
     {
     public class OrderRepository : Repository<Order>
         {
@@ -26,8 +26,8 @@ namespace EntityASP.Repository
 
         #region Constructors
         public OrderRepository()
-            {
-            }
+        {
+        }
         #endregion
 
         #region StaticFunctions
@@ -38,7 +38,7 @@ namespace EntityASP.Repository
             {
             ProductOrderRepository productOrderRepository = new ProductOrderRepository();
             double price = 0;
-            
+
             foreach (ProductOrder item in order.ProductOrders)
                 price += productOrderRepository.PriceTVA(item);
 
@@ -58,7 +58,7 @@ namespace EntityASP.Repository
 
         public double PriceTTC(Order order)
             {
-            return this.PriceHT(order) +this.PriceTVA(order);
+            return this.PriceHT(order) + this.PriceTVA(order);
             }
 
         public double FinalPrice(Order order)

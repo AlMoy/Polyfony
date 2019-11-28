@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EntityUWP.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using EntityASP.Entity;
 using System.Threading.Tasks;
 
-namespace EntityASP.Repository
+namespace EntityUWP.Repository
     {
     public class ProductTypeRepository : Repository<ProductType>
         {
@@ -39,7 +39,7 @@ namespace EntityASP.Repository
             ulong numberStock = 0;
             ProductType productType = this.Find(id);
             //If id matche at a productType in database
-            if(productType!=null)
+            if (productType != null)
                 foreach (Product item in productType.Products)
                     if (item.Quantity > 0)
                         numberStock++;
@@ -50,7 +50,7 @@ namespace EntityASP.Repository
             {
             ulong numberStock = 0;
             foreach (Product item in productType.Products)
-                if(item.Quantity>0)
+                if (item.Quantity > 0)
                     numberStock++;
 
             return numberStock;
@@ -63,7 +63,7 @@ namespace EntityASP.Repository
             //If id matche at a productType in database
             if (productType != null)
                 foreach (Product item in productType.Products)
-                    quantityStock+=item.Quantity;
+                    quantityStock += item.Quantity;
 
             return quantityStock;
             }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    class TVA
+    public class TVA
         {
         #region Attributs
         private long id;
