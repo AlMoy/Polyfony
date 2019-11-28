@@ -48,6 +48,13 @@ namespace EntityUWP.Repository
             return items;
             }
 
+        public List<T> FindBy(Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, ulong? limit = null, ulong? offset = null)
+            {
+            List<T> items = new List<T>();
+
+            return items;
+            }
+
         public void Remove(ulong id)
             {
 
