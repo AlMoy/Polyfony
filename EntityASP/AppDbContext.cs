@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,20 @@ namespace EntityASP
             modelBuilder.Entity<Person>().HasRequired<Role>(p => p.Role).WithMany(r => r.People);
 
             base.OnModelCreating(modelBuilder);
+            }
+
+        public bool CheckConnection()
+            {
+            try
+                {
+                this.Database.Connection.Open();
+                this.Database.Connection.Close();
+                }
+            catch (SqlException)
+                {
+                return false;
+                }
+            return true;
             }
         #endregion
         }
