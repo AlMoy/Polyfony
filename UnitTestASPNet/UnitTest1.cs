@@ -43,7 +43,7 @@ namespace UnitTestASPNet
             }
 
         [Test]
-        public void Login_Test()
+        public void LoginTest()
             {//https://stackoverflow.com/questions/25718394/getting-error-cannot-convert-type-actionresult-to-viewresult-in-unit-testing
             // Arrange
             var loginModel = new LoginViewModel() { Email = "Admin@admin.com", Password = "admin123" };
