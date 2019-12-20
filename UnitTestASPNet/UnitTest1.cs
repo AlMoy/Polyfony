@@ -4,6 +4,11 @@ using EntityASP;
 using EntityASP.Entity;
 using EntityASP.Repository;
 using NUnit.Framework;
+using System.Web.Mvc;
+using ASP.Net_SellIt.Models;
+using ASP.Net_SellIt.Controllers;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace UnitTestASPNet
 {
@@ -46,7 +51,7 @@ namespace UnitTestASPNet
         public void LoginTest()
             {//https://stackoverflow.com/questions/25718394/getting-error-cannot-convert-type-actionresult-to-viewresult-in-unit-testing
              // Arrange
-            /*var loginModel = new LoginViewModel() { Email = "Admin@admin.com", Password = "admin123" };
+            var loginModel = new LoginViewModel() { Email = "Admin@admin.com", Password = "admin123" };
             var controller = new AccountController();
 
             // Validate model state start
@@ -64,11 +69,11 @@ namespace UnitTestASPNet
 
             // Act
 
-            var result =  controller.Login(loginModel, null) as RedirectToRouteResult;
+            //var result =  controller.Login(loginModel, null) as RedirectToRouteResult;
 
             // Assert
-            Assert.AreEqual("Index", result.RouteValues["action"]);
-            Assert.AreEqual("Home", result.RouteValues["controller"]);*/
+            //Assert.AreEqual("Index", result.RouteValues["action"]);
+           // Assert.AreEqual("Home", result.RouteValues["controller"]);
         }
 
         [Test]
