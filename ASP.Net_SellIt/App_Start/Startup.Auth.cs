@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using ASP.Net_SellIt.Models;
+using ASP.Net_SellIt.Models.Security;
 
 namespace ASP.Net_SellIt
 {
@@ -22,7 +23,7 @@ namespace ASP.Net_SellIt
             // Autoriser l’application à utiliser un cookie pour stocker des informations pour l’utilisateur connecté
             // et pour utiliser un cookie à des fins de stockage temporaire des informations sur la connexion utilisateur avec un fournisseur de connexion tiers
             // Configurer le cookie de connexion
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            _ = app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
@@ -30,7 +31,7 @@ namespace ASP.Net_SellIt
                 {
                     // Permet à l'application de valider le timbre de sécurité quand l'utilisateur se connecte.
                     // Cette fonction de sécurité est utilisée quand vous changez un mot de passe ou ajoutez une connexion externe à votre compte.  
-                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, MyIdentityUser>(
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
