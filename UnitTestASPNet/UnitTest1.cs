@@ -102,7 +102,7 @@ namespace UnitTestASPNet
         [Test]
         public void CreateElement<T>(Repository<T> repository, T element)
             {
-            Assert.IsNotNull(repository.Create(element));
+            Assert.IsNotNull(repository.CreateAsync(element));
             }
         }
     }

@@ -15,7 +15,7 @@ namespace EntityASP
             if (dropAlways)
                 context.Database.Delete();
 
-            context.Database.Create();
+            context.Database.CreateIfNotExists();
 
             //if db has been already seeded
             if (context.PersonDb.Any())

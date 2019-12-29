@@ -20,38 +20,17 @@ namespace EntityASP.Repository
         #endregion
 
         #region Attributs
-        DbSet dbSet;
+        protected DbContext context;
+        protected DbSet dbSet;
         #endregion
 
         #region Properties
         #endregion
 
         #region Constructors
-        public Repository()
+        public Repository(DbContext context)
             {
-            if(typeof(T) == typeof(Order))
-                this.dbSet = new AppDbContext().OrderDb;
-
-            if (typeof(T) == typeof(Person))
-                this.dbSet = new AppDbContext().PersonDb;
-
-            if (typeof(T) == typeof(Product))
-                this.dbSet = new AppDbContext().ProductDb;
-
-            if (typeof(T) == typeof(ProductOrder))
-                this.dbSet = new AppDbContext().ProductOrdersDb;
-
-            if (typeof(T) == typeof(ProductType))
-                this.dbSet = new AppDbContext().ProductTypeDb;
-
-            if (typeof(T) == typeof(Role))
-                this.dbSet = new AppDbContext().RoleDb;
-
-            if (typeof(T) == typeof(StateProduct))
-                this.dbSet = new AppDbContext().StateProductDb;
-
-            if (typeof(T) == typeof(TVA))
-                this.dbSet = new AppDbContext().TvaDb;
+            this.context = context;
             }
         #endregion
 
@@ -59,40 +38,48 @@ namespace EntityASP.Repository
         #endregion
 
         #region Functions
-        public async Task<T> FindAsync(long id)
+        public async Task<T> FindAsync(long? id)
             {
             return (T)await this.dbSet.FindAsync(id);
             }
 
         public async Task<List<T>> FindAllAsync()
             {
-            return ((IList<T>)await this.dbSet.ToListAsync()).ToList();
+            List<object> items = await this.dbSet.ToListAsync();
+            List<T> ts = new List<T>();
+
+            foreach (object item in items)
+                ts.Add((T)item);
+
+            return ts;
             }
 
         public async Task<List<T>> FindByAsync(Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, ulong? limit = null, ulong? offset = null)
             {
             List<T> items = ((IList<T>)await this.dbSet.ToListAsync()).ToList();
 
-
+            
 
             return items;
             }
 
-        public void Remove(T item)
+        public async Task Remove(T item)
             {
             this.dbSet.Remove(item);
+            await this.context.SaveChangesAsync();
             }
 
-        public T Create(T item)
+        public async Task<T> CreateAsync(T item)
             {
-            return (T)this.dbSet.Add(item);
+            item=(T)this.dbSet.Add(item);
+            await this.context.SaveChangesAsync();
+            return item;
             }
 
-        public T Update(ulong id, T item)
+        public async Task UpdateAsync(T item)
             {
-            T result = default;
-            this.dbSet.
-            return result;
+            this.context.Entry(item).State = EntityState.Modified;
+            await this.context.SaveChangesAsync();
             }
         #endregion
         }

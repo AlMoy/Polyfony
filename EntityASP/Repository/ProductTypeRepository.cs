@@ -25,8 +25,9 @@ namespace EntityASP.Repository
         #endregion
 
         #region Constructors 
-        public ProductTypeRepository()
+        public ProductTypeRepository(AppDbContext context) : base(context)
             {
+            this.dbSet = context.ProductTypeDb;
             }
         #endregion
 
@@ -34,10 +35,10 @@ namespace EntityASP.Repository
         #endregion
 
         #region Functions
-        public ulong numberProductsStock(ulong id)
+        public async Task<ulong> numberProductsStockAsync(long id)
             {
             ulong numberStock = 0;
-            ProductType productType = this.Find(id);
+            ProductType productType = await this.FindAsync(id);
             //If id matche at a productType in database
             if(productType!=null)
                 foreach (Product item in productType.Products)
@@ -56,10 +57,10 @@ namespace EntityASP.Repository
             return numberStock;
             }
 
-        public ulong quantityProductsStock(ulong id)
+        public async Task<ulong> quantityProductsStockAsync(long id)
             {
             ulong quantityStock = 0;
-            ProductType productType = this.Find(id);
+            ProductType productType = await this.FindAsync(id);
             //If id matche at a productType in database
             if (productType != null)
                 foreach (Product item in productType.Products)
