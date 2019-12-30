@@ -192,7 +192,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.1F,
                     Color = "Noir",
-                    Quantity = 30L,
+                    Quantity = 30,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -203,7 +203,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 4.0F,
                     Color = "Noir",
-                    Quantity = 25L,
+                    Quantity = 25,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -214,7 +214,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 5.2F,
                     Color = "Noir",
-                    Quantity = 42L,
+                    Quantity = 42,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -225,7 +225,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 1.8F,
                     Color = "Noir",
-                    Quantity = 30L,
+                    Quantity = 30,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -236,7 +236,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 3.8F,
                     Color = "Noir",
-                    Quantity = 25L,
+                    Quantity = 25,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -247,7 +247,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 5.3F,
                     Color = "Noir",
-                    Quantity = 42L,
+                    Quantity = 42,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -258,7 +258,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.2F,
                     Color = "Blanc",
-                    Quantity = 10L,
+                    Quantity = 10,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -269,7 +269,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.5F,
                     Color = "Blanc",
-                    Quantity = 40L,
+                    Quantity = 40,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[1]
@@ -280,7 +280,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 3.6F,
                     Color = "Rouge",
-                    Quantity = 25L,
+                    Quantity = 25,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[0]
@@ -291,7 +291,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Noir",
-                    Quantity = 30L,
+                    Quantity = 30,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -302,7 +302,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Marron",
-                    Quantity = 15L,
+                    Quantity = 15,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[1]
@@ -313,7 +313,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 1.7F,
                     Color = "Bleu",
-                    Quantity = 15L,
+                    Quantity = 15,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[0]
