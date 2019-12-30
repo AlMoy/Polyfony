@@ -12,7 +12,7 @@ namespace EntityASP
         public static void Initialize(this AppDbContext context, bool dropAlways = false)
             {
             //To drop database or not
-            if (dropAlways)
+            if (dropAlways && context.Database.Exists())
                 context.Database.Delete();
 
             context.Database.CreateIfNotExists();
@@ -45,10 +45,10 @@ namespace EntityASP
                     FirstName = "Alex",
                     Address = "addr",
                     Mail = "alex.moysan@mail.com",
-                    TelephoneNumber = "06557869",
+                    TelephoneNumber = "0761006692",
                     BirthDate = DateTime.Now,
                     Login = "alex",
-                    PassWord = "alex",
+                    PassWord = "password",
                     Role = roles[0],
                     },
                 new Person()
@@ -57,10 +57,10 @@ namespace EntityASP
                     FirstName = "Trang",
                     Address = "addr",
                     Mail = "trang.luu@mail.com",
-                    TelephoneNumber = "06557869",
+                    TelephoneNumber = "0761006692",
                     BirthDate = DateTime.Now,
                     Login = "trang",
-                    PassWord = "trang",
+                    PassWord = "password",
                     Role = roles[1],
                     },
                 new Person()
@@ -69,10 +69,10 @@ namespace EntityASP
                     FirstName = "Yacouba",
                     Address = "addr",
                     Mail = "yacouba.yacaba@mail.com",
-                    TelephoneNumber = "06557869",
+                    TelephoneNumber = "0761006692",
                     BirthDate = DateTime.Now,
                     Login = "yacouba",
-                    PassWord = "yacouba",
+                    PassWord = "password",
                     Role = roles[1],
                     },
                 new Person()
@@ -81,10 +81,10 @@ namespace EntityASP
                     FirstName = "Fatumata",
                     Address = "addr",
                     Mail = "fatumata.foursov@mail.com",
-                    TelephoneNumber = "06557869",
+                    TelephoneNumber = "0761006692",
                     BirthDate = DateTime.Now,
                     Login = "fatumata",
-                    PassWord = "fatumata",
+                    PassWord = "password",
                     Role = roles[2],
                     }
                 };
@@ -192,7 +192,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.1F,
                     Color = "Noir",
-                    Quantity = 30,
+                    Quantity = 30L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -203,7 +203,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 4.0F,
                     Color = "Noir",
-                    Quantity = 25,
+                    Quantity = 25L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -214,7 +214,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 5.2F,
                     Color = "Noir",
-                    Quantity = 42,
+                    Quantity = 42L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -225,7 +225,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 1.8F,
                     Color = "Noir",
-                    Quantity = 30,
+                    Quantity = 30L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -236,7 +236,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 3.8F,
                     Color = "Noir",
-                    Quantity = 25,
+                    Quantity = 25L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -247,7 +247,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 5.3F,
                     Color = "Noir",
-                    Quantity = 42,
+                    Quantity = 42L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -258,7 +258,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.2F,
                     Color = "Blanc",
-                    Quantity = 10,
+                    Quantity = 10L,
                     ToValid = true,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -269,7 +269,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 2.5F,
                     Color = "Blanc",
-                    Quantity = 40,
+                    Quantity = 40L,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[1]
@@ -280,7 +280,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 3.6F,
                     Color = "Rouge",
-                    Quantity = 25,
+                    Quantity = 25L,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[0]
@@ -291,7 +291,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Noir",
-                    Quantity = 30,
+                    Quantity = 30L,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[2]
@@ -302,7 +302,7 @@ namespace EntityASP
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Marron",
-                    Quantity = 15,
+                    Quantity = 15L,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[1]
@@ -313,7 +313,7 @@ namespace EntityASP
                     Name = "Trot-Simple",
                     Weight = 1.7F,
                     Color = "Bleu",
-                    Quantity = 15,
+                    Quantity = 15L,
                     ToValid = false,
                     StateProducts = stateProducts,
                     ProductType = productTypes[0]
@@ -328,6 +328,28 @@ namespace EntityASP
             context.TvaDb.AddRange(tvas3);
             context.ProductTypeDb.AddRange(productTypes);
             context.ProductDb.AddRange(products);
+
+            //If a problem for save the test datas
+            try
+                {
+                context.SaveChanges();
+                }
+            catch (Exception e)
+                {
+                Console.WriteLine(e.Message);
+                //Print the errors of datas for entitys (annotations => "required",...)
+                foreach (var gve in context.GetValidationErrors())
+                    foreach (var ve in gve.ValidationErrors)
+                        Console.WriteLine(new StringBuilder("\n-------------------")
+                            .Append("\nErrorMessage: ")
+                            .Append(ve.ErrorMessage)
+                            .Append("\nGetHashCode: ")
+                            .Append(ve.GetHashCode())
+                            .Append("\nGetType: ")
+                            .Append(ve.GetType())
+                            .Append("\nPropertyName: ")
+                            .Append(ve.PropertyName));
+                }
             }
         }
     }

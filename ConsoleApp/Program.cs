@@ -16,8 +16,8 @@ namespace ConsoleApp
             {
             using(AppDbContext context=new AppDbContext())
                 {
-                context.Initialize(false);
-                List<Object> products = await new ProductRepository(context).FindAllAsync();
+                context.Initialize(true);
+                List<Product> products = await new ProductRepository(context).FindAllAsync();
                 foreach (Product product in products)
                     Console.WriteLine(product.Name);
                 }

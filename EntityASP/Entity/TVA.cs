@@ -27,7 +27,6 @@ namespace EntityASP.Entity
             set { id = value; }
             }
 
-        [Required]
         [Column("tva_endDate")]
         [DataType(DataType.Date)]
         public DateTime? EndDate
