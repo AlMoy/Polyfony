@@ -18,10 +18,7 @@ namespace ASP.Net_SellIt.Models
             return userIdentity;
         }
 
-        internal Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

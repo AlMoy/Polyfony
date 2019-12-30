@@ -23,6 +23,14 @@ namespace ASP.Net_SellIt.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Nom de l'utilisateur")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Login")]
+        public string Login { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Courrier électronique")]
         public string Email { get; set; }
@@ -37,6 +45,10 @@ namespace ASP.Net_SellIt.Models
         [Display(Name = "Confirmer le mot de passe ")]
         [Compare("Password", ErrorMessage = "Le mot de passe et le mot de passe de confirmation ne correspondent pas.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "UserRoles")]
+        public string Roles { get; set; }
     }
 
     public class ResetPasswordViewModel

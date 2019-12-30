@@ -9,7 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ASP.Net_SellIt.Models;
-using ASP.Net_SellIt.Models.Security;
+
 
 namespace ASP.Net_SellIt.Controllers
 {
@@ -19,8 +19,10 @@ namespace ASP.Net_SellIt.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        ApplicationDbContext context;
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -100,6 +102,8 @@ namespace ASP.Net_SellIt.Controllers
         //[Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                    .ToList(), "Name", "Name");
             return View();
         }
 
@@ -113,7 +117,7 @@ namespace ASP.Net_SellIt.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new MyIdentityUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -127,6 +131,8 @@ namespace ASP.Net_SellIt.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
+                ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                    .ToList(), "Name", "Name");
                 AddErrors(result);
             }
 
