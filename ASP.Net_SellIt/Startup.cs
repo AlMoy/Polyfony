@@ -1,5 +1,5 @@
 ﻿using ASP.Net_SellIt.Models;
-using EntityASP;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
@@ -34,20 +34,20 @@ namespace ASP.Net_SellIt
                 role.Name = "Admin";
                 roleManager.Create(role);
 
-                //Here create a Admin user who will maintain the website                   
+                //Here we create a Admin super user who will maintain the website                   
 
                 var user = new ApplicationUser();
-                user.UserName = "Admin";
-                user.Email = "admin@gmail.com";
+                user.UserName = "admin1";
+                user.Email = "admin1@gmail.com";
 
-                string userPWD = "Admin@123";
+                string userPWD = "Admin1!123";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
                 //Add default User to Role Admin    
                 if (chkUser.Succeeded)
                 {
-                    var result = UserManager.AddToRole(user.Id, "Admin");
+                    var result1 = UserManager.AddToRole(user.Id, "Admin");
 
                 }
 

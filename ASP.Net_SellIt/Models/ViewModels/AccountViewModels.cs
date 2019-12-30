@@ -48,7 +48,7 @@ namespace ASP.Net_SellIt.Models
 
         [Required]
         [Display(Name = "UserRoles")]
-        public string Roles { get; set; }
+        public string UserRole { get; set; }
     }
 
     public class ResetPasswordViewModel

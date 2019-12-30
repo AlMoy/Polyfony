@@ -1,9 +1,9 @@
 ﻿@model ASP.Net_SellIt.Models.RegisterViewModel
 @{
-            ViewBag.Title = "S'inscrire";
-        }
+    ViewBag.Title = "S'inscrire";
+}
 
-    @*h2>@ViewBag.Title</h2>*@
+@*h2>@ViewBag.Title</h2>*@
 
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -51,17 +51,21 @@
         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
     </div>
 
-
     <div class="input-group mt-3">
         <div class="input-group-prepend">
-            @Html.Label("Rôle", new { @class = "control-label" })
-            <div class="col-md-10">
+            @Html.Label("Selectioner un rôle", new { @class = "col-md-12" })
+        </div>
+            <div class="col-md-1">
                 @*@Html.DropDownList("Name")*@
-                @Html.DropDownList("Roles", (SelectList)ViewBag.Name, " ")
+                @Html.DropDownList("UserRole", (SelectList)ViewBag.Name, " ")
             </div>
+
         </div>
 
-    </div>
+        
+            @* *@
+
+        
 
         <div class="mt-2">
             <input type="submit" class="btn btn-primary" value="S'inscrire" />
