@@ -96,7 +96,7 @@ namespace EntityASP.Entity
             set { productOrders = value; }
             }
 
-        public ProductType ProductType
+        public virtual ProductType ProductType
             {
             get { return productType; }
             set { productType = value; }

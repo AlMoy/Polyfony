@@ -13,15 +13,28 @@ using EntityASP.Repository;
 
 namespace ASP.Net_SellIt.Controllers
     {
+    [RoutePrefix("Products")]
     public class ProductsController : Controller
         {
         private AppDbContext db = new AppDbContext();
         private ProductRepository productRepository = new ProductRepository(new AppDbContext());
 
         // GET: Products
-        public async Task<ActionResult> Index()
+        [HttpGet]
+        [Route("ListProducts/Stock", Name = "ProductsStock")]
+        public async Task<ActionResult> ProductsStock()
             {
-            return View(await productRepository.FindAllAsync());
+            List<Product> products = await productRepository.FindAllAsync();
+            return View("ListProducts", products.Where(ps => ps.ToValid == true));
+            }
+
+        // GET: Products
+        [HttpGet]
+        [Route("ListProducts/NoValid", Name = "ProductsNoValid")]
+        public async Task<ActionResult> ProductNoValid()
+            {
+            List<Product> products = await productRepository.FindAllAsync();
+            return View("ListProducts", products.Where(ps => ps.ToValid == false));
             }
 
         // GET: Products/Details/5

@@ -54,12 +54,11 @@ namespace EntityASP.Repository
             return ts;
             }
 
-        public async Task<List<T>> FindByAsync(Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, ulong? limit = null, ulong? offset = null)
+        public async Task<List<T>> FindByAsync(Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, long? limit = null, long? offset = null)
             {
             List<T> items = ((IList<T>)await this.dbSet.ToListAsync()).ToList();
 
             
-
             return items;
             }
 

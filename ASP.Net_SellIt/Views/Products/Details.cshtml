@@ -2,57 +2,60 @@
 
 @{
     ViewBag.Title = "Details";
+    String route = Model.ToValid ? "ListProducts/Stock" : "ListProducts/NoValid";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Size)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Size)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ToValid)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ToValid)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div class="d-flex flex-column">
+        <div>
+            @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-primary" })
+        </div>
+        <h3>Détails</h3>
+        <div class="d-flex">
+            <div>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.Name)</strong>-->
+                    <strong>Nom:</strong>
+                    @Html.DisplayFor(model => model.Name)
+                </p>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.ProductType)</strong>-->
+                    <strong>Type:</strong>
+                    
+                    @Html.ActionLink(Model.ProductType.Name,"Details",new { controller = "ProductTypes", id = Model.ProductType.Id })
+                </p>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.Size)</strong>-->
+                    <strong>Taille:</strong>
+                    @Html.DisplayFor(model => model.Size)
+                </p>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.Weight)</strong>-->
+                    <strong>Masse:</strong>
+                    @Html.DisplayFor(model => model.Weight)
+                </p>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.Color)</strong>-->
+                    <strong>Couleur:</strong>
+                    @Html.DisplayFor(model => model.Color)
+                </p>
+                <p>
+                    <!--<strong>@Html.DisplayNameFor(model => model.ToValid)</strong>-->
+                    <strong>Validé:</strong>
+                    @{
+                        if (Model.ToValid)
+                        {
+                            <span>Oui</span>
+                        }
+                        else
+                        {
+                            <span>Non</span>
+                        }
+                    }
+                </p>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
