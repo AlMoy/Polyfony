@@ -13,6 +13,7 @@ namespace ASP.Net_SellIt.Controllers
     public class UsersController : Controller
     {
         // GET: Users
+        [Authorize]
         public ActionResult Index()
         {
             if (User.Identity.IsAuthenticated)
@@ -22,7 +23,7 @@ namespace ASP.Net_SellIt.Controllers
 
                 ViewBag.displayMenu = "No";
 
-                if (isAdminUser())
+                if (isAdmin())
                 {
                     ViewBag.displayMenu = "Yes";
                 }
@@ -35,7 +36,7 @@ namespace ASP.Net_SellIt.Controllers
             return View();
         }
 
-        private bool isAdminUser()
+        private bool isAdmin()
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -54,5 +55,7 @@ namespace ASP.Net_SellIt.Controllers
             }
             return false;
         }
+        
+        
     }
 }

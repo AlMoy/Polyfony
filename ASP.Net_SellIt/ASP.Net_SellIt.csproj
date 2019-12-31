@@ -185,7 +185,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StateProductsController.cs" />
     <Compile Include="Controllers\TVAsController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\Customization\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

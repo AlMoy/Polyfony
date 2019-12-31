@@ -1,18 +1,42 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 @if (ViewBag.displayMenu == "Yes")
-{
-    <h1>Welcome Admin. Now you can create user Role.</h1>
-    
-        <li>@Html.ActionLink("Manage Role", "Index", "Role")</li>
-    
+{@* user is admin*@
+<h1>Bonjour Admin!</h1>
 
+<h3>
+    @* une erreur pour cette action???*@
+    @Html.ActionLink("Consulter les commandes", "Index", "Orders")
+
+    @* quelle controller pour cette action??*@
+    @*@Html.ActionLink("Consulter le stock", "Index", "Products")*@
+
+    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products")
+    @Html.ActionLink("Créer un nouveau vendeur", "Register", "Account")
+
+    @* Je ne sais pas quelle controller pour cette action*@
+    @*@Html.ActionLink("Valider d'ajout de stock", "Create", "Products")*@
+</h3>
 }
 else
-{
-    <h2>  Welcome <strong>@ViewBag.Name</strong> :) .We will add user module soon </h2>
+{ @* user is seller*@
+<h1>Bonjour <strong>@ViewBag.Name</strong>!</h1>
+
+<h3>
+    @Html.ActionLink("Consulter les commandes", "Index", "Orders")
+
+    @*@Html.ActionLink("Consulter le stock", "Index", "Products")*@
+
+    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products")
+</h3>
 }
+
+
+
+
+
+
+
 

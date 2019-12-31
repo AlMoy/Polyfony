@@ -12,6 +12,7 @@ using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers
 {
+    [Authorize]
     public class RolesController : Controller
     {
         private AppDbContext db = new AppDbContext();

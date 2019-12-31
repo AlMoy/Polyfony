@@ -82,11 +82,11 @@ namespace ASP.Net_SellIt.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                                     
+                    return RedirectToAction("Index", "Users");
+                                        
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
-                //case SignInStatus.RequiresVerification:
-                //    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return View("Lockout");                
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Tentative de connexion non valide.");
@@ -95,11 +95,10 @@ namespace ASP.Net_SellIt.Controllers
         }
 
 
-
         //
         // GET: /Account/Register
-        [AllowAnonymous]
-        //[Authorize(Roles = "Admin")]
+        
+        [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
@@ -108,9 +107,8 @@ namespace ASP.Net_SellIt.Controllers
 
         //
         // POST: /Account/Register
-        [HttpPost]
-        [AllowAnonymous]
-        //[Authorize(Roles = "Admin")]
+        [HttpPost]        
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -129,7 +127,7 @@ namespace ASP.Net_SellIt.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Users");
                 }
                 ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
                 AddErrors(result);
@@ -193,7 +191,7 @@ namespace ASP.Net_SellIt.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //
