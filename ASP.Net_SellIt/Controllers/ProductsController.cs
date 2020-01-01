@@ -165,7 +165,7 @@ namespace ASP.Net_SellIt.Controllers
             product.ToValid = true;
             await this.productRepository.UpdateAsync(product);
 
-            return View(product);
+            return RedirectToAction("Details", new { id = product.Id });
             }
 
 
