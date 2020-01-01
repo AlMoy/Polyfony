@@ -92,7 +92,7 @@ namespace ASP.Net_SellIt.Controllers
 
         // GET: Products/Edit/5
         [HttpGet]
-        [Route("Edit")]
+        [Route("Edit/{id}")]
         public async Task<ActionResult> Edit(long? id)
             {
             if (id == null)
@@ -111,7 +111,7 @@ namespace ASP.Net_SellIt.Controllers
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Route("Edit")]
+        [Route("Edit/{id}")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Size,Weight,Color,ToValid")] Product product)
             {
@@ -119,6 +119,13 @@ namespace ASP.Net_SellIt.Controllers
 
             if (ModelState.IsValid)
                 {
+                Boolean toValid;
+                Boolean.TryParse(Request.Form["ToValid"], out toValid);
+                product.ToValid = toValid;
+
+                long quantity;
+                long.TryParse(Request.Form["Quantity"], out quantity);
+                product.Quantity = quantity;
                 await this.productRepository.UpdateAsync(product);
                 return RedirectToAction("Details", new { id = product.Id });
                 }
@@ -141,7 +148,8 @@ namespace ASP.Net_SellIt.Controllers
             }
 
         // POST: Products/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
+        [Route("Delete/{id}")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(long id)
             {
@@ -165,7 +173,7 @@ namespace ASP.Net_SellIt.Controllers
             product.ToValid = true;
             await this.productRepository.UpdateAsync(product);
 
-            return RedirectToAction("Details", new { id = product.Id });
+            return RedirectToAction("ListProducts/NoValid");
             }
 
 

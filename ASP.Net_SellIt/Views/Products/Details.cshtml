@@ -21,8 +21,8 @@
                 <p>
                     <!--<strong>@Html.DisplayNameFor(model => model.ProductType)</strong>-->
                     <strong>Type:</strong>
-                    
-                    @Html.ActionLink(Model.ProductType.Name,"Details",new { controller = "ProductTypes", id = Model.ProductType.Id })
+
+                    @Html.ActionLink(Model.ProductType.Name, "Details", new { controller = "ProductTypes", id = Model.ProductType.Id })
                 </p>
                 <p>
                     <!--<strong>@Html.DisplayNameFor(model => model.Size)</strong>-->
@@ -39,6 +39,18 @@
                     <strong>Couleur:</strong>
                     @Html.DisplayFor(model => model.Color)
                 </p>
+
+                @{
+                    if (Model.ToValid)
+                        {
+                        <p>
+                            <!--<strong>@Html.DisplayNameFor(model => model.Quantity)</strong>-->
+                            <strong>Quantité:</strong>
+                            @Html.DisplayFor(model => model.Quantity)
+                        </p>
+                        }
+                }
+
                 <p>
                     <!--<strong>@Html.DisplayNameFor(model => model.ToValid)</strong>-->
                     <strong>Validé:</strong>
