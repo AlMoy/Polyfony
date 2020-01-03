@@ -46,6 +46,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_size")]
+        [Range(typeof(float), "0", "20")]
+        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
         public float Size
             {
             get { return size; }
@@ -54,6 +56,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_weight")]
+        [Range(typeof(float), "0", "20")]
+        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
         public float Weight
             {
             get { return weight; }
@@ -71,6 +75,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_quantity")]
+        [Range(typeof(long), "0", "100000")]
         public long Quantity
             {
             get { return quantity; }
