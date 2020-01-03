@@ -23,7 +23,7 @@ namespace UnitTestASPNet
         [Test]
         public List<T> GetList<T>(Repository<T> repository)
             {
-            List<T> list = repository.FindAll();
+            List<T> list = repository.FindAllAsync();
             Assert.IsEmpty(list);
             return list;
             }
@@ -31,7 +31,7 @@ namespace UnitTestASPNet
         [Test]
         public List<T> GetListFiltered<T>(Repository<T> repository, Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, ulong? limit = null, ulong? offset = null)
             {
-            List<T> list = repository.FindBy(criteria, orderBy, limit, offset);
+            List<T> list = repository.FindByAsync(criteria, orderBy, limit, offset);
             Assert.IsEmpty(list);
             return list;
             }
@@ -102,7 +102,7 @@ namespace UnitTestASPNet
         [Test]
         public void CreateElement<T>(Repository<T> repository, T element)
             {
-            Assert.IsNotNull(repository.Create(element));
+            Assert.IsNotNull(repository.CreateAsync(element));
             }
         }
     }

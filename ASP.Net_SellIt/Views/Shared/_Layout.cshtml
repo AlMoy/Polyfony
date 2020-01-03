@@ -8,20 +8,20 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body class="d-flex flex-column justify-content-between vh-100 p-0">
-    <header class="bg-primary d-flex flex-column justify-content-center ">
-        <img src="~/logo.png" class="align-self-start">
-        <h1 class="text-light align-self-center position-absolute">Authentification</h1>
-        <div class="align-self-end position-absolute">
-            @Html.Partial("_LoginPartial")
-        </div>
-    </header>
-    <section class="d-flex justify-content-center w-100">
-        @RenderBody()
-    </section>
-    <footer class="bg-primary p-4"></footer>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+    <body class="d-flex flex-column justify-content-between vh-100 p-0">
+        <header class="bg-primary d-flex flex-column justify-content-center ">
+            <img src="~/logo.png" class="align-self-start">
+            <h1 class="text-light align-self-center position-absolute">@ViewBag.Title</h1>
+            <div class="align-self-end position-absolute">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </header>
+        <section class="d-flex justify-content-center w-100">
+            @RenderBody()
+        </section>
+        <footer class="bg-primary p-4"></footer>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

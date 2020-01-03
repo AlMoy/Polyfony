@@ -176,8 +176,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\Security\AccountController.cs" />
-    <Compile Include="Controllers\Security\ManageController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -202,10 +202,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
     <Content Include="logo.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -215,12 +213,21 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -314,6 +321,10 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
@@ -336,7 +347,7 @@
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\ListProducts.cshtml" />
     <Content Include="Views\ProductTypes\Create.cshtml" />
     <Content Include="Views\ProductTypes\Delete.cshtml" />
     <Content Include="Views\ProductTypes\Details.cshtml" />
@@ -357,20 +368,21 @@
     <Content Include="Views\TVAs\Details.cshtml" />
     <Content Include="Views\TVAs\Edit.cshtml" />
     <Content Include="Views\TVAs\Index.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
