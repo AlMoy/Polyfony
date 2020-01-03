@@ -78,11 +78,11 @@ namespace ASP.Net_SellIt.Controllers
 
             // Ceci ne comptabilise pas les échecs de connexion pour le verrouillage du compte
             // Pour que les échecs de mot de passe déclenchent le verrouillage du compte, utilisez shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email,model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                                     
+                                                         
                     return RedirectToAction("Index", "Users");
                                         
                 case SignInStatus.LockedOut:
@@ -97,8 +97,9 @@ namespace ASP.Net_SellIt.Controllers
 
         //
         // GET: /Account/Register
-        
+
         [Authorize(Roles = "Admin")]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
@@ -107,7 +108,8 @@ namespace ASP.Net_SellIt.Controllers
 
         //
         // POST: /Account/Register
-        [HttpPost]        
+        [HttpPost]
+        //[AllowAnonymous]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)

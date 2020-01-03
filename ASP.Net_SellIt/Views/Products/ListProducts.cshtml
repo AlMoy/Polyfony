@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<EntityASP.Entity.Product>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Produits en stock";
 }
 
 <div class="d-flex flex-column">
-    <h3>Produits en stock</h3>
-    <div class="mb-2">
-        <a href="accueil.html" class="btn btn-info">Retour</a>
+      <div class="mb-2">
+        @Html.ActionLink("Retour", "Index", "Users")
+       
         @Html.ActionLink("Nouveau produit", "Create", "Product", new { @class = "btn btn-primary" })
     </div>
         <table class="table table-striped table-bordered table-hover">

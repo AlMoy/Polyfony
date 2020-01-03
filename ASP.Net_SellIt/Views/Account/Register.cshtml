@@ -3,8 +3,6 @@
     ViewBag.Title = "S'inscrire";
 }
 
-@*h2>@ViewBag.Title</h2>*@
-
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -62,10 +60,7 @@
 
         </div>
 
-        
-            @* *@
-
-        
+       
 
         <div class="mt-2">
             <input type="submit" class="btn btn-primary" value="S'inscrire" />
