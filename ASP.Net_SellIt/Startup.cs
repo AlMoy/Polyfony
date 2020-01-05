@@ -54,10 +54,10 @@ namespace ASP.Net_SellIt
             }
                      
             // Creating Seller role     
-            if (!roleManager.RoleExists("Seller"))
+            if (!roleManager.RoleExists("Vendeur"))
             {
                 var role = new IdentityRole();
-                role.Name = "Seller";
+                role.Name = "Vendeur";
                 roleManager.Create(role);
 
             }

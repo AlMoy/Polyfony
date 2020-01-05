@@ -9,5 +9,22 @@
 
 
 .link {
-    color: #fff !important;
+    background-color: #ff9900;
+    color: black;
 }
+
+.link:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+.header_link{
+    color: white;
+}
+
+.header_link:hover {
+    color: white;
+}
+
+
+    

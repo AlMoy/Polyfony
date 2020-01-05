@@ -98,8 +98,8 @@ namespace ASP.Net_SellIt.Controllers
         //
         // GET: /Account/Register
 
-        [Authorize(Roles = "Admin")]
-        //[AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
+        [AllowAnonymous]
         public ActionResult Register()
         {
             ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
@@ -109,8 +109,8 @@ namespace ASP.Net_SellIt.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        //[AllowAnonymous]
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {

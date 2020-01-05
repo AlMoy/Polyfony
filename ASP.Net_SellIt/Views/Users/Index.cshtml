@@ -4,55 +4,40 @@
 
         @if (ViewBag.displayMenu == "Yes")
         {@* user is admin*@
-    <div class="col-md-4">
+                <div class="col-md-4">
 
-            <div class="btn btn-info btn-lg btn-block link mt-auto" type="button">
-                @Html.ActionLink("Consulter les commandes", "Index", "Orders")
-            </div>
+                    @Html.ActionLink("Consulter les commandes", "Index", "Orders", null,
+                            new { @class = "btn btn-lg btn-block link mt-auto" })
 
-            <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products")
-            </div>
+                    @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
 
-            <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                @Html.ActionLink("Créer un nouveau vendeur", "Create", "People")
-            </div>
+                    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
 
-            <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                @* quelle controller pour cette action??*@
-                @Html.ActionLink("Consulter le stock", "ListProducts/Stock", "Products")
-            </div>
+                    @Html.ActionLink("Créer un nouveau vendeur", "Create", "People", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
 
-            <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                @* Je ne sais pas quelle controller pour cette action*@
-                @*@Html.ActionLink("Valider d'ajout de stock", "Create", "Products")*@
-            </div>
-                      
+                    @Html.ActionLink("Valider d'ajout de stock", "ProductNoValid", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })                                    
 
-    </div>
-
-
+                </div>
+                
          }else
             { @* user is seller*@
 
-            <div class="col-md-4">
+                <div class="col-md-4">
 
-                <div class="btn btn-info btn-lg btn-block mt-auto" type="button">
-                    @Html.ActionLink("Consulter les commandes", "Index", "Orders")
+                    @Html.ActionLink("Consulter les commandes", "Index", "Orders", null,
+                    new { @class = "btn btn-lg btn-block link mt-auto" })
+
+                    @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+
+                    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+                    
                 </div>
-
-                <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products")
-                </div>
-
-                <div class="btn btn-info btn-lg btn-block mt-4" type="button">
-                    @* quelle controller pour cette action??*@
-                    @Html.ActionLink("Consulter le stock", "ListProducts/Stock", "Products")
-                </div>
-
-    
-
-            </div>
             }
 
 

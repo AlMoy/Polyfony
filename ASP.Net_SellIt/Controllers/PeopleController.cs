@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using EntityASP;
 using EntityASP.Entity;
+using EntityASP.Repository;
 
 namespace ASP.Net_SellIt.Controllers
 {
@@ -16,11 +17,20 @@ namespace ASP.Net_SellIt.Controllers
     public class PeopleController : Controller
     {
         private AppDbContext db = new AppDbContext();
+        private PersonRepository personRepository;
+        private RoleRepository roleRepository;
+
+        public PeopleController()
+        {
+            this.personRepository = new PersonRepository(this.db);
+            this.roleRepository = new RoleRepository(this.db);
+        }
 
         // GET: People
         public async Task<ActionResult> Index()
         {
-            return View(await db.PersonDb.ToListAsync());
+            List<Person> people = await this.personRepository.FindAllAsync();
+            return View("Index", people);
         }
 
         // GET: People/Details/5
@@ -39,8 +49,10 @@ namespace ASP.Net_SellIt.Controllers
         }
 
         // GET: People/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
+
         {
+            this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             return View();
         }
 
@@ -51,10 +63,12 @@ namespace ASP.Net_SellIt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,LastName,FirstName,Address,Mail,TelephoneNumber,BirthDate,Login,PassWord")] Person person)
         {
+            this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             if (ModelState.IsValid)
             {
-                db.PersonDb.Add(person);
-                await db.SaveChangesAsync();
+                person.Role = await this.roleRepository.FindAsync(int.Parse(Request.Form["Role"]));
+                await this.personRepository.CreateAsync(person);
+                
                 return RedirectToAction("Index");
             }
 
@@ -68,11 +82,13 @@ namespace ASP.Net_SellIt.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = await db.PersonDb.FindAsync(id);
+            Person person = await this.personRepository.FindAsync(id);
             if (person == null)
-            {
+            
                 return HttpNotFound();
-            }
+
+            this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
+
             return View(person);
         }
 
@@ -83,10 +99,10 @@ namespace ASP.Net_SellIt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,LastName,FirstName,Address,Mail,TelephoneNumber,BirthDate,Login,PassWord")] Person person)
         {
+            this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             if (ModelState.IsValid)
             {
-                db.Entry(person).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                await this.personRepository.UpdateAsync(person);
                 return RedirectToAction("Index");
             }
             return View(person);
@@ -112,9 +128,8 @@ namespace ASP.Net_SellIt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(long id)
         {
-            Person person = await db.PersonDb.FindAsync(id);
-            db.PersonDb.Remove(person);
-            await db.SaveChangesAsync();
+            Person person = await this.personRepository.FindAsync(id);
+            await this.personRepository.Remove(person);      
             return RedirectToAction("Index");
         }
 

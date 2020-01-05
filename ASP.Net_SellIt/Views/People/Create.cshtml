@@ -1,7 +1,7 @@
 ﻿@model EntityASP.Entity.Person
 
 @{
-    ViewBag.Title = "Création d'un nouveau vendeur";
+    ViewBag.Title = "Ajouter une nouvelle personne";
 }
 
 
@@ -74,7 +74,7 @@
             <div class="input-group-prepend">
                 @Html.LabelFor(m => m.PassWord, new { @class = "input-group-text" })
             </div>
-            @Html.PasswordFor(m => m.PassWord, new { @class = "form-control" })
+            @Html.TextBoxFor(m => m.PassWord, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.PassWord, "", new { @class = "text-danger" })
         </div>
 
@@ -91,7 +91,7 @@
         <div class="form-group mt-3">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Créer" class="btn btn-primary" />
-                @Html.ActionLink("Retour à la liste", "Index", "Users", htmlAttributes: new { @class = "btn btn-info" })
+                @Html.ActionLink("Retour à la liste", "Index", "People", null, htmlAttributes: new { @class = "btn btn-primary" })
             </div>
 
         </div>
