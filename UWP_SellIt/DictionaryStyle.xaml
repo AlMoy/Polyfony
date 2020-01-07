@@ -14,11 +14,17 @@
     <SolidColorBrush x:Key="secondary-dark" Color="#001064"/>
     <SolidColorBrush x:Key="secondary-text" Color="#ffffff"/>
     <!--FontSize-->
-    <x:Int32 x:Key="title">22</x:Int32>
+    <x:Int32 x:Key="FontSizeTitle">40</x:Int32>
     <x:Int32 x:Key="paragraphe">15</x:Int32>
     <!--Style-->
+    
     <Style x:Key="bandeau" TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource primary-dark}"/>
+    </Style>
+
+    <Style x:Key="Titletext" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{StaticResource FontSizeTitle}"/>
+        <Setter Property="Foreground" Value="{StaticResource secondary-text}"/>
     </Style>
     <Style x:Key="section" TargetType="Grid">
         <Setter Property="HorizontalAlignment" Value="Center"/>
