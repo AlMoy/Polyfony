@@ -12,4 +12,8 @@
     <SolidColorBrush x:Key="secondary-light" Color="#5f5fc4"/>
     <SolidColorBrush x:Key="secondary-dark" Color="#001064"/>
     <SolidColorBrush x:Key="secondary-text" Color="#ffffff"/>
+    <!--Other-->
+    <Style TargetType="Rectangle">
+        <Setter Property="Fill" Value="{StaticResource primary-dark}"/>
+    </Style>
 </ResourceDictionary>
