@@ -8,7 +8,42 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DictionaryStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Rectangle x:Name="header" Style="{StaticResource bandeau}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
+            <StackPanel>
+                <TextBlock x:Name="TblockTitle" Text="Authentification" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TblockMail" Text="Identifiant" VerticalAlignment="Center"/>
+                    <TextBox x:Name="TboxMail"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TblockPassword" Text="Mot de passe" VerticalAlignment="Center"/>
+                    <TextBox x:Name="TboxPassword"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Rectangle x:Name="footer" Style="{StaticResource bandeau}"/>
+        </Grid>
     </Grid>
 </Page>
