@@ -30,17 +30,27 @@
             <Rectangle x:Name="header" Style="{StaticResource bandeau}"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
-            <StackPanel>
-                <TextBlock x:Name="TblockTitle" Text="Authentification" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="TblockMail" Text="Identifiant" VerticalAlignment="Center"/>
-                    <TextBox x:Name="TboxMail"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="TblockPassword" Text="Mot de passe" VerticalAlignment="Center"/>
-                    <TextBox x:Name="TboxPassword"/>
-                </StackPanel>
-            </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="TblockTitle" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Authentification" HorizontalAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="TblockMail" Grid.Row="2" Grid.Column="0" Text="Identifiant" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="TboxMail" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch"/>
+            <TextBlock x:Name="TblockPassword" Grid.Row="4" Grid.Column="0" Text="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <PasswordBox x:Name="TboxPassword" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" Width="200"/>
+            <Button x:Name="btnLogin" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">Connexion</Button>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="0">
             <Rectangle x:Name="footer" Style="{StaticResource bandeau}"/>
