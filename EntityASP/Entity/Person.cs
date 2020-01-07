@@ -36,6 +36,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_lastName")]
+        [Display(Name ="Nom de famille")]
         [DataType(DataType.Text)]
         public string LastName
             {
@@ -45,6 +46,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_firstName")]
+        [Display(Name = "Prénom")]
         [DataType(DataType.Text)]
         public string FirstName
             {
@@ -54,6 +56,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_address")]
+        [Display(Name = "Adresse")]
         [DataType(DataType.Text)]
         public string Address
             {
@@ -63,6 +66,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_Mail")]
+        [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Mail
             {
@@ -72,6 +76,7 @@ namespace EntityASP.Entity
         
         [Required]
         [Column("pe_telephoneNumber")]
+        [Display(Name = "N° de téléphone")]
         [DataType(DataType.PhoneNumber)]
         public string TelephoneNumber
             {
@@ -81,6 +86,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_birthDate")]
+        [Display(Name = "Date de naissance")]
         [DataType(DataType.Date)]
         public DateTime BirthDate
             {
@@ -91,6 +97,7 @@ namespace EntityASP.Entity
         [Required]
         [Column("pe_login")]
         [DataType(DataType.Text)]
+        [Display(Name = "Login")]
         [MinLength(4)]
         [MaxLength(10)]
         [Index(IsUnique = true)]
@@ -102,6 +109,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_password")]
+        [Display(Name = "Mot de passe")]
         [DataType(DataType.Password)]
         [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
         [MaxLength(200)]
@@ -111,6 +119,7 @@ namespace EntityASP.Entity
             set { passWord = value; }
             }
 
+        [Display(Name = "Rôle")]
         public Role Role
             {
             get { return role; }

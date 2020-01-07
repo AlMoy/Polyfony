@@ -14,12 +14,13 @@
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-primary" />
-                @Html.ActionLink("Back to List", "Index", "People", null, new { @class = "btn btn-primary" })
-            </div>
+    <div class="form-actions no-color">
+        @Html.ActionLink("Retour à la liste", "Index", "People", null, new { @class = "btn btn-primary" })
+        <input type="submit" value="Delete" class="btn btn-primary" />
+
+    </div>
         }
-        <h4 class="mt-3">Détaille de la personne</h4>
+        <h4 class="mt-3">Détaill de la personne</h4>
         <hr />
         <div class="d-flex flex-column">
 

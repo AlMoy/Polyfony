@@ -66,7 +66,7 @@ namespace ASP.Net_SellIt.Controllers
             this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             if (ModelState.IsValid)
             {
-                person.Role = await this.roleRepository.FindAsync(int.Parse(Request.Form["Role"]));
+                person.Role = await this.roleRepository.FindAsync(int.Parse(Request.Form["Rôle"]));
                 await this.personRepository.CreateAsync(person);
                 
                 return RedirectToAction("Index");
