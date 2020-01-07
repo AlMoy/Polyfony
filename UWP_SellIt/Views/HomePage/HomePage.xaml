@@ -41,7 +41,7 @@
             <Button Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
         </Grid>
 
-        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="1">
+        <ScrollViewer x:Name="contentScrollViewerHome" Grid.Column="1" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

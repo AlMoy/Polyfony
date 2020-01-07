@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UWP_SellIt.Views;
 using UWP_SellIt.Views.HomePage;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
