@@ -31,7 +31,7 @@ namespace EntityUWP.Entity
             {
             get { return id; }
             set { id = value; }
-            
+            }
 
         [Required]
         [Column("pr_name")]
