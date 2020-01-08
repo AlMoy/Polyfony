@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="UWP_SellIt.Views.Product.ShowAdvance"
+    x:Class="UWP_SellIt.Views.Product.ListAdvanceUC"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWP_SellIt.Views.Product"

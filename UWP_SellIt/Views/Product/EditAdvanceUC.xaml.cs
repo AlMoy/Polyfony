@@ -17,9 +17,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace UWP_SellIt.Views.Product
 {
-    public sealed partial class ShowAdvance : UserControl
+    public sealed partial class EditAdvanceUC : UserControl
     {
-        public ShowAdvance()
+        public EditAdvanceUC()
         {
             this.InitializeComponent();
         }
