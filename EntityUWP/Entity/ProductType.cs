@@ -14,7 +14,7 @@ namespace EntityUWP.Entity
         private long id;
         private float price;
         private string name;
-        private List<TVA> tvas;
+        private List<ProductTypeTVA> productTypeTVAs;
         private List<Product> products;
         #endregion
 
@@ -45,10 +45,10 @@ namespace EntityUWP.Entity
             set { name = value; }
             }
 
-        public List<TVA> TVAS
+        public List<ProductTypeTVA> ProductTypeTVAs
             {
-            get { return tvas; }
-            set { tvas = value; }
+            get { return productTypeTVAs; }
+            set { productTypeTVAs = value; }
             }
 
         public List<Product> Products
@@ -61,7 +61,7 @@ namespace EntityUWP.Entity
         #region Constructors
         public ProductType()
             {
-            this.tvas = new List<TVA>();
+            this.productTypeTVAs = new List<ProductTypeTVA>();
             this.products = new List<Product>();
             }
         #endregion
