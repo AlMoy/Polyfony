@@ -9,16 +9,27 @@ using System.Web;
 using System.Web.Mvc;
 using EntityASP;
 using EntityASP.Entity;
+using EntityASP.Repository;
 
 namespace ASP.Net_SellIt.Controllers
 {
+    [Authorize]
+
     public class OrdersController : Controller
     {
         private AppDbContext db = new AppDbContext();
+        private OrderRepository orderRepository;
+
+        public OrdersController()
+        {
+            this.orderRepository = new OrderRepository(this.db);
+        }
 
         // GET: Orders
         public async Task<ActionResult> Index()
         {
+
+            List<Order> order = await this.orderRepository.FindAllAsync();
             return View(await db.OrderDb.ToListAsync());
         }
 
