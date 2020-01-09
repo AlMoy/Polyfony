@@ -9,7 +9,41 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid>
-
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="listView" ItemsSource="{Binding ProductList}">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Nom"/>
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Couleur"/>
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Taille"/>
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Masse"/>
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Quantité"/>
+                        <TextBlock TextAlignment="Center" MinWidth="50" Text="Type"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ContextFlyout>
+                <Flyout>
+                    <StackPanel>
+                        <MenuFlyoutItem Text="Détails"/>
+                        <MenuFlyoutItem Text="Editer"/>
+                        <MenuFlyoutItem Text="Supprimer"/>
+                    </StackPanel>
+                </Flyout>
+            </ListView.ContextFlyout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding Name}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding Color}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding Size}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding Weight}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding Quantity}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="50" Text="{Binding ProductType.Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </UserControl>

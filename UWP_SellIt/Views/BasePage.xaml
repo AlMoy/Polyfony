@@ -11,7 +11,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/DictionaryStyle.xaml"/>
+                <ResourceDictionary Source="./Styles/DictionaryStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
@@ -29,23 +29,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="headerGrid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
-            <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
-            <!--Textbox pour Titre-->
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}"></TextBlock>
-        </Grid>
-
-        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="1">
+        <Rectangle x:Name="header" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+        <Image x:Name="logo" Grid.Column="0" Grid.Row="0" Stretch="None"  Source="ms-appx:///Assets/logo.png"/>
+        <TextBlock x:Name="titlePage" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="titre"></TextBlock>
+        <ScrollViewer x:Name="section" Grid.Column="1" Grid.Row="1">
             <!--les élements de la page-->
         </ScrollViewer>
-
-
-        <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+        <Rectangle x:Name="footer" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

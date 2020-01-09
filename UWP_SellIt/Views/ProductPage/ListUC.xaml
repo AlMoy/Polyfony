@@ -17,58 +17,40 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid x:Name="mainGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="14*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
-            <Rectangle x:Name="header" Style="{StaticResource bandeau}"/>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
-            <StackPanel>
-                <ListView x:Name="listView" ItemsSource="{Binding ProductList}">
-                    <ListView.HeaderTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="Nom"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="Couleur"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="Taille"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="Masse"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="Quantité"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.HeaderTemplate>
-                    <ListView.ContextFlyout>
-                        <Flyout>
-                            <StackPanel>
-                                <MenuFlyoutItem Text="Détails"></MenuFlyoutItem>
-                                <MenuFlyoutItem Text="Editer"></MenuFlyoutItem>
-                                <MenuFlyoutItem Text="Supprimer"></MenuFlyoutItem>
-                            </StackPanel>
-                        </Flyout>
-                    </ListView.ContextFlyout>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="{Binding Name}"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="{Binding Color}"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="{Binding Size}"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="{Binding Weight}"/>
-                                <TextBlock TextAlignment="Center" MinWidth="70" Text="{Binding Quantity}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Row="2" Grid.Column="0">
-            <Rectangle x:Name="footer" Style="{StaticResource bandeau}"/>
-        </Grid>
-    </Grid>
+    <StackPanel>
+        <ListView x:Name="listView" ItemsSource="{Binding ProductList}">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock TextAlignment="Center" MinWidth="70" Text="Nom"/>
+                        <TextBlock TextAlignment="Center" MinWidth="70" Text="Couleur"/>
+                        <TextBlock TextAlignment="Center" MinWidth="70" Text="Taille"/>
+                        <TextBlock TextAlignment="Center" MinWidth="70" Text="Masse"/>
+                        <TextBlock TextAlignment="Center" MinWidth="70" Text="Quantité"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ContextFlyout>
+                <Flyout>
+                    <StackPanel>
+                        <MenuFlyoutItem Text="Détails"></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Editer"></MenuFlyoutItem>
+                        <MenuFlyoutItem Text="Supprimer"></MenuFlyoutItem>
+                    </StackPanel>
+                </Flyout>
+            </ListView.ContextFlyout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock TextAlignment="Left" MinWidth="70" Text="{Binding Name}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="70" Text="{Binding Color}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="70" Text="{Binding Size}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="70" Text="{Binding Weight}"/>
+                        <TextBlock TextAlignment="Left" MinWidth="70" Text="{Binding Quantity}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </UserControl>

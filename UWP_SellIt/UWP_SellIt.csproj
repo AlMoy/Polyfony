@@ -132,7 +132,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="UC.xaml.cs">
       <DependentUpon>UC.xaml</DependentUpon>
     </Compile>
@@ -154,12 +153,10 @@
     <Compile Include="Views\ProductPage\ShowUC.xaml.cs">
       <DependentUpon>ShowUC.xaml</DependentUpon>
     </Compile>
-=======
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
->>>>>>> UWP
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -182,7 +179,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
     <Page Include="UC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,11 +210,6 @@
     <Page Include="Views\Styles\DictionaryStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-=======
-    <Page Include="DictionaryStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
->>>>>>> UWP
     </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -237,7 +228,6 @@
       <Version>5.4.1.1</Version>
     </PackageReference>
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
@@ -249,8 +239,6 @@
       <Name>EntityUWP</Name>
     </ProjectReference>
   </ItemGroup>
-=======
->>>>>>> UWP
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
