@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityUWP.Entity
     {
     public class ProductType : EntityBase<ProductType>
-    {
+        {
         #region Attributs
         private long id;
         private float price;
@@ -69,31 +69,23 @@ namespace EntityUWP.Entity
         #region Functions
         public override ProductType Copy()
             {
-            Order order = new Order();
-            order.Id = this.Id;
-            order.Name = this.Name;
-            order.Description = this.Description;
-            order.Remise = this.Remise;
-            order.DatePayment = this.DatePayment;
-            order.DateCreation = this.DateCreation;
-            order.ProductOrders = this.ProductOrders;
-            order.Client = this.Client;
-            order.Seller = this.Seller;
+            ProductType productType = new ProductType();
+            productType.Id = this.Id;
+            productType.Price = this.Price;
+            productType.Name = this.Name;
+            productType.ProductTypeTVAs = this.ProductTypeTVAs;
+            productType.Products = this.products;
 
-            return order;
+            return productType;
             }
 
         public override void CopyFrom(ProductType obj)
             {
             this.Id = obj.Id;
+            this.Price = obj.Price;
             this.Name = obj.Name;
-            this.Description = obj.Description;
-            this.Remise = obj.Remise;
-            this.DatePayment = obj.DatePayment;
-            this.DateCreation = obj.DateCreation;
-            this.ProductOrders = obj.ProductOrders;
-            this.Client = obj.Client;
-            this.Seller = obj.Seller;
+            this.ProductTypeTVAs = obj.ProductTypeTVAs;
+            this.Products = obj.products;
             }
         #endregion
         }
