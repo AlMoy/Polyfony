@@ -40,7 +40,9 @@ namespace UWP_SellIt.Entities
         public string LastName
             {
             get { return lastName; }
-            set { lastName = value; }
+            set { lastName = value;
+               // OnPropertyChanged("LastName");
+            }
             }
 
         [Required]
@@ -113,7 +115,9 @@ namespace UWP_SellIt.Entities
         public Role Role
             {
             get { return role; }
-            set { role = value; }
+            set { role = value;
+                OnPropertyChanged("Role");
+                }
             }
 
         public List<Order> Orders
@@ -129,5 +133,24 @@ namespace UWP_SellIt.Entities
             this.orders = new List<Order>();
             }
         #endregion
+
+        #region Functions
+
+        public override object Copy()
+        {
+            Person role = new Role();
+            role.Id = this.Id;
+            role.Name = this.Name;
+
+            return role;
         }
+
+        public override void CopyFrom(object obj)
+        {
+            Role role = obj as Role;
+            this.Id = role.Id;
+            this.Name = role.Name;
+        }
+        #endregion
     }
+}
