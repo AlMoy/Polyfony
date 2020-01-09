@@ -15,6 +15,10 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
+<<<<<<< HEAD
+=======
+  
+>>>>>>> UWP
 
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
@@ -39,7 +43,11 @@
             <!--Textbox pour Titre-->
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}"></TextBlock>
         </Grid>
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> UWP
         <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="1">
             <!--les élements de la page-->
         </ScrollViewer>

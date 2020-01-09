@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class Person
+    public class Person : EntityBase<Person>
         {
         #region Attributs
         private long id;
@@ -40,7 +40,7 @@ namespace EntityUWP.Entity
         public string LastName
             {
             get { return lastName; }
-            set { lastName = value; }
+            set { lastName = value; OnPropertyChanged("LastName"); }
             }
 
         [Required]
@@ -49,7 +49,7 @@ namespace EntityUWP.Entity
         public string FirstName
             {
             get { return firstName; }
-            set { firstName = value; }
+            set { firstName = value; OnPropertyChanged("FirstName"); }
             }
 
         [Required]
@@ -58,7 +58,7 @@ namespace EntityUWP.Entity
         public string Address
             {
             get { return address; }
-            set { address = value; }
+            set { address = value; OnPropertyChanged("Address"); }
             }
 
         [Required]
@@ -67,7 +67,7 @@ namespace EntityUWP.Entity
         public string Mail
             {
             get { return mail; }
-            set { mail = value; }
+            set { mail = value; OnPropertyChanged("Mail"); }
             }
 
         [Required]
@@ -76,7 +76,7 @@ namespace EntityUWP.Entity
         public string TelephoneNumber
             {
             get { return telephoneNumber; }
-            set { telephoneNumber = value; }
+            set { telephoneNumber = value; OnPropertyChanged("TelephoneNumber"); }
             }
 
         [Required]
@@ -85,7 +85,7 @@ namespace EntityUWP.Entity
         public DateTime BirthDate
             {
             get { return birthDate; }
-            set { birthDate = value; }
+            set { birthDate = value; OnPropertyChanged("BirthDate"); }
             }
 
         [Required]
@@ -107,19 +107,19 @@ namespace EntityUWP.Entity
         public string PassWord
             {
             get { return passWord; }
-            set { passWord = value; }
+            set { passWord = value; OnPropertyChanged("Password"); }
             }
 
         public Role Role
             {
             get { return role; }
-            set { role = value; }
+            set { role = value; OnPropertyChanged("Role"); }
             }
 
         public List<Order> Orders
             {
             get { return orders; }
-            set { orders = value; }
+            set { orders = value; OnPropertyChanged("Orders"); }
             }
         #endregion
 
@@ -127,6 +127,41 @@ namespace EntityUWP.Entity
         public Person()
             {
             this.orders = new List<Order>();
+            }
+        #endregion
+
+        #region Functions
+        public override Person Copy()
+            {
+            Person person = new Person();
+            person.Id = this.Id;
+            person.LastName = this.LastName;
+            person.FirstName = this.FirstName;
+            person.Address = this.Address;
+            person.Mail = this.Mail;
+            person.TelephoneNumber = this.TelephoneNumber;
+            person.BirthDate = this.BirthDate;
+            person.Login = this.Login;
+            person.PassWord = this.PassWord;
+            person.Role = this.Role;
+            person.Orders = this.Orders;
+
+            return person;
+            }
+
+        public override void CopyFrom(Person obj)
+            {
+            this.Id = obj.Id;
+            this.LastName = obj.LastName;
+            this.FirstName = obj.FirstName;
+            this.Address = obj.Address;
+            this.Mail = obj.Mail;
+            this.TelephoneNumber = obj.TelephoneNumber;
+            this.BirthDate = obj.BirthDate;
+            this.Login = obj.Login;
+            this.PassWord = obj.PassWord;
+            this.Role = obj.Role;
+            this.Orders = obj.Orders;
             }
         #endregion
         }

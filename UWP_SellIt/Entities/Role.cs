@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityUWP.Entity
-    {
-    public class Role : EntityBase<Role>
+namespace UWP_SellIt.Entities
+{
+    public class Role : EntityBase
     {
         #region Attributs
         private long id;
@@ -34,13 +34,15 @@ namespace EntityUWP.Entity
         public string Name
             {
             get { return name; }
-            set { name = value; OnPropertyChanged("Name"); }
+            set { name = value;
+                OnPropertyChanged("Name");
+                }
             }
 
         public List<Person> People
             {
             get { return people; }
-            set { people = value; OnPropertyChanged("People"); }
+            set { people = value; }
             }
         #endregion
 
@@ -52,22 +54,24 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Functions
-        public override Role Copy()
-            {
+
+        public override object Copy()
+        {
             Role role = new Role();
             role.Id = this.Id;
             role.Name = this.Name;
-            role.People = this.People;
 
             return role;
-            }
-
-        public override void CopyFrom(Role obj)
-            {
-            this.Id = obj.Id;
-            this.Name = obj.Name;
-            this.People = obj.People;
-            }
-        #endregion
         }
+
+        public override void CopyFrom(object obj)
+        {
+            Role role = obj as Role;
+            this.Id = role.Id;
+            this.Name = role.Name;
+        }
+        #endregion
     }
+
+
+}

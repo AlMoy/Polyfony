@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityASP.Entity
+namespace UWP_SellIt.Entities
+{
+    public class Person : EntityBase
     {
-    public class Person
-        {
         #region Attributs
         private long id;
         private string lastName;
@@ -69,7 +69,7 @@ namespace EntityASP.Entity
             get { return mail; }
             set { mail = value; }
             }
-        
+
         [Required]
         [Column("pe_telephoneNumber")]
         [DataType(DataType.PhoneNumber)]
@@ -129,5 +129,20 @@ namespace EntityASP.Entity
             this.orders = new List<Order>();
             }
         #endregion
+
+
+        #region Functions
+
+        public override object Copy()
+        {
+            Person person = new Person();
+            return person;
         }
+
+        public override void CopyFrom(object obj)
+        {
+      
+        }
+        #endregion
     }
+}

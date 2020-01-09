@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityUWP.Entity
-    {
-    public class TVA : EntityBase<TVA>
+namespace UWP_SellIt.Entities
+{
+    public class TVA
         {
         #region Attributs
         private long id;
         private float rate;
         private DateTime endDate;
-        private List<ProductTypeTVA> productTypeTVAs;
+        private ProductType productType;
         #endregion
 
         #region Properties
@@ -45,38 +45,16 @@ namespace EntityUWP.Entity
             set { rate = value; }
             }
 
-        public List<ProductTypeTVA> ProductTypeTVAs
+        public ProductType ProductType
             {
-            get { return productTypeTVAs; }
-            set { productTypeTVAs = value; }
+            get { return productType; }
+            set { productType = value; }
             }
         #endregion
 
         #region Constructors
         public TVA()
             {
-            this.productTypeTVAs = new List<ProductTypeTVA>();
-            }
-        #endregion
-
-        #region Functions
-        public override TVA Copy()
-            {
-            TVA tva = new TVA();
-            tva.Id = this.Id;
-            tva.Rate = this.Rate;
-            tva.EndDate = this.EndDate;
-            tva.ProductTypeTVAs = this.ProductTypeTVAs;
-
-            return tva;
-            }
-
-        public override void CopyFrom(TVA obj)
-            {
-            this.Id = obj.Id;
-            this.Rate = obj.Rate;
-            this.EndDate = obj.EndDate;
-            this.ProductTypeTVAs = obj.ProductTypeTVAs;
             }
         #endregion
         }
