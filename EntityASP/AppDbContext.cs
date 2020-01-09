@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,15 +30,16 @@ namespace EntityASP
 
         #region function
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-            {//Relation One-To-Many => ProductType -To- TVA 
-            modelBuilder.Entity<TVA>().HasRequired<ProductType>(t => t.ProductType).WithMany(pt => pt.TVAS);
+            {//Relation Many-To-Many => TVA -To- ProductType
+            modelBuilder.Entity<ProductTypeTVA>().HasRequired<TVA>(ptt => ptt.TVA).WithMany(t => t.ProductTypeTVAs);
+            modelBuilder.Entity<ProductTypeTVA>().HasRequired<ProductType>(ptt => ptt.ProductType).WithMany(t => t.ProductTypeTVAs);
             //Relation One-To-Many => ProductType -To- Product
             modelBuilder.Entity<Product>().HasRequired<ProductType>(p => p.ProductType).WithMany(pt => pt.Products);
-            //Relation Many-To-Many => StateProduct -To- Product
-            modelBuilder.Entity<StateProduct>().HasMany<Product>(sp => sp.Products).WithMany(p => p.StateProducts);
-            //Relation One-To-Many => Product -To- ProductOrder
+            //Relation Many-To-Many => Product -To- StateProduct
+            modelBuilder.Entity<ProductStateProduct>().HasRequired<Product>(psp => psp.Product).WithMany(p => p.ProductStateProducts);
+            modelBuilder.Entity<ProductStateProduct>().HasRequired<StateProduct>(psp => psp.StateProduct).WithMany(sp => sp.ProductStateProducts);
+            //Relation Many-To-Many => Product -To- Order
             modelBuilder.Entity<ProductOrder>().HasRequired<Product>(po => po.Product).WithMany(p => p.ProductOrders);
-            //Relation One-To-Many => Order -To- ProductOrder
             modelBuilder.Entity<ProductOrder>().HasRequired<Order>(po => po.Order).WithMany(o => o.ProductOrders);
             //Relation Many-To-One => Order -To- Person
             modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithRequired(o => o.Client);
@@ -46,7 +48,23 @@ namespace EntityASP
             //Relation One-To-Many => Role -To- Person
             modelBuilder.Entity<Person>().HasRequired<Role>(p => p.Role).WithMany(r => r.People);
 
+            modelBuilder.Entity<Person>().HasIndex(p => p.Login).IsUnique();
+
             base.OnModelCreating(modelBuilder);
+            }
+
+        public bool CheckConnection()
+            {
+            try
+                {
+                this.Database.Connection.Open();
+                this.Database.Connection.Close();
+                }
+            catch (SqlException)
+                {
+                return false;
+                }
+            return true;
             }
         #endregion
         }
