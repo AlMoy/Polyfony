@@ -1,0 +1,49 @@
+﻿        @{
+            ViewBag.Title = "Accueil";
+        }
+
+        @if (ViewBag.displayMenu == "Yes")
+        {@* user is admin*@
+                <div class="col-md-4">
+
+                    @Html.ActionLink("Consulter les commandes", "Index", "Orders", null,
+                            new { @class = "btn btn-lg btn-block link mt-auto" })
+
+                    @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+
+                    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+
+                    @Html.ActionLink("Créer un nouveau vendeur", "Create", "People", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+
+                    @Html.ActionLink("Valider d'ajout de stock", "ProductNoValid", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })                                    
+
+                </div>
+                
+         }else
+            { @* user is seller*@
+
+                <div class="col-md-4">
+
+                    @Html.ActionLink("Consulter les commandes", "Index", "Orders", null,
+                    new { @class = "btn btn-lg btn-block link mt-auto" })
+
+                    @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+
+                    @Html.ActionLink("Ajouter d'un produit au stock", "Create", "Products", null,
+                            new { @class = "btn btn-lg btn-block link mt-3" })
+                    
+                </div>
+            }
+
+
+
+
+
+
+
+

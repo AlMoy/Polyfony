@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using ASP.Net_SellIt.Models;
 
+
 namespace ASP.Net_SellIt
 {
     public partial class Startup
@@ -22,7 +23,7 @@ namespace ASP.Net_SellIt
             // Autoriser l’application à utiliser un cookie pour stocker des informations pour l’utilisateur connecté
             // et pour utiliser un cookie à des fins de stockage temporaire des informations sur la connexion utilisateur avec un fournisseur de connexion tiers
             // Configurer le cookie de connexion
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            _ = app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),

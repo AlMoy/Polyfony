@@ -58,29 +58,6 @@ namespace ASP.Net_SellIt.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class AddPhoneNumberViewModel
-    {
-        [Required]
-        [Phone]
-        [Display(Name = "Numéro de téléphone")]
-        public string Number { get; set; }
-    }
+   
 
-    public class VerifyPhoneNumberViewModel
-    {
-        [Required]
-        [Display(Name = "Code")]
-        public string Code { get; set; }
-
-        [Required]
-        [Phone]
-        [Display(Name = "Numéro de téléphone")]
-        public string PhoneNumber { get; set; }
-    }
-
-    public class ConfigureTwoFactorViewModel
-    {
-        public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
-    }
 }

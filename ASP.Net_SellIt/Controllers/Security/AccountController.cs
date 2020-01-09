@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ASP.Net_SellIt.Models;
+using EntityASP;
 
 namespace ASP.Net_SellIt.Controllers
 {
@@ -18,8 +19,10 @@ namespace ASP.Net_SellIt.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        ApplicationDbContext context;
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -75,15 +78,15 @@ namespace ASP.Net_SellIt.Controllers
 
             // Ceci ne comptabilise pas les échecs de connexion pour le verrouillage du compte
             // Pour que les échecs de mot de passe déclenchent le verrouillage du compte, utilisez shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email,model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                                                         
+                    return RedirectToAction("Index", "Users");
+                                        
                 case SignInStatus.LockedOut:
-                    return View("Lockout");
-                //case SignInStatus.RequiresVerification:
-                //    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                    return View("Lockout");                
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Tentative de connexion non valide.");
@@ -91,13 +94,15 @@ namespace ASP.Net_SellIt.Controllers
             }
         }
 
-        
 
         //
         // GET: /Account/Register
+
+        //[Authorize(Roles = "Admin")]
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -105,25 +110,28 @@ namespace ASP.Net_SellIt.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRole };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+
                     // Pour plus d'informations sur l'activation de la confirmation de compte et de la réinitialisation de mot de passe, visitez https://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Users");
                 }
+                ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
                 AddErrors(result);
             }
 
@@ -131,10 +139,11 @@ namespace ASP.Net_SellIt.Controllers
             return View(model);
         }
 
-       
+
         //
         // GET: /Account/ResetPassword
         [AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
@@ -144,6 +153,7 @@ namespace ASP.Net_SellIt.Controllers
         // POST: /Account/ResetPassword
         [HttpPost]
         [AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
@@ -169,6 +179,7 @@ namespace ASP.Net_SellIt.Controllers
         //
         // GET: /Account/ResetPasswordConfirmation
         [AllowAnonymous]
+        //[Authorize(Roles = "Admin")]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
@@ -182,7 +193,7 @@ namespace ASP.Net_SellIt.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //
