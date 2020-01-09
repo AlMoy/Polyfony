@@ -13,7 +13,7 @@ namespace EntityUWP.Entity
         #region Attributs
         private long id;
         private string name;
-        private List<Product> products;
+        private List<ProductStateProduct> productStateProducts;
         #endregion
 
         #region Properties
@@ -37,17 +37,17 @@ namespace EntityUWP.Entity
             set { name = value; }
             }
 
-        public List<Product> Products
+        public List<ProductStateProduct> ProductStateProducts
             {
-            get { return products; }
-            set { products = value; }
+            get { return productStateProducts; }
+            set { productStateProducts = value; }
             }
         #endregion
 
         #region Constructors
         public StateProduct()
             {
-            this.products = new List<Product>();
+            this.productStateProducts = new List<ProductStateProduct>();
             }
         #endregion
         }
