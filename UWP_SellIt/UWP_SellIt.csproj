@@ -135,8 +135,23 @@
       <DependentUpon>OrdersUc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\PersonEdit.xaml.cs">
-      <DependentUpon>PersonEdit.xaml</DependentUpon>
+    <Compile Include="Views\OrderCheckPage.xaml.cs">
+      <DependentUpon>OrderCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\BackBtnUC.xaml.cs">
+      <DependentUpon>BackBtnUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\EditProduitUC.xaml.cs">
+      <DependentUpon>EditProduitUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListProduitsUC.xaml.cs">
+      <DependentUpon>ListProduitsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\RefClientUC.xaml.cs">
+      <DependentUpon>RefClientUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ResumeOrderUC.xaml.cs">
+      <DependentUpon>ResumeOrderUC.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -184,9 +199,29 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PersonEdit.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Views\OrderCheckPage.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\BackBtnUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\EditProduitUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\ListProduitsUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\RefClientUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\ResumeOrderUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
