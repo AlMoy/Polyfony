@@ -13,10 +13,17 @@
     <SolidColorBrush x:Key="secondary-light" Color="#5f5fc4"/>
     <SolidColorBrush x:Key="secondary-dark" Color="#001064"/>
     <SolidColorBrush x:Key="secondary-text" Color="#ffffff"/>
+    <!--Color diver-->
+    <SolidColorBrush x:Key="yellow" Color="#ffffe6"/>
+    <SolidColorBrush x:Key="Blue" Color="#809fff"/>
+
     <!--FontSize-->
     <x:Int32 x:Key="FontSizeTitle">40</x:Int32>
     <x:Int32 x:Key="paragraphe">15</x:Int32>
     <!--Style-->
+    <Style x:Key="leftbandeau" TargetType="Rectangle">
+        <Setter Property="Fill" Value="{StaticResource yellow}"/>
+    </Style>
     
     <Style x:Key="bandeau" TargetType="Rectangle">
         <Setter Property="Fill" Value="{StaticResource primary-dark}"/>
@@ -54,6 +61,14 @@
         <Setter Property="Background" Value="{StaticResource secondary-light}"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>     
+    </Style>
+
+    <Style x:Key="Menuproductbutton" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="150"/>       
+        <Setter Property="Foreground" Value="{StaticResource secondary-text}"/>
+        <Setter Property="Background" Value="{StaticResource Blue}"/>       
+        <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
     </Style>
 
 

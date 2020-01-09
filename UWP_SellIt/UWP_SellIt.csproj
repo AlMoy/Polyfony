@@ -133,8 +133,15 @@
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\HomePage\HomePageViewModel.cs" />
-    <Compile Include="Views\MVVMLight\ProductPage\ProductPageUC.xaml.cs">
-      <DependentUpon>ProductPageUC.xaml</DependentUpon>
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductPageUC.xaml.cs">
+      <DependentUpon>MenuProductPageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductPageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\ProductHommePageUC.xaml.cs">
+      <DependentUpon>ProductHommePageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductFemmePageUC.xaml.cs">
+      <DependentUpon>ProductFemmePageUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ProductPage\ProductPageViewModel.cs" />
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
@@ -211,7 +218,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MVVMLight\ProductPage\ProductPageUC.xaml">
+    <Page Include="Views\MVVMLight\ProductPage\MenuProductPageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductHommePageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductFemmePageUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

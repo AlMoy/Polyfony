@@ -25,11 +25,14 @@ namespace UWP_SellIt.Views.MVVMLight
             {
                 var navigationService = new NavigationService();
                 navigationService.Configure("MainPage", typeof(MainPage));
-                navigationService.Configure("ProductListPage", typeof(ProductListPage));               
+                navigationService.Configure("ProductListPage", typeof(ProductListPage));
+                navigationService.Configure("ProductHommeList", typeof(ProductHommePageUC));
+
                 return navigationService;
             });
             SimpleIoc.Default.Register<HomePageViewModel>();
             SimpleIoc.Default.Register<ProductPageViewModel>();
+            SimpleIoc.Default.Register<MenuProductPageViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
         }
 
@@ -42,6 +45,11 @@ namespace UWP_SellIt.Views.MVVMLight
         public ProductPageViewModel ProductPageInstance
         {
             get { return ServiceLocator.Current.GetInstance<ProductPageViewModel>(); }
+        }
+
+        public MenuProductPageViewModel MenuProductPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<MenuProductPageViewModel>(); }
         }
 
         //public Page2ViewModel MyProperty
