@@ -4,6 +4,7 @@ using System.Linq;
 using EntityASP.Entity;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace EntityASP.Repository
     {
@@ -25,8 +26,9 @@ namespace EntityASP.Repository
         #endregion
 
         #region Constructors 
-        public TVARepository()
+        public TVARepository(AppDbContext context) : base(context)
             {
+            this.dbSet = context.TvaDb;
             }
         #endregion
 

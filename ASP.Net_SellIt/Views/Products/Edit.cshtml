@@ -1,0 +1,73 @@
+﻿@model EntityASP.Entity.Product
+
+@{
+    ViewBag.Title = "Edit";
+    String route = Model.ToValid ? "ListProducts/Stock" : "ListProducts/NoValid";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ToValid)
+    <div class="d-flex flex-column form-horizontal">
+        <h3>Edition produit</h3>
+        <div>
+            @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Détails", "Details", new { id = Model.Id }, new { @class = "btn btn-info" })
+            <input type="submit" value="Editer" class="btn btn-primary" />
+        </div>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Name, "Nom", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Size, "Taille", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Weight, "Masse", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Color, "Couleur", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Quantity, "Quantité", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.ProductType, "Type", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.DropDownListFor(model => model.ProductType, new SelectList(ViewBag.ProductTypes, "id", "name"), new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

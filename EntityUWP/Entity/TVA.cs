@@ -14,7 +14,7 @@ namespace EntityUWP.Entity
         private long id;
         private float rate;
         private DateTime endDate;
-        private ProductType productType;
+        private List<ProductTypeTVA> productTypeTVAs;
         #endregion
 
         #region Properties
@@ -45,16 +45,17 @@ namespace EntityUWP.Entity
             set { rate = value; }
             }
 
-        public ProductType ProductType
+        public List<ProductTypeTVA> ProductTypeTVAs
             {
-            get { return productType; }
-            set { productType = value; }
+            get { return productTypeTVAs; }
+            set { productTypeTVAs = value; }
             }
         #endregion
 
         #region Constructors
         public TVA()
             {
+            this.productTypeTVAs = new List<ProductTypeTVA>();
             }
         #endregion
         }

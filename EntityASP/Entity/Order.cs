@@ -27,54 +27,59 @@ namespace EntityASP.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("or_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
         [Required]
         [Column("or_name")]
+        [Display(Name = "Nom")]
         [DataType(DataType.Text)]
         [MinLength(4)]
         [MaxLength(20)]
         public string Name
-            {
+        {
             get { return name; }
             set { name = value; }
-            }
+        }
 
         [Column("or_description")]
+        [Display(Name = "Description")]
         [DataType(DataType.MultilineText)]
         public string Description
-            {
+        {
             get { return description; }
             set { description = value; }
-            }
+        }
 
         [Column("or_remise")]
+        [Display(Name = "Remise")]
         [DataType(DataType.Currency)]
         public float Remise
-            {
+        {
             get { return remise; }
             set { remise = value; }
-            }
+        }
 
         [Column("or_datePayment")]
+        [Display(Name = "Date de payement")]
         [DataType(DataType.Date)]
         public DateTime DatePayment
-            {
+        {
             get { return datePayment; }
             set { datePayment = value; }
-            }
+        }
 
         [Required]
         [Column("or_dateCreation")]
+        [Display(Name = "Date de création")]
         [DataType(DataType.Date)]
         public DateTime DateCreation
-            {
+        {
             get { return dateCreation; }
             set { dateCreation = value; }
-            }
+        }
 
         public List<ProductOrder> ProductOrders
             {

@@ -11,12 +11,22 @@ namespace EntityASP.Entity
     public class ProductOrder
         {
         #region Attributs
+        private long id;
         private ulong quantity;
         private Product product;
         private Order order;
         #endregion
 
         #region Properties
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("po_id")]
+        public long Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         [Required]
         [Column("po_quantity")]
         public ulong Quantity
