@@ -139,6 +139,33 @@
     <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\StateProductRepository.cs" />
     <Compile Include="Repository\TVARepository.cs" />
+    <Compile Include="Views\OrderCheckPage.xaml.cs">
+      <DependentUpon>OrderCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\BackBtnUC.xaml.cs">
+      <DependentUpon>BackBtnUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\EditOrderUC.xaml.cs">
+      <DependentUpon>EditOrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\EditProduitUC.xaml.cs">
+      <DependentUpon>EditProduitUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListOrderUC.xaml.cs">
+      <DependentUpon>ListOrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListProduitsUC.xaml.cs">
+      <DependentUpon>ListProduitsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\RefClientUC.xaml.cs">
+      <DependentUpon>RefClientUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ResumeOrderUC.xaml.cs">
+      <DependentUpon>ResumeOrderUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ShowOrderUC.xaml.cs">
+      <DependentUpon>ShowOrderUC.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\EntityUWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +176,44 @@
       <Version>6.2.9</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Views\OrderCheckPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\BackBtnUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\EditOrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\EditProduitUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\ListOrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\ListProduitsUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\RefClientUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\ResumeOrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\ShowOrderUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

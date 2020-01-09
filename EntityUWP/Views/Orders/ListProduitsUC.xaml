@@ -1,0 +1,34 @@
+﻿<UserControl
+    x:Class="EntityUWP.Views.Orders.ListProduitsUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EntityUWP.Views.Orders"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="listView">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock MinWidth="60" Text="Produit" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock MinWidth="40" Text="Type" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock MinWidth="60" Text="Quantité" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock MinWidth="60" Text="Prix HT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock MinWidth="40" Text="TVA" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock MinWidth="60" Text="Prix TTC" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
