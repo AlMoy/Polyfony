@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class ProductOrder
+    public class ProductOrder : EntityBase<ProductOrder>
         {
         #region Attributs
         private ulong quantity;
@@ -22,7 +22,7 @@ namespace EntityUWP.Entity
         public ulong Quantity
             {
             get { return quantity; }
-            set { quantity = value; }
+            set { quantity = value; OnPropertyChanged("Quantity"); }
             }
 
         [Required]
@@ -30,7 +30,7 @@ namespace EntityUWP.Entity
         public Product Product
             {
             get { return product; }
-            set { product = value; }
+            set { product = value; OnPropertyChanged("Product"); }
             }
 
         [Required]
@@ -38,13 +38,32 @@ namespace EntityUWP.Entity
         public Order Order
             {
             get { return order; }
-            set { order = value; }
+            set { order = value; OnPropertyChanged("Order"); }
             }
         #endregion
 
         #region Constructors
         public ProductOrder()
             {
+            }
+        #endregion
+
+        #region Functions
+        public override ProductOrder Copy()
+            {
+            ProductOrder productOrder = new ProductOrder();
+            productOrder.Quantity = this.Quantity;
+            productOrder.Product = this.Product;
+            productOrder.Order = this.Order;
+
+            return productOrder;
+            }
+
+        public override void CopyFrom(ProductOrder obj)
+            {
+            this.Quantity = obj.Quantity;
+            this.Product = obj.Product;
+            this.Order = obj.Order;
             }
         #endregion
         }

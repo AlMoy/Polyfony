@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class ProductType
+    public class ProductType : EntityBase<ProductType>
         {
         #region Attributs
         private long id;
@@ -63,6 +63,29 @@ namespace EntityUWP.Entity
             {
             this.productTypeTVAs = new List<ProductTypeTVA>();
             this.products = new List<Product>();
+            }
+        #endregion
+
+        #region Functions
+        public override ProductType Copy()
+            {
+            ProductType productType = new ProductType();
+            productType.Id = this.Id;
+            productType.Price = this.Price;
+            productType.Name = this.Name;
+            productType.ProductTypeTVAs = this.ProductTypeTVAs;
+            productType.Products = this.products;
+
+            return productType;
+            }
+
+        public override void CopyFrom(ProductType obj)
+            {
+            this.Id = obj.Id;
+            this.Price = obj.Price;
+            this.Name = obj.Name;
+            this.ProductTypeTVAs = obj.ProductTypeTVAs;
+            this.Products = obj.products;
             }
         #endregion
         }

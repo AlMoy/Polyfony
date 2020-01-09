@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class TVA
+    public class TVA : EntityBase<TVA>
         {
         #region Attributs
         private long id;
@@ -56,6 +56,27 @@ namespace EntityUWP.Entity
         public TVA()
             {
             this.productTypeTVAs = new List<ProductTypeTVA>();
+            }
+        #endregion
+
+        #region Functions
+        public override TVA Copy()
+            {
+            TVA tva = new TVA();
+            tva.Id = this.Id;
+            tva.Rate = this.Rate;
+            tva.EndDate = this.EndDate;
+            tva.ProductTypeTVAs = this.ProductTypeTVAs;
+
+            return tva;
+            }
+
+        public override void CopyFrom(TVA obj)
+            {
+            this.Id = obj.Id;
+            this.Rate = obj.Rate;
+            this.EndDate = obj.EndDate;
+            this.ProductTypeTVAs = obj.ProductTypeTVAs;
             }
         #endregion
         }
