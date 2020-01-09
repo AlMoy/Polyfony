@@ -25,8 +25,9 @@ namespace EntityASP.Repository
         #endregion
 
         #region Constructors 
-        public PersonRepository()
+        public PersonRepository(AppDbContext context) : base(context)
             {
+            this.dbSet = context.PersonDb;
             }
         #endregion
 

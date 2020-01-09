@@ -16,7 +16,7 @@ namespace EntityASP.Entity
         private string name;
         private float weight;
         private string color;
-        private ulong quantity;
+        private long quantity;
         private Boolean toValid;
         private List<StateProduct> stateProducts;
         private List<ProductOrder> productOrders;
@@ -46,6 +46,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_size")]
+        [Range(typeof(float), "0", "20")]
+        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
         public float Size
             {
             get { return size; }
@@ -54,6 +56,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_weight")]
+        [Range(typeof(float), "0", "20")]
+        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
         public float Weight
             {
             get { return weight; }
@@ -71,7 +75,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_quantity")]
-        public ulong Quantity
+        [Range(typeof(long), "0", "100000")]
+        public long Quantity
             {
             get { return quantity; }
             set { quantity = value; }
@@ -96,7 +101,7 @@ namespace EntityASP.Entity
             set { productOrders = value; }
             }
 
-        public ProductType ProductType
+        public virtual ProductType ProductType
             {
             get { return productType; }
             set { productType = value; }

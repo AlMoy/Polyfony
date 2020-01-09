@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EntityASP;
 using EntityASP.Entity;
 using EntityASP.Repository;
@@ -21,17 +22,17 @@ namespace UnitTestASPNet
             }
 
         [Test]
-        public List<T> GetList<T>(Repository<T> repository)
+        public async Task<List<T>> GetListAsync<T>(Repository<T> repository)
             {
-            List<T> list = repository.FindAll();
+            List<T> list = await repository.FindAllAsync();
             Assert.IsEmpty(list);
             return list;
             }
 
         [Test]
-        public List<T> GetListFiltered<T>(Repository<T> repository, Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, ulong? limit = null, ulong? offset = null)
+        public async Task<List<T>> GetListFilteredAsync<T>(Repository<T> repository, Dictionary<String, String> criteria, Dictionary<String, String> orderBy = null, long? limit = null, long? offset = null)
             {
-            List<T> list = repository.FindBy(criteria, orderBy, limit, offset);
+            List<T> list = await repository.FindByAsync(criteria, orderBy, limit, offset);
             Assert.IsEmpty(list);
             return list;
             }
@@ -87,22 +88,22 @@ namespace UnitTestASPNet
             }
 
         [Test]
-        public void DeleteElement<T>(Repository<T> repository, ulong id)
+        public async Task DeleteElementAsync<T>(Repository<T> repository, long id)
             {
-            repository.Remove(id);
-            Assert.IsTrue(repository.Find(id) != null);
+            await repository.Remove(await repository.FindAsync(id));
+            Assert.IsTrue(await repository.FindAsync(id) != null);
             }
 
         [Test]
-        public void FindElement<T>(Repository<T> repository, ulong id) 
+        public async Task FindElementAsync<T>(Repository<T> repository, long id) 
             {
-            Assert.IsNotNull(repository.Find(id));
+            Assert.IsNotNull(await repository.FindAsync(id));
             }
 
         [Test]
         public void CreateElement<T>(Repository<T> repository, T element)
             {
-            Assert.IsNotNull(repository.Create(element));
+            Assert.IsNotNull(repository.CreateAsync(element));
             }
         }
     }

@@ -11,7 +11,7 @@ namespace EntityASP.Entity
     public class ProductOrder
         {
         #region Attributs
-        private ulong id;
+        private long id;
         private ulong quantity;
         private Product product;
         private Order order;
@@ -21,7 +21,7 @@ namespace EntityASP.Entity
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("po_id")]
-        public ulong Id
+        public long Id
         {
             get { return id; }
             set { id = value; }

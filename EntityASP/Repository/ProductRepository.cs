@@ -25,8 +25,9 @@ namespace EntityASP.Repository
         #endregion
 
         #region Constructors 
-        public ProductRepository()
+        public ProductRepository(AppDbContext context) : base(context)
             {
+            this.dbSet = context.ProductDb;
             }
         #endregion
 
