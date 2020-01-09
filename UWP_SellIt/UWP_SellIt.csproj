@@ -128,19 +128,21 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\StateProduct.cs" />
     <Compile Include="Entities\TVA.cs" />
-    <Compile Include="Views\HomePage\HomePage.xaml.cs">
+    <Compile Include="Views\MVVMLight\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomePage\HomePageUC.xaml.cs">
+    <Compile Include="Views\MVVMLight\HomePage\HomePageUC.xaml.cs">
       <DependentUpon>HomePageUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
+    <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MVVMLight\HomePage\HomePageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
     <Compile Include="Views\People\EditPersonUC.xaml.cs">
       <DependentUpon>EditPersonUC.xaml</DependentUpon>
     </Compile>
@@ -153,7 +155,7 @@
     <Compile Include="Views\People\ShowPersonUC.xaml.cs">
       <DependentUpon>ShowPersonUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductListPage.xaml.cs">
+    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RolePage.xaml.cs">
@@ -198,18 +200,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MVVMLight\HomePage\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\HomePage\HomePageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HomePage\HomePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HomePage\HomePageUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -233,7 +232,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProductListPage.xaml">
+    <Page Include="Views\MVVMLight\ProductPage\ProductListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

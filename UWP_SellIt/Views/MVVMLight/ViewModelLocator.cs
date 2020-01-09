@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UWP_SellIt.Views.MVVMLight.HomePage;
+using UWP_SellIt.Views.MVVMLight.ProductPage;
 
 namespace UWP_SellIt.Views.MVVMLight
 {
@@ -18,16 +20,22 @@ namespace UWP_SellIt.Views.MVVMLight
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             //Register your services used here
-            SimpleIoc.Default.Register<INavigationService, NavigationService>();
-            //SimpleIoc.Default.Register<Page1ViewModel>();
+
+            SimpleIoc.Default.Register<INavigationService>(() =>
+            {
+                var navigationService = new NavigationService();
+                navigationService.Configure("ProductListPage", typeof(ProductListPage));               
+                return navigationService;
+            });
+            SimpleIoc.Default.Register<HomePageViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
         }
 
 
-        //public Page1ViewModel BlankPageInstance
-        //{
-        //    get { return ServiceLocator.Current.GetInstance<BlankPageViewModel>(); }
-        //}
+        public HomePageViewModel HomePageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<HomePageViewModel>(); }
+        }
         //public Page2ViewModel MyProperty
         //{
         //    get { return ServiceLocator.Current.GetInstance<OtherPageViewModel>(); }
