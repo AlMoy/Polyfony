@@ -232,7 +232,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 30,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -243,7 +242,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 25,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -254,7 +252,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 42,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -265,7 +262,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 30,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -276,7 +272,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 25,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -287,7 +282,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 42,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -298,7 +292,6 @@ namespace EntityASP
                     Color = "Blanc",
                     Quantity = 10,
                     ToValid = true,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -309,7 +302,6 @@ namespace EntityASP
                     Color = "Blanc",
                     Quantity = 40,
                     ToValid = false,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[1]
                     },
                 new Product()
@@ -320,7 +312,6 @@ namespace EntityASP
                     Color = "Rouge",
                     Quantity = 25,
                     ToValid = false,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[0]
                     },
                 new Product()
@@ -331,7 +322,6 @@ namespace EntityASP
                     Color = "Noir",
                     Quantity = 30,
                     ToValid = false,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[2]
                     },
                 new Product()
@@ -342,7 +332,6 @@ namespace EntityASP
                     Color = "Marron",
                     Quantity = 15,
                     ToValid = false,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[1]
                     },
                 new Product()
@@ -353,8 +342,131 @@ namespace EntityASP
                     Color = "Bleu",
                     Quantity = 15,
                     ToValid = false,
-                    StateProducts = stateProducts,
                     ProductType = productTypes[0]
+                    }
+                };
+
+            List<ProductStateProduct> productStateProducts = new List<ProductStateProduct>()
+                {
+                new ProductStateProduct()
+                    {
+                    Product = products[0],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[1],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[2],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[3],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[4],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[5],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[6],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[7],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[8],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[9],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[10],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[11],
+                    StateProduct = stateProducts[0]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[0],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[1],
+                    StateProduct = stateProducts[2]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[2],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[3],
+                    StateProduct = stateProducts[2]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[4],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[5],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[6],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[7],
+                    StateProduct = stateProducts[2]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[8],
+                    StateProduct = stateProducts[1]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[9],
+                    StateProduct = stateProducts[2]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[10],
+                    StateProduct = stateProducts[2]
+                    },
+                new ProductStateProduct()
+                    {
+                    Product = products[11],
+                    StateProduct = stateProducts[1]
                     }
                 };
 
@@ -365,6 +477,7 @@ namespace EntityASP
             context.ProductTypeTvaDb.AddRange(productTypeTVAs);
             context.ProductTypeDb.AddRange(productTypes);
             context.ProductDb.AddRange(products);
+            context.ProductStateProductDb.AddRange(productStateProducts);
             
             //If a problem for save the test datas
             try
