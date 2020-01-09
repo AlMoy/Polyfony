@@ -55,6 +55,10 @@
             </Grid.ColumnDefinitions>
                 <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource bandeau}"/>
                 <TextBlock Grid.Row="0" VerticalAlignment="Center">Type de produit: Trottinette Homme</TextBlock>
+                <FlipView x:Name="flipView1" Grid.Row="1" Grid.Column="0">
+                    <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
+                    <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
+                </FlipView>
             </Grid>
 
             

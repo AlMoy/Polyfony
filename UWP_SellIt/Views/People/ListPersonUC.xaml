@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="UWP_SellIt.Views.People.ListPersonUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_SellIt.Views.People"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="listView" x:FieldModifier="public" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock MinWidth="200" Text="Prénom"/>
+                        <TextBlock MinWidth="200" Text="Nom"/>
+                        <TextBlock MinWidth="200" Text="Adresse"/>
+                        <TextBlock MinWidth="200" Text="Email"/>
+                        <TextBlock MinWidth="200" Text="Téléphone"/>
+                        <TextBlock MinWidth="200" Text="Date de naissance"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ContextFlyout>
+                <Flyout>
+                    <StackPanel>
+                        <MenuFlyoutItem Text="Supprimer" Click="MenuFlyoutDelete_Click"></MenuFlyoutItem>
+                    </StackPanel>
+                </Flyout>
+            </ListView.ContextFlyout>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock MinWidth="200" Text="{Binding Firstname}"/>
+                        <TextBlock MinWidth="200" Text="{Binding Lastname}"/>
+                        <TextBlock MinWidth="200" Text="{Binding Address}"/>
+                        <TextBlock MinWidth="200" Text="{Binding Mail}"/>
+                        <TextBlock MinWidth="200" Text="{Binding TelephoneNumber}"/>
+                        <TextBlock MinWidth="200" Text="{Binding BirthDate}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+
+
+</UserControl>

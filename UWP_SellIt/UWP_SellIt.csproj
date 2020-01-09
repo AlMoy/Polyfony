@@ -119,6 +119,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductOrder.cs" />
+    <Compile Include="Entities\ProductType.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\StateProduct.cs" />
+    <Compile Include="Entities\TVA.cs" />
     <Compile Include="Views\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -132,9 +141,34 @@
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\People\EditPersonUC.xaml.cs">
+      <DependentUpon>EditPersonUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People\ListPersonUC.xaml.cs">
+      <DependentUpon>ListPersonUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People\ShowAdvancePersonUC.xaml.cs">
+      <DependentUpon>ShowAdvancePersonUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People\ShowPersonUC.xaml.cs">
+      <DependentUpon>ShowPersonUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RolePage.xaml.cs">
+      <DependentUpon>RolePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\EditRoleUC.xaml.cs">
+      <DependentUpon>EditRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\ListRoleUC.xaml.cs">
+      <DependentUpon>ListRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\ShowRoleUC.xaml.cs">
+      <DependentUpon>ShowRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControlBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -142,6 +176,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\images\trot_homme_elect_blanc.png" />
+    <Content Include="Assets\images\trot_homme_elect_noir.png" />
     <Content Include="Assets\logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -177,7 +213,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\People\EditPersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\People\ListPersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\People\ShowAdvancePersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\People\ShowPersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProductListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RolePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Roles\EditRoleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Roles\ListRoleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Roles\ShowRoleUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
