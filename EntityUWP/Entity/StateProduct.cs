@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class StateProduct
+    public class StateProduct : EntityBase<StateProduct>
         {
         #region Attributs
         private long id;
         private string name;
-        private List<Product> products;
+        private List<ProductStateProduct> productStateProducts;
         #endregion
 
         #region Properties
@@ -37,17 +37,36 @@ namespace EntityUWP.Entity
             set { name = value; }
             }
 
-        public List<Product> Products
+        public List<ProductStateProduct> ProductStateProducts
             {
-            get { return products; }
-            set { products = value; }
+            get { return productStateProducts; }
+            set { productStateProducts = value; }
             }
         #endregion
 
         #region Constructors
         public StateProduct()
             {
-            this.products = new List<Product>();
+            this.productStateProducts = new List<ProductStateProduct>();
+            }
+        #endregion
+
+        #region Functions
+        public override StateProduct Copy()
+            {
+            StateProduct stateProduct = new StateProduct();
+            stateProduct.Id = this.Id;
+            stateProduct.Name = this.Name;
+            stateProduct.ProductStateProducts = this.ProductStateProducts;
+
+            return stateProduct;
+            }
+
+        public override void CopyFrom(StateProduct obj)
+            {
+            this.Id = obj.Id;
+            this.Name = obj.Name;
+            this.ProductStateProducts = obj.ProductStateProducts;
             }
         #endregion
         }

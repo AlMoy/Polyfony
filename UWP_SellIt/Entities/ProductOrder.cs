@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityUWP.Entity
-    {
-    public class ProductOrder : EntityBase<ProductOrder>
+namespace UWP_SellIt.Entities
+{
+    public class ProductOrder
         {
         #region Attributs
         private ulong quantity;
@@ -22,7 +22,7 @@ namespace EntityUWP.Entity
         public ulong Quantity
             {
             get { return quantity; }
-            set { quantity = value; OnPropertyChanged("Quantity"); }
+            set { quantity = value; }
             }
 
         [Required]
@@ -30,7 +30,7 @@ namespace EntityUWP.Entity
         public Product Product
             {
             get { return product; }
-            set { product = value; OnPropertyChanged("Product"); }
+            set { product = value; }
             }
 
         [Required]
@@ -38,32 +38,13 @@ namespace EntityUWP.Entity
         public Order Order
             {
             get { return order; }
-            set { order = value; OnPropertyChanged("Order"); }
+            set { order = value; }
             }
         #endregion
 
         #region Constructors
         public ProductOrder()
             {
-            }
-        #endregion
-
-        #region Functions
-        public override ProductOrder Copy()
-            {
-            ProductOrder productOrder = new ProductOrder();
-            productOrder.Quantity = this.Quantity;
-            productOrder.Product = this.Product;
-            productOrder.Order = this.Order;
-
-            return productOrder;
-            }
-
-        public override void CopyFrom(ProductOrder obj)
-            {
-            this.Quantity = obj.Quantity;
-            this.Product = obj.Product;
-            this.Order = obj.Order;
             }
         #endregion
         }

@@ -6,22 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityASP.Entity
-    {
-    public class ProductType
+namespace UWP_SellIt.Entities
+{ 
+    public class StateProduct
         {
         #region Attributs
         private long id;
-        private float price;
         private string name;
-        private List<ProductTypeTVA> productTypeTVAs;
         private List<Product> products;
         #endregion
 
         #region Properties
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("pt_id")]
+        [Column("sp_id")]
         public long Id
             {
             get { return id; }
@@ -29,26 +27,14 @@ namespace EntityASP.Entity
             }
 
         [Required]
-        [Column("pt_price")]
-        public float Price
-            {
-            get { return price; }
-            set { price = value; }
-            }
-
-        [Required]
-        [Column("pt_name")]
+        [Column("sp_name")]
         [DataType(DataType.Text)]
+        [MinLength(4)]
+        [MaxLength(20)]
         public string Name
             {
             get { return name; }
             set { name = value; }
-            }
-
-        public List<ProductTypeTVA> ProductTypeTVAs
-        {
-            get { return productTypeTVAs; }
-            set { productTypeTVAs = value; }
             }
 
         public List<Product> Products
@@ -59,11 +45,10 @@ namespace EntityASP.Entity
         #endregion
 
         #region Constructors
-        public ProductType()
+        public StateProduct()
             {
-            this.productTypeTVAs = new List<ProductTypeTVA>();
             this.products = new List<Product>();
             }
         #endregion
         }
-    }
+}
