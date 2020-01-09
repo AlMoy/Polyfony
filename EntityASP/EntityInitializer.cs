@@ -20,7 +20,7 @@ namespace EntityASP
             //if db has been already seeded
             if (context.PersonDb.Any())
                 return;
-
+            
             List<Role> roles = new List<Role>()
                 {
                 new Role()
@@ -105,7 +105,7 @@ namespace EntityASP
                     }
                 };
 
-            List<TVA> tvas1 = new List<TVA>()
+            List<TVA> tvas = new List<TVA>()
                 {
                 new TVA()
                     {
@@ -121,11 +121,7 @@ namespace EntityASP
                     {
                     Rate = 5.7F,
                     EndDate = null
-                    }
-                };
-
-            List<TVA> tvas2 = new List<TVA>()
-                {
+                    },
                 new TVA()
                     {
                     Rate = 7.2F,
@@ -140,11 +136,7 @@ namespace EntityASP
                     {
                     Rate = 1.9F,
                     EndDate = null
-                    }
-                };
-
-            List<TVA> tvas3 = new List<TVA>()
-                {
+                    },
                 new TVA()
                     {
                     Rate = 15.0F,
@@ -167,20 +159,66 @@ namespace EntityASP
                 new ProductType()
                     {
                     Price = 20.5F,
-                    Name = "Trot-Enfant",
-                    TVAS = tvas1
+                    Name = "Trot-Enfant"
                     },
                 new ProductType()
                     {
                     Price = 15.3F,
                     Name = "Trot-Femme",
-                    TVAS = tvas2
                     },
                 new ProductType()
                     {
                     Price = 18.8F,
                     Name = "Trot-Homme",
-                    TVAS = tvas3
+                    }
+                };
+
+            List<ProductTypeTVA> productTypeTVAs = new List<ProductTypeTVA>()
+                {
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[0],
+                    TVA = tvas[0]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[0],
+                    TVA = tvas[1]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[0],
+                    TVA = tvas[2]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[1],
+                    TVA = tvas[3]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[1],
+                    TVA = tvas[4]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[1],
+                    TVA = tvas[5]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[2],
+                    TVA = tvas[6]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[2],
+                    TVA = tvas[7]
+                    },
+                new ProductTypeTVA()
+                    {
+                    ProductType = productTypes[2],
+                    TVA = tvas[8]
                     }
                 };
 
@@ -323,12 +361,11 @@ namespace EntityASP
             context.RoleDb.AddRange(roles);
             context.PersonDb.AddRange(peoples);
             context.StateProductDb.AddRange(stateProducts);
-            context.TvaDb.AddRange(tvas1);
-            context.TvaDb.AddRange(tvas2);
-            context.TvaDb.AddRange(tvas3);
+            context.TvaDb.AddRange(tvas);
+            context.ProductTypeTvaDb.AddRange(productTypeTVAs);
             context.ProductTypeDb.AddRange(productTypes);
             context.ProductDb.AddRange(products);
-
+            
             //If a problem for save the test datas
             try
                 {

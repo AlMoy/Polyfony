@@ -13,13 +13,9 @@ namespace EntityASP.Entity
         #region Attributs
         private long id;
         private float rate;
-<<<<<<< HEAD
-        private DateTime endDate;
-        private List<ProductTypeTVA> productTypeTVAs;
-=======
         private DateTime? endDate;
-        private ProductType productType;
->>>>>>> AM
+        private List<ProductTypeTVA> productTypeTVAs;
+
         #endregion
 
         #region Properties

@@ -15,8 +15,10 @@ namespace EntityASP
         public DbSet<Order> OrderDb { get; set; }
         public DbSet<Person> PersonDb { get; set; }
         public DbSet<Product> ProductDb { get; set; }
-        public DbSet<ProductOrder> ProductOrdersDb { get; set; }
+        public DbSet<ProductOrder> ProductOrderDb { get; set; }
+        public DbSet<ProductStateProduct> ProductStateProductDb { get; set; }
         public DbSet<ProductType> ProductTypeDb { get; set; }
+        public DbSet<ProductTypeTVA> ProductTypeTvaDb { get; set; }
         public DbSet<Role> RoleDb { get; set; }
         public DbSet<StateProduct> StateProductDb { get; set; }
         public DbSet<TVA> TvaDb { get; set; }
