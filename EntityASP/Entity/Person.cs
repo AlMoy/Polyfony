@@ -81,7 +81,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_birthDate")]
-        [DataType(DataType.Date)]
+        [Range(typeof(DateTime), "01/01/1900", "31/12/2020")]
         public DateTime BirthDate
             {
             get { return birthDate; }
@@ -102,7 +102,7 @@ namespace EntityASP.Entity
         [Required]
         [Column("pe_password")]
         [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
+        [MinLength(8, ErrorMessage = "Le mot de passe doit avoir 8 cractères miniment")]
         [MaxLength(200)]
         public string PassWord
             {
