@@ -18,7 +18,7 @@ namespace EntityUWP.Entity
         private string color;
         private ulong quantity;
         private Boolean toValid;
-        private List<StateProduct> stateProducts;
+        private List<ProductStateProduct> productStateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
         #endregion
@@ -84,10 +84,10 @@ namespace EntityUWP.Entity
             get { return toValid; }
             set { toValid = value; }
             }
-        public List<StateProduct> StateProducts
+        public List<ProductStateProduct> ProductStateProducts
             {
-            get { return stateProducts; }
-            set { stateProducts = value; }
+            get { return productStateProducts; }
+            set { productStateProducts = value; }
             }
 
         public List<ProductOrder> ProductOrders
@@ -106,7 +106,7 @@ namespace EntityUWP.Entity
         #region Constructors
         public Product()
             {
-            this.stateProducts = new List<StateProduct>();
+            this.productStateProducts = new List<ProductStateProduct>();
             this.productOrders = new List<ProductOrder>();
             }
         #endregion

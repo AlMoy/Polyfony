@@ -36,9 +36,9 @@ namespace EntityUWP.Repository
         #region Functions
         public float PercentageTVA(ProductOrder productOrder)
             {
-            foreach (TVA item in productOrder.Product.ProductType.TVAS)
-                if (item.EndDate == null)
-                    return item.Rate;
+            foreach (ProductTypeTVA item in productOrder.Product.ProductType.ProductTypeTVAs)
+                if (item.TVA.EndDate == null)
+                    return item.TVA.Rate;
             return 0;
             }
 

@@ -93,7 +93,6 @@ namespace EntityASP.Entity
         [DataType(DataType.Text)]
         [MinLength(4)]
         [MaxLength(10)]
-        [Index(IsUnique = true)]
         public string Login
             {
             get { return login; }

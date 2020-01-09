@@ -134,22 +134,18 @@ namespace UWP_SellIt.Entities
             }
         #endregion
 
+
         #region Functions
 
         public override object Copy()
         {
-            Person role = new Role();
-            role.Id = this.Id;
-            role.Name = this.Name;
-
-            return role;
+            Person person = new Person();
+            return person;
         }
 
         public override void CopyFrom(object obj)
         {
-            Role role = obj as Role;
-            this.Id = role.Id;
-            this.Name = role.Name;
+
         }
         #endregion
     }
