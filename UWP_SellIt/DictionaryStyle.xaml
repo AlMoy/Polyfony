@@ -22,6 +22,15 @@
         <Setter Property="Fill" Value="{StaticResource primary-dark}"/>
     </Style>
 
+    <Style x:Key="bandeausecondary" TargetType="Rectangle">
+        <Setter Property="Fill" Value="{StaticResource secondary-light}"/>        
+    </Style>
+
+    <Style x:Key="textbandeausecondary" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
+        <Setter Property="Foreground" Value="{StaticResource secondary-text}"/>
+    </Style>
+
     <Style x:Key="Titletext" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource FontSizeTitle}"/>
         <Setter Property="Foreground" Value="{StaticResource secondary-text}"/>

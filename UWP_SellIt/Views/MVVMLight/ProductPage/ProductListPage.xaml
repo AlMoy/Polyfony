@@ -42,26 +42,8 @@
 
         <ScrollViewer x:Name="contentScrollViewerProduct" Grid.Column="1" Grid.Row="1">
             <!--les élements de la page-->
-            <Grid> 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="3*"/>
-
-                </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>                
-            </Grid.ColumnDefinitions>
-                <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource bandeau}"/>
-                <TextBlock Grid.Row="0" VerticalAlignment="Center">Type de produit: Trottinette Homme</TextBlock>
-                <FlipView x:Name="flipView1" Grid.Row="1" Grid.Column="0">
-                    <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
-                    <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
-                </FlipView>
-            </Grid>
-
-            
+            <local:ProductPageUC x:Name="ProductpageUC"/>
+           
         </ScrollViewer>
 
 

@@ -39,7 +39,7 @@
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
             <!--Textbox pour Titre-->
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Accueil</TextBlock>
-            <Button x:Name="Deconnectionbtn"  Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
+            <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
         </Grid>
 
         <ScrollViewer x:Name="contentScrollViewerHome" Grid.Column="1" Grid.Row="1">

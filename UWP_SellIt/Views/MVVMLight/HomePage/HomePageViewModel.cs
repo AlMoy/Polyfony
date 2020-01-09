@@ -14,6 +14,12 @@ namespace UWP_SellIt.Views.MVVMLight.HomePage
     public class HomePageViewModel : ViewModelBase
     {
         private INavigationService navigationService;
+
+        public ICommand Deconnectionbtn => new RelayCommand(() =>
+        {
+            this.navigationService.NavigateTo("MainPage");
+
+        });
         public ICommand ButtonProduct => new RelayCommand(() =>
         {
             this.navigationService.NavigateTo("ProductListPage");

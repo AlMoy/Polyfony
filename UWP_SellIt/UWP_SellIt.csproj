@@ -142,6 +142,9 @@
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\HomePage\HomePageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\ProductPageUC.xaml.cs">
+      <DependentUpon>ProductPageUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
     <Compile Include="Views\People\EditPersonUC.xaml.cs">
       <DependentUpon>EditPersonUC.xaml</DependentUpon>
@@ -213,6 +216,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\BasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductPageUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

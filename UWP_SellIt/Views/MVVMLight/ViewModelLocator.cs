@@ -24,6 +24,7 @@ namespace UWP_SellIt.Views.MVVMLight
             SimpleIoc.Default.Register<INavigationService>(() =>
             {
                 var navigationService = new NavigationService();
+                navigationService.Configure("MainPage", typeof(MainPage));
                 navigationService.Configure("ProductListPage", typeof(ProductListPage));               
                 return navigationService;
             });
