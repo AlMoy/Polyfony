@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="txtName" Text="Name" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBlock x:Name="txtName" Text="Rôle" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBlock x:Name="txtRoleName" Text="{Binding Name, Mode=TwoWay}"  Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
     </Grid>

@@ -119,15 +119,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\Order.cs" />
-    <Compile Include="Entities\Person.cs" />
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\ProductOrder.cs" />
-    <Compile Include="Entities\ProductType.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\StateProduct.cs" />
-    <Compile Include="Entities\TVA.cs" />
     <Compile Include="Views\MVVMLight\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +136,7 @@
     <Compile Include="Views\MVVMLight\ProductPage\ProductPageUC.xaml.cs">
       <DependentUpon>ProductPageUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductPageViewModel.cs" />
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
     <Compile Include="Views\People\EditPersonUC.xaml.cs">
       <DependentUpon>EditPersonUC.xaml</DependentUpon>
@@ -267,6 +259,12 @@
     <PackageReference Include="MvvmLight">
       <Version>5.4.1.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

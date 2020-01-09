@@ -121,6 +121,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="Entity\EntityBase.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Product.cs" />

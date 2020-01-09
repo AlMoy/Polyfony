@@ -29,6 +29,7 @@ namespace UWP_SellIt.Views.MVVMLight
                 return navigationService;
             });
             SimpleIoc.Default.Register<HomePageViewModel>();
+            SimpleIoc.Default.Register<ProductPageViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
         }
 
@@ -37,6 +38,12 @@ namespace UWP_SellIt.Views.MVVMLight
         {
             get { return ServiceLocator.Current.GetInstance<HomePageViewModel>(); }
         }
+
+        public ProductPageViewModel ProductPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<ProductPageViewModel>(); }
+        }
+
         //public Page2ViewModel MyProperty
         //{
         //    get { return ServiceLocator.Current.GetInstance<OtherPageViewModel>(); }

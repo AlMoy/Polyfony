@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+     DataContext="{Binding ProductPageInstance, Source={StaticResource Locator}}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -38,6 +39,7 @@
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
             <!--Textbox pour Titre-->
             <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Catalogues Produits</TextBlock>
+            <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
         </Grid>
 
         <ScrollViewer x:Name="contentScrollViewerProduct" Grid.Column="1" Grid.Row="1">
