@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
+
 
 namespace EntityUWP.Entity
     {
@@ -23,27 +25,33 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
+        [PrimaryKey, SQLite.AutoIncrement]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("or_id")]
+        [SQLite.Column("or_id")]
+        
         public long Id
+            ///[Table("Order")]
+            
             {
             get { return id; }
             set { id = value; }
+            
             }
 
-        [Required]
-        [Column("or_name")]
+        [Unique]
+        [NotNull]
+              
+        [System.ComponentModel.DataAnnotations.Schema.Column("or_name")]
         [DataType(DataType.Text)]
         [MinLength(4)]
-        [MaxLength(20)]
+        [SQLite.MaxLength(20)]
         public string Name
             {
             get { return name; }
             set { name = value; OnPropertyChanged("Name"); }
             }
 
-        [Column("or_description")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("or_description")]
         [DataType(DataType.MultilineText)]
         public string Description
             {
@@ -51,7 +59,7 @@ namespace EntityUWP.Entity
             set { description = value; OnPropertyChanged("Description"); }
             }
 
-        [Column("or_remise")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("or_remise")]
         [DataType(DataType.Currency)]
         public float Remise
             {
@@ -59,7 +67,7 @@ namespace EntityUWP.Entity
             set { remise = value; OnPropertyChanged("Remise"); }
             }
 
-        [Column("or_datePayment")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("or_datePayment")]
         [DataType(DataType.Date)]
         public DateTime DatePayment
             {
@@ -68,7 +76,7 @@ namespace EntityUWP.Entity
             }
 
         [Required]
-        [Column("or_dateCreation")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("or_dateCreation")]
         [DataType(DataType.Date)]
         public DateTime DateCreation
             {

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace UWP_SellIt.Entities
 {
@@ -24,9 +25,9 @@ namespace UWP_SellIt.Entities
         #endregion
 
         #region Properties
-        [Key]
+        [PrimaryKey, SQLite.AutoIncrement]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Column("pr_id")]
+        [SQLite.Column("pr_id")]
         public long Id
             {
             get { return id; }
@@ -34,10 +35,10 @@ namespace UWP_SellIt.Entities
             }
 
         [Required]
-        [Column("pr_name")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("pr_name")]
         [DataType(DataType.Text)]
         [MinLength(4)]
-        [MaxLength(20)]
+        [SQLite.MaxLength(20)]
         public string Name
             {
             get { return name; }
@@ -45,7 +46,7 @@ namespace UWP_SellIt.Entities
             }
 
         [Required]
-        [Column("pr_size")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("pr_size")]
         public float Size
             {
             get { return size; }
@@ -53,7 +54,7 @@ namespace UWP_SellIt.Entities
             }
 
         [Required]
-        [Column("pr_weight")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("pr_weight")]
         public float Weight
             {
             get { return weight; }
@@ -61,7 +62,7 @@ namespace UWP_SellIt.Entities
             }
 
         [Required]
-        [Column("pr_color")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("pr_color")]
         [DataType(DataType.Text)]
         public string Color
             {
@@ -70,7 +71,7 @@ namespace UWP_SellIt.Entities
             }
 
         [Required]
-        [Column("pr_quantity")]
+        [System.ComponentModel.DataAnnotations.Schema.Column("pr_quantity")]
         public ulong Quantity
             {
             get { return quantity; }
