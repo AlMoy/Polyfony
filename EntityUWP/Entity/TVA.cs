@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
+{
+    public class TVA : EntityBase<TVA>
     {
-    public class TVA
-        {
         #region Attributs
         private long id;
         private float rate;
         private DateTime endDate;
-        private ProductType productType;
+        private List<ProductTypeTVA> productTypeTVAs;
         #endregion
 
         #region Properties
@@ -22,40 +22,62 @@ namespace EntityUWP.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("tva_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
         [Required]
         [Column("tva_endDate")]
         [DataType(DataType.Date)]
         public DateTime EndDate
-            {
+        {
             get { return endDate; }
             set { endDate = value; }
-            }
+        }
 
         [Required]
         [Column("tva_rate")]
         [Range(0, 100)]
         public float Rate
-            {
+        {
             get { return rate; }
             set { rate = value; }
-            }
+        }
 
-        public ProductType ProductType
-            {
-            get { return productType; }
-            set { productType = value; }
-            }
+        public List<ProductTypeTVA> ProductTypeTVAs
+        {
+            get { return productTypeTVAs; }
+            set { productTypeTVAs = value; }
+        }
         #endregion
 
         #region Constructors
         public TVA()
-            {
-            }
-        #endregion
+        {
+            this.productTypeTVAs = new List<ProductTypeTVA>();
         }
+        #endregion
+
+        #region Functions
+        public override TVA Copy()
+        {
+            TVA tva = new TVA();
+            tva.Id = this.Id;
+            tva.Rate = this.Rate;
+            tva.EndDate = this.EndDate;
+            tva.ProductTypeTVAs = this.ProductTypeTVAs;
+
+            return tva;
+        }
+
+        public override void CopyFrom(TVA obj)
+        {
+            this.Id = obj.Id;
+            this.Rate = obj.Rate;
+            this.EndDate = obj.EndDate;
+            this.ProductTypeTVAs = obj.ProductTypeTVAs;
+        }
+        #endregion
     }
+}

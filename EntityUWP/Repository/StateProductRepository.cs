@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Repository
     {
-    public class StateProductRepository : Repository<StateProduct>
+    public class StateProductRepository : Repository<ProductStateProduct>
         {
         #region StaticVariables
         #endregion

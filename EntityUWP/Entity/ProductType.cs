@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
+{
+    public class ProductType : EntityBase<ProductType>
     {
-    public class ProductType
-        {
         #region Attributs
         private long id;
         private float price;
         private string name;
-        private List<TVA> tvas;
+        private List<ProductTypeTVA> productTypeTVAs;
         private List<Product> products;
         #endregion
 
@@ -23,47 +23,70 @@ namespace EntityUWP.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("pt_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
         [Required]
         [Column("pt_price")]
         public float Price
-            {
+        {
             get { return price; }
             set { price = value; }
-            }
+        }
 
         [Required]
         [Column("pt_name")]
         [DataType(DataType.Text)]
         public string Name
-            {
+        {
             get { return name; }
             set { name = value; }
-            }
+        }
 
-        public List<TVA> TVAS
-            {
-            get { return tvas; }
-            set { tvas = value; }
-            }
+        public List<ProductTypeTVA> ProductTypeTVAs
+        {
+            get { return productTypeTVAs; }
+            set { productTypeTVAs = value; }
+        }
 
         public List<Product> Products
-            {
+        {
             get { return products; }
             set { products = value; }
-            }
+        }
         #endregion
 
         #region Constructors
         public ProductType()
-            {
-            this.tvas = new List<TVA>();
+        {
+            this.productTypeTVAs = new List<ProductTypeTVA>();
             this.products = new List<Product>();
-            }
-        #endregion
         }
+        #endregion
+
+        #region Functions
+        public override ProductType Copy()
+        {
+            ProductType productType = new ProductType();
+            productType.Id = this.Id;
+            productType.Price = this.Price;
+            productType.Name = this.Name;
+            productType.ProductTypeTVAs = this.ProductTypeTVAs;
+            productType.Products = this.products;
+
+            return productType;
+        }
+
+        public override void CopyFrom(ProductType obj)
+        {
+            this.Id = obj.Id;
+            this.Price = obj.Price;
+            this.Name = obj.Name;
+            this.ProductTypeTVAs = obj.ProductTypeTVAs;
+            this.Products = obj.products;
+        }
+        #endregion
     }
+}

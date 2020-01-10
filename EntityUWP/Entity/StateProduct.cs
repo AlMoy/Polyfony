@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
+{
+    public class StateProduct : EntityBase<StateProduct>
     {
-    public class StateProduct
-        {
         #region Attributs
         private long id;
         private string name;
-        private List<Product> products;
+        private List<ProductStateProduct> productStateProducts;
         #endregion
 
         #region Properties
@@ -21,10 +21,10 @@ namespace EntityUWP.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("sp_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
         [Required]
         [Column("sp_name")]
@@ -32,23 +32,42 @@ namespace EntityUWP.Entity
         [MinLength(4)]
         [MaxLength(20)]
         public string Name
-            {
+        {
             get { return name; }
             set { name = value; }
-            }
+        }
 
-        public List<Product> Products
-            {
-            get { return products; }
-            set { products = value; }
-            }
+        public List<ProductStateProduct> ProductStateProducts
+        {
+            get { return productStateProducts; }
+            set { productStateProducts = value; }
+        }
         #endregion
 
         #region Constructors
         public StateProduct()
-            {
-            this.products = new List<Product>();
-            }
-        #endregion
+        {
+            this.productStateProducts = new List<ProductStateProduct>();
         }
+        #endregion
+
+        #region Functions
+        public override StateProduct Copy()
+        {
+            StateProduct stateProduct = new StateProduct();
+            stateProduct.Id = this.Id;
+            stateProduct.Name = this.Name;
+            stateProduct.ProductStateProducts = this.ProductStateProducts;
+
+            return stateProduct;
+        }
+
+        public override void CopyFrom(StateProduct obj)
+        {
+            this.Id = obj.Id;
+            this.Name = obj.Name;
+            this.ProductStateProducts = obj.ProductStateProducts;
+        }
+        #endregion
     }
+}
