@@ -14,6 +14,7 @@ using System.Data.Entity.Core;
 
 namespace ASP.Net_SellIt.Controllers
 {
+    [Authorize]
     [RoutePrefix("Products")]
     public class ProductsController : Controller
     {

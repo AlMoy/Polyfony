@@ -1,7 +1,7 @@
 ﻿@model EntityASP.Entity.Product
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Ajout d'un produit";
 }
 
 @using (Html.BeginForm())
@@ -9,9 +9,9 @@
     @Html.AntiForgeryToken()
 
     <div class="d-flex flex-column form-horizontal">
-        <h3>Nouveau produit</h3>
+       
         <div>
-            @Html.ActionLink("Retour à la liste", "ListProducts/NoValid", new { }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Retour à la liste", "ListProducts/NoValid", new { }, new { @class = "btn btn-primary" })
             <input type="submit" value="Ajouter" class="btn btn-primary" />
         </div>
 

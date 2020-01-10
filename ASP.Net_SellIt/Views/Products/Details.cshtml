@@ -1,13 +1,13 @@
 ﻿@model EntityASP.Entity.Product
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detail d'un produit";
     String route = Model.ToValid ? "ListProducts/Stock" : "ListProducts/NoValid";
 }
 
 <div class="d-flex flex-column">
     <div>
-        @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+        @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
         @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-primary" })
     </div>
     <h3>Détails</h3>
