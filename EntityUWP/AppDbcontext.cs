@@ -31,6 +31,7 @@ namespace EntityUWP
         protected override void OnModelCreating(ModelBuilder modelBuilder)
             {//Relation Many-To-Many => TVA -To- ProductType
             modelBuilder.Entity<ProductTypeTVA>().HasOne<TVA>(ptt => ptt.TVA).WithMany(t => t.ProductTypeTVAs);
+
             modelBuilder.Entity<ProductTypeTVA>().HasOne<ProductType>(ptt => ptt.ProductType).WithMany(t => t.ProductTypeTVAs);
             //Relation One-To-Many => ProductType -To- Product
             modelBuilder.Entity<Product>().HasOne<ProductType>(p => p.ProductType).WithMany(pt => pt.Products);

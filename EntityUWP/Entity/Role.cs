@@ -1,13 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
+    [Table("Role")]
     public class Role : EntityBase<Role>
     {
         #region Attributs
@@ -17,8 +17,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]        
         [Column("ro_id")]
         public long Id
             {
@@ -26,11 +25,9 @@ namespace EntityUWP.Entity
             set { id = value; }
             }
 
-        [Required]
-        [Column("ro_name")]
-        [DataType(DataType.Text)]
-        [MinLength(4)]
-        [MaxLength(20)]
+        [Unique]
+        [NotNull]
+        [Column("ro_name")]        
         public string Name
             {
             get { return name; }

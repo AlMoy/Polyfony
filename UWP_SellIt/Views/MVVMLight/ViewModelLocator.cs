@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UWP_SellIt.Services;
+using UWP_SellIt.Views.MVVMLight.ClientPage;
 using UWP_SellIt.Views.MVVMLight.HomePage;
 using UWP_SellIt.Views.MVVMLight.ProductPage;
 
@@ -34,6 +36,11 @@ namespace UWP_SellIt.Views.MVVMLight
             SimpleIoc.Default.Register<ProductPageViewModel>();
             SimpleIoc.Default.Register<MenuProductPageViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
+
+            SimpleIoc.Default.Register<DatabaseService>(() =>
+            {
+                return new DatabaseService();
+            }, true);
         }
 
 
@@ -50,6 +57,11 @@ namespace UWP_SellIt.Views.MVVMLight
         public MenuProductPageViewModel MenuProductPageInstance
         {
             get { return ServiceLocator.Current.GetInstance<MenuProductPageViewModel>(); }
+        }
+
+        public ClientListPageViewModel ClientListPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<ClientListPageViewModel>(); }
         }
 
         //public Page2ViewModel MyProperty

@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +17,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]
         [Column("tva_id")]
         public long Id
             {
@@ -27,24 +25,25 @@ namespace EntityUWP.Entity
             set { id = value; }
             }
 
-        [Required]
-        [Column("tva_endDate")]
-        [DataType(DataType.Date)]
+        [Unique]
+        [NotNull]
+        [Column("tva_endDate")]        
         public DateTime EndDate
             {
             get { return endDate; }
             set { endDate = value; }
             }
 
-        [Required]
-        [Column("tva_rate")]
-        [Range(0, 100)]
+        [Unique]
+        [NotNull]
+        [Column("tva_rate")]      
         public float Rate
             {
             get { return rate; }
             set { rate = value; }
             }
 
+        [Ignore]
         public List<ProductTypeTVA> ProductTypeTVAs
             {
             get { return productTypeTVAs; }

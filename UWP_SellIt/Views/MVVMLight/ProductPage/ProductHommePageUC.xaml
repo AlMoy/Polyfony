@@ -19,10 +19,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="*"/>
+            
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -31,14 +31,30 @@
         </Grid.ColumnDefinitions>
         <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource bandeausecondary}"/>
         <TextBlock Grid.Row="1" VerticalAlignment="Center" Style="{StaticResource textbandeausecondary}">Trottinette Homme</TextBlock>
-        <FlipView x:Name="flipView1" Grid.Row="3" Grid.Column="0">
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
+        <FlipView x:Name="flipView1" Grid.Row="2" Grid.Column="0" Width="480" Height="270" 
+          BorderBrush="Black" BorderThickness="1">
+
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                <Image Width="480" Height="270"
+                       Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
+                        
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+
         </FlipView>
-        <FlipView x:Name="flipView2" Grid.Row="5" Grid.Column="0">
+
+
+        <!--<FlipView x:Name="flipView1" Grid.Row="3" Grid.Column="0">
+            <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
+            <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
+        </FlipView>
+        <FlipView x:Name="flipView2" Grid.Row="4" Grid.Column="0">
             <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
             <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
-        </FlipView> 
+        </FlipView> -->
         
     </Grid>
 </UserControl>

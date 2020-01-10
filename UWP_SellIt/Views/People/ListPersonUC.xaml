@@ -19,7 +19,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock MinWidth="200" Text="Prénom"/>
-                        <TextBlock MinWidth="200" Text="Nom"/>
+                        <TextBlock MinWidth="200" Text="Nom de famille"/>
                         <TextBlock MinWidth="200" Text="Adresse"/>
                         <TextBlock MinWidth="200" Text="Email"/>
                         <TextBlock MinWidth="200" Text="Téléphone"/>

@@ -1,13 +1,13 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
+    [Table("Order")]
     public class Order : EntityBase<Order>
         {
         #region Attributs
@@ -23,8 +23,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]        
         [Column("or_id")]
         public long Id
             {
@@ -32,44 +31,41 @@ namespace EntityUWP.Entity
             set { id = value; }
             }
 
-        [Required]
+        [Unique]
+        [NotNull]
         [Column("or_name")]
-        [DataType(DataType.Text)]
-        [MinLength(4)]
-        [MaxLength(20)]
         public string Name
             {
             get { return name; }
             set { name = value; OnPropertyChanged("Name"); }
             }
 
-        [Column("or_description")]
-        [DataType(DataType.MultilineText)]
+        [Unique]
+        [Column("or_description")]        
         public string Description
             {
             get { return description; }
             set { description = value; OnPropertyChanged("Description"); }
             }
 
-        [Column("or_remise")]
-        [DataType(DataType.Currency)]
+        [Unique]
+        [Column("or_remise")]       
         public float Remise
             {
             get { return remise; }
             set { remise = value; OnPropertyChanged("Remise"); }
             }
 
-        [Column("or_datePayment")]
-        [DataType(DataType.Date)]
+        [Unique]
+        [Column("or_datePayment")]       
         public DateTime DatePayment
             {
             get { return datePayment; }
             set { datePayment = value; OnPropertyChanged("DatePayment"); }
             }
 
-        [Required]
-        [Column("or_dateCreation")]
-        [DataType(DataType.Date)]
+        [Unique]
+        [Column("or_dateCreation")]        
         public DateTime DateCreation
             {
             get { return dateCreation; }
