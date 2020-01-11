@@ -12,7 +12,7 @@ namespace EntityASP.Entity
         {
         #region Attributs
         private long id;
-        private float size;
+        private string size;
         private string name;
         private float weight;
         private string color;
@@ -35,9 +35,10 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_name")]
+        [Display(Name = "Nom de produit")]
         [DataType(DataType.Text)]
         [MinLength(4)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Name
             {
             get { return name; }
@@ -45,16 +46,18 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Taille")]
         [Column("pr_size")]
-        [Range(typeof(float), "0", "20")]
-        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
-        public float Size
+        //[Range(typeof(float), "0", "20")]
+        //[DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
+        public string Size
             {
             get { return size; }
             set { size = value; }
             }
 
         [Required]
+        [Display(Name = "Poids(kg)")]
         [Column("pr_weight")]
         [Range(typeof(float), "0", "20")]
         [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
@@ -65,6 +68,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Couleur")]
         [Column("pr_color")]
         [DataType(DataType.Text)]
         public string Color
@@ -74,6 +78,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Quantité")]
         [Column("pr_quantity")]
         [Range(typeof(long), "0", "100000")]
         public long Quantity

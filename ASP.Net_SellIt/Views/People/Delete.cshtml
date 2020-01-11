@@ -4,10 +4,8 @@
     ViewBag.Title = "Supprimer un personnel";
 }
  
-
-
     <div>
-        <h3>Voulez vous supprimer cette personne?</h3>
+        <h3>Voulez vous supprimer ce personnel?</h3>
         <hr />
 
         @using (Html.BeginForm())
@@ -16,8 +14,7 @@
 
     <div class="form-actions no-color">
         @Html.ActionLink("Retour à la liste", "Index", "People", null, new { @class = "btn btn-primary" })
-        <input type="submit" value="Delete" class="btn btn-primary" />
-
+        <input type="submit" value="Supprimer" class="btn btn-primary" />
     </div>
         }
         <h4 class="mt-3">Détaill de la personne</h4>

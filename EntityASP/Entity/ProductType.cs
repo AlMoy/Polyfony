@@ -29,6 +29,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Prix")]
         [Column("pt_price")]
         public float Price
             {
@@ -37,6 +38,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Type de produit")]
         [Column("pt_name")]
         [DataType(DataType.Text)]
         public string Name

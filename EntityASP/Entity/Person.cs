@@ -86,7 +86,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_birthDate")]
-        [Range(typeof(DateTime), "01/01/1900", "31/12/2020")]
+        //[Range(typeof(DateTime), "01/01/1900", "31/12/2020")]
         [Display(Name = "Date de naissance")]
         [DataType(DataType.Date)]
         public DateTime BirthDate

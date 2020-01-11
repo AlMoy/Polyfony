@@ -14,7 +14,7 @@
         <div>
             @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-info" })
             @Html.ActionLink("Détails", "Details", new { id = Model.Id }, new { @class = "btn btn-info" })
-            <input type="submit" value="Editer" class="btn btn-primary" />
+            <input type="submit" value="Sauvegarder" class="btn btn-primary" />
         </div>
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -25,6 +25,14 @@
             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
         </div>
         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.ProductType, "Type", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.DropDownListFor(model => model.ProductType, new SelectList(ViewBag.ProductTypes, "id", "name"), new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
@@ -58,13 +66,9 @@
         </div>
         @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
 
-        <div class="input-group mt-3">
-            <div class="input-group-prepend">
-                @Html.LabelFor(model => model.ProductType, "Type", htmlAttributes: new { @class = "input-group-text" })
-            </div>
-            @Html.DropDownListFor(model => model.ProductType, new SelectList(ViewBag.ProductTypes, "id", "name"), new { @class = "form-control" })
-        </div>
-        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+
+
+
     </div>
 }
 

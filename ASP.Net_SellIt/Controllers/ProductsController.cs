@@ -14,7 +14,7 @@ using System.Data.Entity.Core;
 
 namespace ASP.Net_SellIt.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("Products")]
     public class ProductsController : Controller
     {
@@ -85,6 +85,8 @@ namespace ASP.Net_SellIt.Controllers
             {
                 product.ProductType = await this.productTypeRepository.FindAsync(int.Parse(Request.Form["ProductType"]));
                 await this.productRepository.CreateAsync(product);
+
+                List<Product> products = await this.productRepository.FindAllAsync();
                 return RedirectToAction("Details", new { id = product.Id });
             }
 
@@ -161,6 +163,7 @@ namespace ASP.Net_SellIt.Controllers
 
         // POST: Products/Validate/5
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         [Route("Validate")]
         public async Task<ActionResult> Validate(long? id)
         {

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Gérér d'autres fonctionnalités";
+}
+
+
+    <div class="col-md-4">
+
+        @Html.ActionLink("Gestion des rôles", "Index", "Roles", null,
+                new { @class = "btn btn-lg btn-block linkdivers mt-auto" })
+
+        @Html.ActionLink("Gestion des types de produit", "Index", "ProductTypes", null,
+                new { @class = "btn btn-lg btn-block linkdivers mt-3" })
+
+        @Html.ActionLink("Gestion des états de produit", "Index", "StateProducts", null,
+                new { @class = "btn btn-lg btn-block linkdivers mt-3" })
+
+        @Html.ActionLink("Gestion des taux TVA", "Index", "TVAs", null,
+                new { @class = "btn btn-lg btn-block linkdivers mt-3" })
+
+        @Html.ActionLink("Retour", "Index", "Users", null,
+                new { @class = "btn btn-lg btn-block linkdivers mt-3" })
+
+    </div>
+

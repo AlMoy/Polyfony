@@ -9,14 +9,25 @@
 
 
 .link {
-    background-color: #ff9900;
+    background-color: #5f5fc4;
     color: black;
 }
 
 .link:hover {
-    background-color: #ff9900;
-    color: white;
+        background-color: #5f5fc4;
+        color: white;
 }
+
+.linkdivers {
+    background-color: #ff9900;
+    color: black;
+}
+
+    .linkdivers:hover {
+        background-color: #ff9900;
+        color: white;
+    }
+
 
 .header_link{
     color: white;

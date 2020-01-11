@@ -25,7 +25,7 @@ namespace EntityASP
                 {
                 new Role()
                     {
-                    Name="Administrateur"
+                    Name="Admin"
                     },
                 new Role()
                     {
@@ -46,7 +46,7 @@ namespace EntityASP
                     Address = "addr",
                     Mail = "alex.moysan@mail.com",
                     TelephoneNumber = "0761006692",
-                    BirthDate = DateTime.Now,
+                    //BirthDate = DateTime.Now,
                     Login = "alex",
                     PassWord = "password",
                     Role = roles[0],
@@ -226,7 +226,7 @@ namespace EntityASP
                 {
                 new Product()
                     {
-                    Size = 0.2F,
+                    Size = "S",
                     Name = "Trot-Elect",
                     Weight = 2.1F,
                     Color = "Noir",
@@ -236,7 +236,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.5F,
+                    Size = "M",
                     Name = "Trot-Elect",
                     Weight = 4.0F,
                     Color = "Noir",
@@ -246,7 +246,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.7F,
+                    Size = "L",
                     Name = "Trot-Elect",
                     Weight = 5.2F,
                     Color = "Noir",
@@ -256,7 +256,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.2F,
+                    Size = "M",
                     Name = "Trot-Simple",
                     Weight = 1.8F,
                     Color = "Noir",
@@ -266,7 +266,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.5F,
+                    Size = "S",
                     Name = "Trot-Simple",
                     Weight = 3.8F,
                     Color = "Noir",
@@ -276,7 +276,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.7F,
+                    Size = "M",
                     Name = "Trot-Simple",
                     Weight = 5.3F,
                     Color = "Noir",
@@ -286,7 +286,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.2F,
+                    Size = "L",
                     Name = "Trot-Elect",
                     Weight = 2.2F,
                     Color = "Blanc",
@@ -296,7 +296,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.2F,
+                    Size = "S",
                     Name = "Trot-Elect",
                     Weight = 2.5F,
                     Color = "Blanc",
@@ -306,7 +306,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.5F,
+                    Size = "M",
                     Name = "Trot-Simple",
                     Weight = 3.6F,
                     Color = "Rouge",
@@ -316,7 +316,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.2F,
+                    Size = "S",
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Noir",
@@ -326,7 +326,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.5F,
+                    Size = "L",
                     Name = "Trot-Elect",
                     Weight = 1.5F,
                     Color = "Marron",
@@ -336,7 +336,7 @@ namespace EntityASP
                     },
                 new Product()
                     {
-                    Size = 0.8F,
+                    Size = "S",
                     Name = "Trot-Simple",
                     Weight = 1.7F,
                     Color = "Bleu",

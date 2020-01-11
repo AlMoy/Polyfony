@@ -36,6 +36,12 @@ namespace ASP.Net_SellIt.Controllers
             return View();
         }
 
+        public ActionResult Divers()
+        {
+            
+            return View();
+        }
+
         private bool isAdmin()
         {
             if (User.Identity.IsAuthenticated)

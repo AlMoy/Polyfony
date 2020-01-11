@@ -9,16 +9,17 @@
     @Html.AntiForgeryToken()
 
     <div class="d-flex flex-column form-horizontal">
-       
+
         <div>
             @Html.ActionLink("Retour à la liste", "ListProducts/NoValid", new { }, new { @class = "btn btn-primary" })
             <input type="submit" value="Ajouter" class="btn btn-primary" />
         </div>
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                @Html.LabelFor(model => model.Name, "Nom", htmlAttributes: new { @class = "input-group-text" })
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "input-group-text" })
             </div>
             @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
         </div>
@@ -26,7 +27,15 @@
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                @Html.LabelFor(model => model.Size, "Taille", htmlAttributes: new { @class = "input-group-text" })
+                @Html.LabelFor(model => model.ProductType, htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.DropDownListFor(model => model.ProductType, new SelectList(ViewBag.ProductTypes, "id", "name"), new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "input-group-text" })
             </div>
             @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
         </div>
@@ -34,7 +43,7 @@
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                @Html.LabelFor(model => model.Weight, "Masse", htmlAttributes: new { @class = "input-group-text" })
+                @Html.LabelFor(model => model.Weight, htmlAttributes: new { @class = "input-group-text" })
             </div>
             @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
         </div>
@@ -42,7 +51,7 @@
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                @Html.LabelFor(model => model.Color, "Couleur", htmlAttributes: new { @class = "input-group-text" })
+                @Html.LabelFor(model => model.Color, htmlAttributes: new { @class = "input-group-text" })
             </div>
             @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control" } })
         </div>
@@ -50,11 +59,13 @@
 
         <div class="input-group mt-3">
             <div class="input-group-prepend">
-                @Html.LabelFor(model => model.ProductType, "Type", htmlAttributes: new { @class = "input-group-text" })
+                @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "input-group-text" })
             </div>
-            @Html.DropDownListFor(model => model.ProductType, new SelectList(ViewBag.ProductTypes, "id", "name"), new { @class = "form-control" })
+            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
         </div>
-        @Html.ValidationMessageFor(model => model.ProductType, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+
+
     </div>
 }
 

@@ -12,7 +12,7 @@ using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class TVAsController : Controller
     {
         private AppDbContext db = new AppDbContext();

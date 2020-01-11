@@ -29,6 +29,7 @@ namespace EntityASP.Entity
             }
 
         [Column("tva_endDate")]
+        [Display(Name = "Date de fin")]
         [DataType(DataType.Date)]
         public DateTime? EndDate
             {
@@ -37,6 +38,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Taux de TVA")]
         [Column("tva_rate")]
         [Range(0,100)]
         public float Rate
