@@ -30,10 +30,10 @@
         </Grid.RowDefinitions>
         
         <Rectangle Grid.Row="0" Grid.RowSpan="6"  Style="{StaticResource leftbandeau}"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >Type de produit</TextBlock>
-        <Button Grid.Row="2" x:Name="TrotHombtn" Command="{Binding Hommebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinete homme</Button>
-        <Button Grid.Row="3" x:Name="TrotFembtn" Command="{Binding Femmebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinete femme</Button>
-        <Button Grid.Row="4" x:Name="TrotEnfbtn" Command="{Binding Enfantbtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinete enfant</Button>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight ="Bold">Type de produit</TextBlock>
+        <Button Grid.Row="2" x:Name="TrotHombtn" Command="{Binding Hommebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette homme</Button>
+        <Button Grid.Row="3" x:Name="TrotFembtn" Command="{Binding Femmebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette femme</Button>
+        <Button Grid.Row="4" x:Name="TrotEnfbtn" Command="{Binding Enfantbtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette enfant</Button>
        
         </Grid>
 </UserControl>

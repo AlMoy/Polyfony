@@ -185,8 +185,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\images\trot_homme_elect_blanc.png" />
-    <Content Include="Assets\images\trot_homme_elect_noir.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_blanc.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_bleumarin.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_maron.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_noir.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_blanc.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_bleu.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_maron.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_noir.png" />
     <Content Include="Assets\logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -296,6 +302,7 @@
       <Name>EntityUWP</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -18,43 +18,206 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>            
             <RowDefinition Height="*"/>
-            
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="8*"/>
             
-            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource bandeausecondary}"/>
-        <TextBlock Grid.Row="1" VerticalAlignment="Center" Style="{StaticResource textbandeausecondary}">Trottinette Homme</TextBlock>
-        <FlipView x:Name="flipView1" Grid.Row="2" Grid.Column="0" Width="480" Height="270" 
-          BorderBrush="Black" BorderThickness="1">
-
+        <!-- <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource bandeausecondary}"/> -->
+        <TextBlock Grid.Row="0" Grid.Column="1"  VerticalAlignment="Center" Style="{StaticResource Typetext}">Trottinette Homme</TextBlock>
+        <FlipView x:Name="fvtrothomelec" Grid.Row="2" Grid.Column="1" Width="200" Height="200" 
+          BorderBrush="Black" BorderThickness="1" >
             <FlipView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                <Image Width="480" Height="270"
-                       Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
-                        
+                        <Image Width="200" Height="200" Source="{Binding}" Stretch="UniformToFill" />
                     </Grid>
                 </DataTemplate>
             </FlipView.ItemTemplate>
-
         </FlipView>
+        <Grid Grid.Row="2" Grid.Column="2">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight ="Bold" FontSize ="20" >Trottinette Electrique</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">Couleur:</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Style="{StaticResource Producttext}">Taille:</TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">Poids (kg):</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  VerticalAlignment="Center"  Style="{StaticResource Stateproducttext}">Produit assurable, changeable et non livréable</TextBlock>
 
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>            
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>                    
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#001a00"/>
+                <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ffffff"/>
+                <Border Grid.Column="4" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ac7339"/>
+                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#005ce6"/>
+             </Grid>
+            
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">S</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">M</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">L</TextBlock>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">13,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">15</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">17,5</TextBlock>
+            </Grid>
 
-        <!--<FlipView x:Name="flipView1" Grid.Row="3" Grid.Column="0">
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
-        </FlipView>
-        <FlipView x:Name="flipView2" Grid.Row="4" Grid.Column="0">
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_noir.png"/>
-            <Image Source="ms-appx:///Assets/images/trot_homme_elect_blanc.png"/>
-        </FlipView> -->
+        </Grid>     
         
+        <FlipView x:Name="fvtrothomsim" Grid.Row="4" Grid.Column="1" Width="200" Height="200" 
+          BorderBrush="Black" BorderThickness="1">
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Image Width="200" Height="200" Source="{Binding}" Stretch="UniformToFill" />
+                    </Grid>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+
+        <Grid Grid.Row="4" Grid.Column="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight ="Bold" FontSize ="20" >Trottinette Simple</TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">Couleur:</TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="0"  VerticalAlignment="Center" Style="{StaticResource Producttext}">Taille:</TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="0"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">Poids (kg):</TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"  VerticalAlignment="Center"  Style="{StaticResource Stateproducttext}">Produit livréable, non assurable et non changeable</TextBlock>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#001a00"/>
+                <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ffffff"/>
+                <Border Grid.Column="4" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ac7339"/>
+                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#005ce6"/>
+            </Grid>
+
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">S</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">M</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">L</TextBlock>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">7,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">8,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">9,5</TextBlock>
+            </Grid>
+
+        </Grid>
+
+
+
     </Grid>
 </UserControl>
