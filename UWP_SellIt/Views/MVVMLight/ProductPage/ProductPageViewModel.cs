@@ -20,36 +20,25 @@ namespace UWP_SellIt.Views.MVVMLight.ProductPage
             this.navigationService.NavigateTo("MainPage");
 
         });
-        public ICommand Hommebtn => new RelayCommand(() =>
-        {
-            this.navigationService.NavigateTo("ProductHommeList");
+        //public ICommand Hommebtn => new RelayCommand(() =>
+        //{
+        //    this.navigationService.NavigateTo("ProductHommeList");
 
-        });
+        //});
 
-        public ICommand Femmebtn => new RelayCommand(() =>
-        {
-            this.navigationService.NavigateTo("MainPage");
+        //public ICommand Femmebtn => new RelayCommand(() =>
+        //{
+        //    this.navigationService.NavigateTo("MainPage");
 
-        });
+        //});
 
-        public ICommand Enfantbtn => new RelayCommand(() =>
-        {
-            this.navigationService.NavigateTo("MainPage");
+        //public ICommand Enfantbtn => new RelayCommand(() =>
+        //{
+        //    this.navigationService.NavigateTo("MainPage");
 
-        });
+        //});
 
-        public ProductPageViewModel()
-        {
-            Messenger.Default.Register<SwitchViewMessage>(this, (switchViewMessage) =>
-            {
-                SwitchView(switchViewMessage.ViewName);
-            });
-        }
-
-        private void SwitchView(string viewName)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public ProductPageViewModel(INavigationService navigationService)
         {

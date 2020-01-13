@@ -81,7 +81,7 @@
                 <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#001a00"/>
                 <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ffffff"/>
                 <Border Grid.Column="4" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ac7339"/>
-                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#005ce6"/>
+                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#00ccff"/>
             </Grid>
 
             <Grid Grid.Row="3" Grid.Column="1">
@@ -116,9 +116,9 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">13,5</TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">15</TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">17,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">11,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">13</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">15,5</TextBlock>
             </Grid>
 
         </Grid>
@@ -174,7 +174,7 @@
                 <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#001a00"/>
                 <Border Grid.Column="2" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ffffff"/>
                 <Border Grid.Column="4" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#ac7339"/>
-                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#005ce6"/>
+                <Border Grid.Column="6" Grid.Row="1" BorderThickness="1" BorderBrush="#001a00" Background="#00ccff"/>
             </Grid>
 
             <Grid Grid.Row="3" Grid.Column="1">
@@ -209,9 +209,9 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">7,5</TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">8,5</TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">9,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">6,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Style="{StaticResource Producttext}">7,5</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center"  VerticalAlignment="Center"  Style="{StaticResource Producttext}">8,5</TextBlock>
             </Grid>
 
         </Grid>
