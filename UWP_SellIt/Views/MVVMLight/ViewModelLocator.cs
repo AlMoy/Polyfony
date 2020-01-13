@@ -28,13 +28,21 @@ namespace UWP_SellIt.Views.MVVMLight
                 var navigationService = new NavigationService();
                 navigationService.Configure("MainPage", typeof(MainPage));
                 navigationService.Configure("ProductListPage", typeof(ProductListPage));
-                navigationService.Configure("ProductHommeList", typeof(ProductHommePageUC));
+                navigationService.Configure("ClientList", typeof(ClientListPage));
+                navigationService.Configure("ProductFemmeList", typeof(ProductListPage2));
+                navigationService.Configure("ProductEnfantList", typeof(ProductListPage3));
+                //navigationService.Configure("ProductHommeList", typeof(ProductHommePageUC));
 
                 return navigationService;
             });
             SimpleIoc.Default.Register<HomePageViewModel>();
             SimpleIoc.Default.Register<ProductPageViewModel>();
             SimpleIoc.Default.Register<MenuProductPageViewModel>();
+            SimpleIoc.Default.Register<MenuProduct2ViewModel>();
+            SimpleIoc.Default.Register<MenuProductUC3ViewModel>();
+            SimpleIoc.Default.Register<ClientListPageViewModel>();
+            SimpleIoc.Default.Register<ProductListPage2ViewModel>();
+            SimpleIoc.Default.Register<ProductListPage3ViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
 
             SimpleIoc.Default.Register<DatabaseService>(() =>
@@ -62,6 +70,26 @@ namespace UWP_SellIt.Views.MVVMLight
         public ClientListPageViewModel ClientListPageInstance
         {
             get { return ServiceLocator.Current.GetInstance<ClientListPageViewModel>(); }
+        }
+
+        public ProductListPage2ViewModel ProductListPage2Instance
+        {
+            get { return ServiceLocator.Current.GetInstance<ProductListPage2ViewModel>(); }
+        }
+
+        public ProductListPage3ViewModel ProductListPage3Instance
+        {
+            get { return ServiceLocator.Current.GetInstance<ProductListPage3ViewModel>(); }
+        }
+
+        public MenuProduct2ViewModel MenuProduct2Instance
+        {
+            get { return ServiceLocator.Current.GetInstance<MenuProduct2ViewModel>(); }
+        }
+
+        public MenuProductUC3ViewModel MenuProductUC3Instance
+        {
+            get { return ServiceLocator.Current.GetInstance<MenuProductUC3ViewModel>(); }
         }
 
         //public Page2ViewModel MyProperty

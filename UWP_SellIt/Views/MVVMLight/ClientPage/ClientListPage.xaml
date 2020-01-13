@@ -47,13 +47,10 @@
             <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
         </Grid>
 
-        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3">
+        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" >
             <personUc:ListPersonUC x:Name="personUc" x:FieldModifier="public" />
         </ScrollViewer>
-        <Button Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
-
-
-
+        <Button x:Name="Returnbtn" Command="{Binding Returnbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
         <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

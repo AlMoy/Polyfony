@@ -14,9 +14,10 @@
     <SolidColorBrush x:Key="secondary-dark" Color="#001064"/>
     <SolidColorBrush x:Key="secondary-text" Color="#ffffff"/>
     <!--Color diver-->
-    <SolidColorBrush x:Key="yellow" Color="#f2f2f2"/>
+    <SolidColorBrush x:Key="gray" Color="#f2f2f2"/>
     <SolidColorBrush x:Key="Blue" Color="#809fff"/>
     <SolidColorBrush x:Key="blackgreen" Color="#333300"/>
+    <SolidColorBrush x:Key="red" Color="#990033"/>
     
 
     <!--FontSize-->
@@ -25,7 +26,7 @@
     <x:Int32 x:Key="FontSizeType">25</x:Int32>
     <!--Style-->
     <Style x:Key="leftbandeau" TargetType="Rectangle">
-        <Setter Property="Fill" Value="{StaticResource yellow}"/>
+        <Setter Property="Fill" Value="{StaticResource gray}"/>
     </Style>
     
     <Style x:Key="bandeau" TargetType="Rectangle">
@@ -46,13 +47,17 @@
         <Setter Property="Foreground" Value="{StaticResource secondary-text}"/>
     </Style>
 
+
+
     <Style x:Key="Typetext" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource FontSizeType}"/>
         <Setter Property="Foreground" Value="{StaticResource blackgreen}"/>
         <Setter Property="FontWeight" Value="Bold"/>
     </Style>
+
     
-    
+
+
 
     <Style x:Key="Producttext" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>

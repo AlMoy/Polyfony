@@ -20,6 +20,13 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
 
         });
 
+        public ICommand Returnbtn => new RelayCommand(() =>
+        {
+            this.navigationService.GoBack();
+
+        });
+
+
         public ClientListPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;

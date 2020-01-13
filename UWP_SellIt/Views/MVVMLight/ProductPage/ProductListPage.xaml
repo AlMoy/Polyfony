@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:hommeUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
     xmlns:femmeUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
+     xmlns:menuUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -26,7 +27,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -44,26 +45,12 @@
         </Grid>
 
         <Grid x:Name="menuGrid" Grid.Column="0" Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5*"/>
-
-            </Grid.RowDefinitions>
-
-            <Rectangle Grid.Row="0" Grid.RowSpan="6"  Style="{StaticResource leftbandeau}"/>
-            <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight ="Bold">Type de produit</TextBlock>
-            <Button Grid.Row="2" x:Name="TrotHombtn" Command="{Binding Hommebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette homme</Button>
-            <Button Grid.Row="3" x:Name="TrotFembtn" Command="{Binding Femmebtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette femme</Button>
-            <Button Grid.Row="4" x:Name="TrotEnfbtn" Command="{Binding Enfantbtn}" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource Menuproductbutton}">Trottinette enfant</Button>
+            <menuUc:MenuProductPageUC x:Name="MenuProductPageUc"/>
         </Grid>
-        
-        
 
-        <ScrollViewer x:Name="contentScrollViewerProduct1" Grid.Column="1" Grid.Row="1">
+
+
+        <ScrollViewer Grid.Column="1" Grid.Row="1">
             <!--les élements de la page-->
             <hommeUc:ProductHommePageUC x:Name="ProductHommepageUC"/>
             <!--<femmeUc:ProductFemmePageUC x:Name="ProductFemmepageUC"/>
@@ -72,11 +59,7 @@
            
         </ScrollViewer>
 
-        <ScrollViewer x:Name="contentScrollViewerProduct2" Grid.Column="1" Grid.Row="1">
-            <!--les élements de la page-->
-          <femmeUc:ProductFemmePageUC x:Name="ProductFemmepageUC"/>
-
-        </ScrollViewer>
+        
 
 
 

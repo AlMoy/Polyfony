@@ -28,7 +28,7 @@ namespace UWP_SellIt.Views.MVVMLight.HomePage
 
         public ICommand ButtonClient => new RelayCommand(() =>
         {
-            this.navigationService.NavigateTo("MainPage");
+            this.navigationService.NavigateTo("ClientList");
 
         });
 

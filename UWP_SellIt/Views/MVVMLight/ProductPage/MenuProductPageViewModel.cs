@@ -32,6 +32,18 @@ namespace UWP_SellIt.Views.MVVMLight.ProductPage
 
         });
 
+        public ICommand Returnbtn => new RelayCommand(() =>
+        {
+            this.navigationService.GoBack();
+
+        });
+
+        public ICommand Suivantbtn => new RelayCommand(() =>
+        {
+            this.navigationService.NavigateTo("ProductFemmeList");
+
+        });
+
         public MenuProductPageViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
