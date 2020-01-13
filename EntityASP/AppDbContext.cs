@@ -30,7 +30,7 @@ namespace EntityASP
             }
         #endregion
 
-        #region function
+        #region Function
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {//Relation Many-To-Many => TVA -To- ProductType
             modelBuilder.Entity<ProductTypeTVA>().HasRequired<TVA>(ptt => ptt.TVA).WithMany(t => t.ProductTypeTVAs);
@@ -43,10 +43,9 @@ namespace EntityASP
             //Relation Many-To-Many => Product -To- Order
             modelBuilder.Entity<ProductOrder>().HasRequired<Product>(po => po.Product).WithMany(p => p.ProductOrders);
             modelBuilder.Entity<ProductOrder>().HasRequired<Order>(po => po.Order).WithMany(o => o.ProductOrders);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithRequired(o => o.Client);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithRequired(o => o.Seller);
+            //Relation Many-To-Many => Order -To- Person
+            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(p => p.Order).WithRequired(o => o.Client);
+            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(p => p.Orders).WithRequired(o => o.Seller);
             //Relation One-To-Many => Role -To- Person
             modelBuilder.Entity<Person>().HasRequired<Role>(p => p.Role).WithMany(r => r.People);
 

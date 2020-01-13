@@ -21,7 +21,7 @@ namespace EntityASP.Entity
         private string login;
         private string passWord;
         private Role role;
-        private List<Order> orders;
+        private List<OrderPerson> orderPersons;
         #endregion
 
         #region Properties
@@ -126,17 +126,17 @@ namespace EntityASP.Entity
             set { role = value; }
             }
 
-        public List<Order> Orders
-            {
-            get { return orders; }
-            set { orders = value; }
+        public List<OrderPerson> OrderPerson
+        {
+            get { return orderPersons; }
+            set { orderPersons = value; }
             }
         #endregion
 
         #region Constructors
         public Person()
             {
-            this.orders = new List<Order>();
+            this.orderPersons = new List<OrderPerson>();
             }
         #endregion
         }
