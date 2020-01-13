@@ -120,7 +120,7 @@ namespace EntityASP.Entity
             }
 
         [Display(Name = "Rôle")]
-        public Role Role
+        public virtual Role Role
             {
             get { return role; }
             set { role = value; }
