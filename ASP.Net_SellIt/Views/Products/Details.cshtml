@@ -8,8 +8,12 @@
 <div class="d-flex flex-column">
     <div>
         @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-primary" })
-        @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
-
+        @{
+            if (User.IsInRole("Admin"))
+                {
+                @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary-dark" })
+                }
+        }
     </div>
         
     <div class="d-flex mt-3">
@@ -66,9 +70,6 @@
                     }
                 }
             </p>
-        </div>
-        <div>
-
         </div>
     </div>
 </div>

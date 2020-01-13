@@ -24,8 +24,8 @@ namespace ASP.Net_SellIt.Controllers
             this.orderRepository = new OrderRepository(this.db);
         }
 
-            // GET: Orders
-            public async Task<ActionResult> Index()
+        // GET: Orders
+        public async Task<ActionResult> Index()
             {
             List<Order> order = await this.orderRepository.FindAllAsync();
             return View(order);
