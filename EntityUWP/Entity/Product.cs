@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class Product
+    public class Product : EntityBase<Product>
         {
         #region Attributs
         private long id;
@@ -18,7 +18,7 @@ namespace EntityUWP.Entity
         private string color;
         private ulong quantity;
         private Boolean toValid;
-        private List<StateProduct> stateProducts;
+        private List<ProductStateProduct> productStateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
         #endregion
@@ -41,7 +41,7 @@ namespace EntityUWP.Entity
         public string Name
             {
             get { return name; }
-            set { name = value; }
+            set { name = value; OnPropertyChanged("Name");  }
             }
 
         [Required]
@@ -49,7 +49,7 @@ namespace EntityUWP.Entity
         public float Size
             {
             get { return size; }
-            set { size = value; }
+            set { size = value; OnPropertyChanged("Size"); }
             }
 
         [Required]
@@ -57,7 +57,7 @@ namespace EntityUWP.Entity
         public float Weight
             {
             get { return weight; }
-            set { weight = value; }
+            set { weight = value; OnPropertyChanged("Weight"); }
             }
 
         [Required]
@@ -66,7 +66,7 @@ namespace EntityUWP.Entity
         public string Color
             {
             get { return color; }
-            set { color = value; }
+            set { color = value; OnPropertyChanged("Color"); }
             }
 
         [Required]
@@ -74,7 +74,7 @@ namespace EntityUWP.Entity
         public ulong Quantity
             {
             get { return quantity; }
-            set { quantity = value; }
+            set { quantity = value; OnPropertyChanged("Quantity"); }
             }
 
         [Required]
@@ -82,32 +82,65 @@ namespace EntityUWP.Entity
         public Boolean ToValid
             {
             get { return toValid; }
-            set { toValid = value; }
+            set { toValid = value; OnPropertyChanged("ToValid"); }
             }
-        public List<StateProduct> StateProducts
+        public List<ProductStateProduct> ProductStateProducts
             {
-            get { return stateProducts; }
-            set { stateProducts = value; }
+            get { return productStateProducts; }
+            set { productStateProducts = value; OnPropertyChanged("ProductStateProducts"); }
             }
 
         public List<ProductOrder> ProductOrders
             {
             get { return productOrders; }
-            set { productOrders = value; }
+            set { productOrders = value; OnPropertyChanged("ProductOrders"); }
             }
 
         public ProductType ProductType
             {
             get { return productType; }
-            set { productType = value; }
+            set { productType = value; OnPropertyChanged("ProductType"); }
             }
         #endregion
 
         #region Constructors
         public Product()
             {
-            this.stateProducts = new List<StateProduct>();
+            this.productStateProducts = new List<ProductStateProduct>();
             this.productOrders = new List<ProductOrder>();
+            }
+        #endregion
+
+        #region Functions
+        public override Product Copy()
+            {
+            Product product = new Product();
+            product.Id = this.Id;
+            product.Size = this.Size;
+            product.Name = this.Name;
+            product.Weight = this.Weight;
+            product.Color = this.Color;
+            product.Quantity = this.Quantity;
+            product.ToValid = this.ToValid;
+            product.ProductStateProducts = this.ProductStateProducts;
+            product.ProductOrders = this.ProductOrders;
+            product.ProductType = this.ProductType;
+
+            return product;
+            }
+
+        public override void CopyFrom(Product obj)
+            {
+            this.Id = obj.Id;
+            this.Size = obj.Size;
+            this.Name = obj.Name;
+            this.Weight = obj.Weight;
+            this.Color = obj.Color;
+            this.Quantity = obj.Quantity;
+            this.ToValid = obj.ToValid;
+            this.ProductStateProducts = obj.ProductStateProducts;
+            this.ProductOrders = obj.ProductOrders;
+            this.ProductType = obj.ProductType;
             }
         #endregion
         }

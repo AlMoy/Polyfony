@@ -121,11 +121,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="Entity\EntityBase.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\ProductOrder.cs" />
+    <Compile Include="Entity\ProductStateProduct.cs" />
     <Compile Include="Entity\ProductType.cs" />
+    <Compile Include="Entity\ProductTypeTVA.cs" />
     <Compile Include="Entity\Role.cs" />
     <Compile Include="Entity\StateProduct.cs" />
     <Compile Include="Entity\TVA.cs" />

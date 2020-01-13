@@ -5,10 +5,56 @@
     xmlns:local="using:UWP_SellIt"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local1="using:UWP_SellIt.Views.ProductPage"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Views/Styles/DictionaryStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Rectangle x:Name="header" Style="{StaticResource bandeau}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="TblockTitle" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Authentification" HorizontalAlignment="Center" FontSize="20"/>
+            <TextBlock x:Name="TblockMail" Grid.Row="2" Grid.Column="0" Text="Identifiant" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <TextBox x:Name="TboxMail" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch"/>
+            <TextBlock x:Name="TblockPassword" Grid.Row="4" Grid.Column="0" Text="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <PasswordBox x:Name="TboxPassword" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" Width="200"/>
+            <Button x:Name="btnLogin" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">Connexion</Button>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Rectangle x:Name="footer" Style="{StaticResource bandeau}"/>
+        </Grid>
     </Grid>
 </Page>

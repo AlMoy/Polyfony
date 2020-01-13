@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="UWP_SellIt.Views.BasePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_SellIt.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Styles/DictionaryStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+  
+
+    <Grid x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle x:Name="header" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+        <Image x:Name="logo" Grid.Column="0" Grid.Row="0" Stretch="None"  Source="ms-appx:///Assets/logo.png"/>
+        <TextBlock x:Name="titlePage" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Text="titre"></TextBlock>
+        <ScrollViewer x:Name="section" Grid.Column="1" Grid.Row="1">
+            <!--les élements de la page-->
+        </ScrollViewer>
+        <Rectangle x:Name="footer" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+    </Grid>
+</Page>

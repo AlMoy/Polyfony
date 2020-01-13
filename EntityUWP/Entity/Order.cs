@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
-    public class Order
+    public class Order : EntityBase<Order>
         {
         #region Attributs
         private long id;
@@ -40,7 +40,7 @@ namespace EntityUWP.Entity
         public string Name
             {
             get { return name; }
-            set { name = value; }
+            set { name = value; OnPropertyChanged("Name"); }
             }
 
         [Column("or_description")]
@@ -48,7 +48,7 @@ namespace EntityUWP.Entity
         public string Description
             {
             get { return description; }
-            set { description = value; }
+            set { description = value; OnPropertyChanged("Description"); }
             }
 
         [Column("or_remise")]
@@ -56,7 +56,7 @@ namespace EntityUWP.Entity
         public float Remise
             {
             get { return remise; }
-            set { remise = value; }
+            set { remise = value; OnPropertyChanged("Remise"); }
             }
 
         [Column("or_datePayment")]
@@ -64,7 +64,7 @@ namespace EntityUWP.Entity
         public DateTime DatePayment
             {
             get { return datePayment; }
-            set { datePayment = value; }
+            set { datePayment = value; OnPropertyChanged("DatePayment"); }
             }
 
         [Required]
@@ -73,25 +73,25 @@ namespace EntityUWP.Entity
         public DateTime DateCreation
             {
             get { return dateCreation; }
-            set { dateCreation = value; }
+            set { dateCreation = value; OnPropertyChanged("DateCreation"); }
             }
 
         public List<ProductOrder> ProductOrders
             {
             get { return productOrders; }
-            set { productOrders = value; }
+            set { productOrders = value; OnPropertyChanged("ProductOrders"); }
             }
 
         public Person Client
             {
             get { return client; }
-            set { client = value; }
+            set { client = value; OnPropertyChanged("Client"); }
             }
 
         public Person Seller
             {
             get { return seller; }
-            set { seller = value; }
+            set { seller = value; OnPropertyChanged("Seller"); }
             }
         #endregion
 
@@ -99,6 +99,37 @@ namespace EntityUWP.Entity
         public Order()
             {
             this.productOrders = new List<ProductOrder>();
+            }
+        #endregion
+
+        #region Functions
+        public override Order Copy()
+            {
+            Order order = new Order();
+            order.Id = this.Id;
+            order.Name = this.Name;
+            order.Description = this.Description;
+            order.Remise = this.Remise;
+            order.DatePayment = this.DatePayment;
+            order.DateCreation = this.DateCreation;
+            order.ProductOrders = this.ProductOrders;
+            order.Client = this.Client;
+            order.Seller = this.Seller;
+
+            return order;
+            }
+
+        public override void CopyFrom(Order obj)
+            {
+            this.Id = obj.Id;
+            this.Name = obj.Name;
+            this.Description = obj.Description;
+            this.Remise = obj.Remise;
+            this.DatePayment = obj.DatePayment;
+            this.DateCreation = obj.DateCreation;
+            this.ProductOrders = obj.ProductOrders;
+            this.Client = obj.Client;
+            this.Seller = obj.Seller;
             }
         #endregion
         }
