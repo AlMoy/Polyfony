@@ -15,8 +15,8 @@ namespace EntityUWP.Entity
         private string name;
         private string description;
         private float remise;
-        private DateTime datePayment;
-        private DateTime dateCreation;
+        private DateTimeOffset datePayment;
+        private DateTimeOffset dateCreation;
         private List<ProductOrder> productOrders;
         private Person client;
         private Person seller;
@@ -52,22 +52,21 @@ namespace EntityUWP.Entity
         }
 
         [Column("or_datePayment")]
-        public DateTime DatePayment
+        public DateTimeOffset DatePayment
         {
             get { return datePayment; }
             set { datePayment = value; OnPropertyChanged("DatePayment"); }
         }
 
-        [Unique]
         [Column("or_dateCreation")]
         [NotNull]
-        public DateTime DateCreation
+        public DateTimeOffset DateCreation
         {
             get { return dateCreation; }
             set { dateCreation = value; OnPropertyChanged("DateCreation"); }
         }
 
-        [Ignore]
+        [OneToMany]
         public List<ProductOrder> ProductOrders
         {
             get { return productOrders; }
@@ -90,6 +89,13 @@ namespace EntityUWP.Entity
             set { clientId = value; }
         }
 
+        [ManyToOne("SellerId")]
+        public Person Seller
+        {
+            get { return seller; }
+            set { seller = value; OnPropertyChanged("Seller"); }
+        }
+
         private int sellerId;
         
         [ForeignKey(typeof(Person))]
@@ -97,13 +103,6 @@ namespace EntityUWP.Entity
         {
             get { return sellerId; }
             set { sellerId = value; }
-        }
-
-        [ManyToOne("SellerId")]
-        public Person Seller
-        {
-            get { return seller; }
-            set { seller = value; OnPropertyChanged("Seller"); }
         }
         #endregion
 

@@ -25,7 +25,7 @@ namespace EntityUWP.Entity
             set { quantity = value; OnPropertyChanged("Quantity"); }
         }
 
-        [OneToMany("ProductId")]
+        [ManyToOne("ProductId")]
         [NotNull]
         [Column("po_product")]
         public Product Product
@@ -43,7 +43,7 @@ namespace EntityUWP.Entity
             set { productId = value; }
         }
 
-        [OneToMany("OrderId")]
+        [ManyToOne("OrderId")]
         [NotNull]
         [Column("po_order")]
         public Order Order
