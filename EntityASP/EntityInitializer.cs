@@ -9,15 +9,8 @@ namespace EntityASP
     {
     public static class EntityInitializer
         {
-        public static void Initialize(this AppDbContext context, bool dropAlways = false)
+        public static void Initialize(this AppDbContext context)
             {
-            //To drop database or not
-            if (dropAlways && context.Database.Exists())
-                context.Database.Delete();
-
-            context.Database.CreateIfNotExists();
-
-            //if db has been already seeded
             if (context.PersonDb.Any())
                 return;
             
