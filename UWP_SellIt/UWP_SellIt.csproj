@@ -132,6 +132,27 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC.xaml.cs">
+      <DependentUpon>UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\EditAdvanceUC.xaml.cs">
+      <DependentUpon>EditAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\EditUC.xaml.cs">
+      <DependentUpon>EditUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ListAdvanceUC.xaml.cs">
+      <DependentUpon>ListAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ListUC.xaml.cs">
+      <DependentUpon>ListUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ShowAdvanceUC.xaml.cs">
+      <DependentUpon>ShowAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ShowUC.xaml.cs">
+      <DependentUpon>ShowUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
@@ -158,9 +179,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="DictionaryStyle.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="UC.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\EditAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\EditUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ListAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ListUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ShowAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ShowUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Styles\DictionaryStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +227,17 @@
     <PackageReference Include="MvvmLight">
       <Version>5.4.1.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
