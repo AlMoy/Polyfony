@@ -27,13 +27,21 @@
             @Html.EditorFor(m => m.Price, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
         </div>
-               
+
+        <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                @Html.LabelFor(model => model.ProductTypeTVAs, "TVA", htmlAttributes: new { @class = "input-group-text" })
+            </div>
+            @Html.DropDownListFor(model => model.ProductTypeTVAs, new SelectList(ViewBag.ListTVA, "id", "rate"), new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ProductTypeTVAs, "", new { @class = "text-danger" })
+
         <div class="col-md-offset-2 mt-3">
             @Html.ActionLink("Retour à la liste", "Index", "ProductTypes", null, htmlAttributes: new { @class = "btn btn-primary" })
             <input type="submit" value="Créer" class="btn btn-primary" />
 
         </div>
-                  
+
     </div>
 }
 

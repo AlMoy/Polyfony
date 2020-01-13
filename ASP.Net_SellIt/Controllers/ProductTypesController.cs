@@ -9,13 +9,16 @@ using System.Web;
 using System.Web.Mvc;
 using EntityASP;
 using EntityASP.Entity;
+using EntityASP.Repository;
 
 namespace ASP.Net_SellIt.Controllers
 {
     //[Authorize]
+    [RoutePrefix("ProductTypes")]
     public class ProductTypesController : Controller
     {
         private AppDbContext db = new AppDbContext();
+        private TVARepository tvaRepository = new TVARepository(new AppDbContext());
 
         // GET: ProductTypes
         public async Task<ActionResult> Index()
@@ -39,8 +42,10 @@ namespace ASP.Net_SellIt.Controllers
         }
 
         // GET: ProductTypes/Create
-        public ActionResult Create()
+        [Route("Create")]
+        public async Task<ActionResult> Create()
         {
+            this.ViewBag.ListTVA = await this.tvaRepository.FindAllAsync();
             return View();
         }
 
@@ -48,18 +53,23 @@ namespace ASP.Net_SellIt.Controllers
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Route("Create")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Price,Name")] ProductType productType)
         {
+            this.ViewBag.ListTVA = await this.tvaRepository.FindAllAsync();
+
             if (ModelState.IsValid)
             {
+                
                 long idTVA;
-                long.TryParse(Request.Form.Get("TVA"), out idTVA);
-                TVA tva = await this.repositoryTVA.FindAsync(idTVA);
+                long.TryParse(Request.Form.Get("ProductTypeTVAs"), out idTVA);
+                TVA tva = await this.tvaRepository.FindAsync(idTVA);
                 //Create a object ProductTypeTVA
                 ProductTypeTVA typeTVA = new ProductTypeTVA();
                 typeTVA.TVA = tva;
                 typeTVA.ProductType = productType;
+
                 //Create in database
                 db.ProductTypeTvaDb.Add(typeTVA);
                 db.ProductTypeDb.Add(productType);
