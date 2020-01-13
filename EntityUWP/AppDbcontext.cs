@@ -29,27 +29,7 @@ namespace EntityUWP
 
         #region function
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {//Relation Many-To-Many => TVA -To- ProductType
-            modelBuilder.Entity<ProductTypeTVA>().HasOne<TVA>(ptt => ptt.TVA).WithMany(t => t.ProductTypeTVAs);
-            modelBuilder.Entity<ProductTypeTVA>().HasOne<ProductType>(ptt => ptt.ProductType).WithMany(t => t.ProductTypeTVAs);
-            //Relation One-To-Many => ProductType -To- Product
-            modelBuilder.Entity<Product>().HasOne<ProductType>(p => p.ProductType).WithMany(pt => pt.Products);
-            //Relation Many-To-Many => Product -To- StateProduct
-            modelBuilder.Entity<ProductStateProduct>().HasOne<Product>(psp => psp.Product).WithMany(p => p.ProductStateProducts);
-            modelBuilder.Entity<ProductStateProduct>().HasOne<StateProduct>(psp => psp.StateProduct).WithMany(sp => sp.ProductStateProducts);
-            //Relation Many-To-Many =>  Product -To- Order
-            modelBuilder.Entity<ProductOrder>().HasOne<Product>(po => po.Product).WithMany(p => p.ProductOrders);
-            modelBuilder.Entity<ProductOrder>().HasOne<Order>(po => po.Order).WithMany(o => o.ProductOrders);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithOne(o => o.Client);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithOne(o => o.Seller);
-            //Relation One-To-Many => Role -To- Person
-            modelBuilder.Entity<Person>().HasOne<Role>(p => p.Role).WithMany(r => r.People);
-
-            modelBuilder.Entity<Person>().HasIndex(p => p.Login).IsUnique();
-
-            base.OnModelCreating(modelBuilder);
+        {
         }
         #endregion
     }

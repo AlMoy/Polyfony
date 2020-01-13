@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace EntityUWP.Entity
         private string login;
         private string passWord;
         private Role role;
-        private List<Order> orders;
+        private List<OrderPerson> orderPerson;
         #endregion
 
         #region Properties
@@ -103,18 +104,18 @@ namespace EntityUWP.Entity
             set { role = value; OnPropertyChanged("Role"); }
         }
 
-        [Ignore]
-        public List<Order> Orders
+        [ManyToOne]
+        public List<OrderPerson> OrderPerson
         {
-            get { return orders; }
-            set { orders = value; OnPropertyChanged("Orders"); }
+            get { return orderPerson; }
+            set { orderPerson = value; OnPropertyChanged("Orders"); }
         }
         #endregion
 
         #region Constructors
         public Person()
         {
-            this.orders = new List<Order>();
+            this.orderPerson = new List<OrderPerson>();
         }
         #endregion
 
@@ -132,7 +133,7 @@ namespace EntityUWP.Entity
             person.Login = this.Login;
             person.PassWord = this.PassWord;
             person.Role = this.Role;
-            person.Orders = this.Orders;
+            person.OrderPerson = this.OrderPerson;
 
             return person;
         }
@@ -149,7 +150,7 @@ namespace EntityUWP.Entity
             this.Login = obj.Login;
             this.PassWord = obj.PassWord;
             this.Role = obj.Role;
-            this.Orders = obj.Orders;
+            this.OrderPerson = obj.OrderPerson;
         }
         #endregion
     }

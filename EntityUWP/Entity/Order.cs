@@ -18,8 +18,7 @@ namespace EntityUWP.Entity
         private DateTimeOffset datePayment;
         private DateTimeOffset dateCreation;
         private List<ProductOrder> productOrders;
-        private Person client;
-        private Person seller;
+        private List<Person> persons;
         #endregion
 
         #region Properties
@@ -73,36 +72,11 @@ namespace EntityUWP.Entity
             set { productOrders = value; OnPropertyChanged("ProductOrders"); }
         }
 
-        [ManyToOne("ClientId")]
-        public Person Client
+        [ManyToMany(typeof(Person))]
+        public List<Person> Persons
         {
-            get { return client; }
-            set { client = value; OnPropertyChanged("Client"); }
-        }
-
-        private int clientId;
-
-        [ForeignKey(typeof(Person))]
-        public int ClientId
-        {
-            get { return clientId; }
-            set { clientId = value; }
-        }
-
-        [ManyToOne("SellerId")]
-        public Person Seller
-        {
-            get { return seller; }
-            set { seller = value; OnPropertyChanged("Seller"); }
-        }
-
-        private int sellerId;
-        
-        [ForeignKey(typeof(Person))]
-        public int SellerId
-        {
-            get { return sellerId; }
-            set { sellerId = value; }
+            get { return persons; }
+            set { persons = value; OnPropertyChanged("Persons"); }
         }
         #endregion
 
@@ -124,8 +98,7 @@ namespace EntityUWP.Entity
             order.DatePayment = this.DatePayment;
             order.DateCreation = this.DateCreation;
             order.ProductOrders = this.ProductOrders;
-            order.Client = this.Client;
-            order.Seller = this.Seller;
+            order.Persons = this.Persons;
 
             return order;
         }
@@ -139,8 +112,7 @@ namespace EntityUWP.Entity
             this.DatePayment = obj.DatePayment;
             this.DateCreation = obj.DateCreation;
             this.ProductOrders = obj.ProductOrders;
-            this.Client = obj.Client;
-            this.Seller = obj.Seller;
+            this.Persons = obj.Persons;
         }
         #endregion
     }
