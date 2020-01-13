@@ -37,23 +37,19 @@
             </Grid.ColumnDefinitions>
             <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="#fff">Liste des commandes</TextBlock>
+            <!--Textbox pour Titre-->
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Authentification</TextBlock>
         </Grid>
 
-
-        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
-            <StackPanel>
-                <TextBlock x:Name="TblockTitle" Text="Authentification" HorizontalAlignment="Center"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="TblockMail" Text="Identifiant" VerticalAlignment="Center"/>
-                    <TextBox x:Name="TboxMail"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="TblockPassword" Text="Mot de passe" VerticalAlignment="Center"/>
-                    <TextBox x:Name="TboxPassword"/>
-                </StackPanel>
-            </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="1" Style="{StaticResource section}">
+            <TextBlock Style="{StaticResource LoginUCTextblock}" x:Name="txtBTitle" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">Connexion</TextBlock>
+            <TextBlock Style="{StaticResource LoginUCTextblock}" x:Name="txtBLogin" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Login</TextBlock>
+            <TextBox x:Name="inputLogin"  Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center"></TextBox>
+            <TextBlock Style="{StaticResource LoginUCTextblock}" x:Name="txtBPassword" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Password</TextBlock>
+            <PasswordBox x:Name="inputPassword" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center"></PasswordBox>
+            <Button  Style="{StaticResource LoginUCButton}" x:Name="btnConnexion" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" MaxWidth="200" HorizontalAlignment="Stretch" VerticalAlignment="Center">Connexion</Button>
         </Grid>
+
 
         <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>

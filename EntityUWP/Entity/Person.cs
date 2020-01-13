@@ -22,7 +22,7 @@ namespace EntityUWP.Entity
         private string passWord;
         private Role role;
         private int roleId;
-        private List<Order> orders;
+        private List<OrderPerson> orderPerson;
         #endregion
 
         #region Properties
@@ -109,6 +109,13 @@ namespace EntityUWP.Entity
             get { return role; }
             set { role = value; OnPropertyChanged("Role"); }
             }
+
+        [ForeignKey(typeof(Role))]
+        public int RoleId
+        {
+            get { return roleId; }
+            set { roleId = value; }
+        }
 
         [ManyToOne]
         public List<OrderPerson> OrderPerson

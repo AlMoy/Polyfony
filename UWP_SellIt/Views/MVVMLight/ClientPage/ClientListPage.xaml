@@ -30,7 +30,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>            
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -50,7 +50,8 @@
         <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" >
             <personUc:ListPersonUC x:Name="personUc" x:FieldModifier="public" />
         </ScrollViewer>
-        <Button x:Name="Returnbtn" Command="{Binding Returnbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
+        <Button x:Name="Returnbtn" Command="{Binding Returnbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
+        <Button x:Name="Ajoutbtn" Command="{Binding Ajoutbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Ajouter</Button>
         <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

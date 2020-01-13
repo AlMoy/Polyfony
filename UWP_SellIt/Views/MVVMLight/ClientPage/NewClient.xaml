@@ -1,15 +1,14 @@
 ﻿<Page
-    x:Class="UWP_SellIt.Views.MVVMLight.ProductPage.ProductListPage3"
+    x:Class="UWP_SellIt.Views.MVVMLight.ClientPage.NewClient"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UWP_SellIt.Views.MVVMLight.ProductPage"
-    xmlns:enfantUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
-     xmlns:menuUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
+    xmlns:local="using:UWP_SellIt.Views.MVVMLight.ClientPage"
+    xmlns:editpersonUc="using:UWP_SellIt.Views.People"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    DataContext="{Binding ProductListPage3Instance, Source={StaticResource Locator}}">
+    DataContext="{Binding NewClientPageInstance, Source={StaticResource Locator}}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -19,15 +18,19 @@
         </ResourceDictionary>
     </Page.Resources>
 
+
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="7*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -40,27 +43,14 @@
             <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
             <!--Textbox pour Titre-->
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Catalogues Produits</TextBlock>
-            <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn3}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Liste des Clients</TextBlock>
+            <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
         </Grid>
 
-        <Grid x:Name="menuGrid" Grid.Column="0" Grid.Row="1">
-            <menuUc:MenuProductUC3 x:Name="MenuProductUc2"/>
-        </Grid>
-
-
-
-        <ScrollViewer Grid.Column="1" Grid.Row="1">
-            <!--les élements de la page-->
-            <enfantUc:ProductEnfantPageUC x:Name="ProductEnfantpageUC"/>
-
-
+        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" >
+            <editpersonUc:EditPersonUC x:Name="personUc" x:FieldModifier="public" />
         </ScrollViewer>
-
-
-
-
-
-        <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+        <Button x:Name="Returnbtn" Command="{Binding Returnbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
+        <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

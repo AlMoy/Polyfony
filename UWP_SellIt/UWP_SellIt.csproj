@@ -122,12 +122,15 @@
     <Compile Include="BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Views\MVVMLight\ClientPage\ClientListPage.xaml.cs">
       <DependentUpon>ClientListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ClientPage\ClientListPageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ClientPage\NewClient.xaml.cs">
+      <DependentUpon>NewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ClientPage\NewClientViewModel.cs" />
     <Compile Include="Views\MVVMLight\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -147,7 +150,6 @@
       <DependentUpon>OrdersUc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="UC.xaml.cs">
       <DependentUpon>UC.xaml</DependentUpon>
     </Compile>
@@ -204,7 +206,6 @@
     <Compile Include="Views\MVVMLight\ProductPage\ProductListPage3ViewModel.cs" />
     <Compile Include="Views\MVVMLight\ProductPage\ProductPageViewModel.cs" />
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
-
     <Compile Include="Views\OrderCheckPage.xaml.cs">
       <DependentUpon>OrderCheckPage.xaml</DependentUpon>
     </Compile>
@@ -223,7 +224,6 @@
     <Compile Include="Views\Orders\ResumeOrderUC.xaml.cs">
       <DependentUpon>ResumeOrderUC.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Views\People\EditPersonUC.xaml.cs">
       <DependentUpon>EditPersonUC.xaml</DependentUpon>
     </Compile>
@@ -282,8 +282,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
+    <Page Include="DictionaryStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ClientPage\NewClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -300,9 +307,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProductPage\ListUC.xaml">
-    <Page Include="DictionaryStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProductPage\ShowAdvanceUC.xaml">
       <SubType>Designer</SubType>
@@ -312,13 +316,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="BasePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DictionaryStyle.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -338,12 +336,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-
     <Page Include="Views\BasePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Page Include="NewOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -379,6 +375,7 @@
     <Page Include="Views\Orders\ResumeOrderUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MVVMLight\ProductPage\MenuProductUC3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

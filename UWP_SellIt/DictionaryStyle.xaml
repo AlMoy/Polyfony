@@ -1,8 +1,7 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWP_SellIt">
-
     <!--Color for Primary-->
     <SolidColorBrush x:Key="primary" Color="#558c2f"/>
     <SolidColorBrush x:Key="primary-light" Color="#85bc5c"/>
@@ -101,7 +100,6 @@
         <Setter Property="Background" Value="{StaticResource Blue}"/>
         <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
     </Style>
-
 
 
 </ResourceDictionary>

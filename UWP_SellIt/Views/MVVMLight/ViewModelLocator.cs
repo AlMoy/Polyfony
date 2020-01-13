@@ -31,6 +31,7 @@ namespace UWP_SellIt.Views.MVVMLight
                 navigationService.Configure("ClientList", typeof(ClientListPage));
                 navigationService.Configure("ProductFemmeList", typeof(ProductListPage2));
                 navigationService.Configure("ProductEnfantList", typeof(ProductListPage3));
+                navigationService.Configure("NewClient", typeof(NewClient));
                 //navigationService.Configure("ProductHommeList", typeof(ProductHommePageUC));
 
                 return navigationService;
@@ -43,6 +44,7 @@ namespace UWP_SellIt.Views.MVVMLight
             SimpleIoc.Default.Register<ClientListPageViewModel>();
             SimpleIoc.Default.Register<ProductListPage2ViewModel>();
             SimpleIoc.Default.Register<ProductListPage3ViewModel>();
+            SimpleIoc.Default.Register<NewClientViewModel>();
             //SimpleIoc.Default.Register<Page2ViewModel>();
 
             SimpleIoc.Default.Register<DatabaseService>(() =>
@@ -70,6 +72,10 @@ namespace UWP_SellIt.Views.MVVMLight
         public ClientListPageViewModel ClientListPageInstance
         {
             get { return ServiceLocator.Current.GetInstance<ClientListPageViewModel>(); }
+        }
+        public NewClientViewModel NewClientPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<NewClientViewModel>(); }
         }
 
         public ProductListPage2ViewModel ProductListPage2Instance
