@@ -38,30 +38,10 @@ namespace ASP.Net_SellIt
 
             // In Startup iam creating first Admin Role and creating a default Admin User     
             if (!roleManager.RoleExists("Admin"))
-            {
-
-                // first create Admin role    
+            {  
                 var role = new IdentityRole();
                 role.Name = "Admin";
                 roleManager.Create(role);
-
-                //Here we create a Admin super user who will maintain the website                   
-
-                var user = new ApplicationUser();
-                user.UserName = "admin1";
-                user.Email = "admin1@gmail.com";
-
-                string userPWD = "Admin1!123";
-
-                var chkUser = UserManager.Create(user, userPWD);
-
-                //Add default User to Role Admin    
-                if (chkUser.Succeeded)
-                {
-                    var result1 = UserManager.AddToRole(user.Id, "Admin");
-
-                }
-
             }
                      
             // Creating Seller role     

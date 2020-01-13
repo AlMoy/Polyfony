@@ -9,11 +9,18 @@ namespace EntityASP.Entity
     public class OrderPerson
         {
         #region Attributs
+        private long id;
         private Order order;
         private Person person;
         #endregion
 
         #region Properties
+        public long Id
+            {
+            get { return id; }
+            set { id = value; }
+            }
+
         public Order Order
             {
             get { return order; }

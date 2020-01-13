@@ -30,58 +30,6 @@ namespace EntityASP
                     }
                 };
 
-            List<Person> peoples = new List<Person>()
-                {
-                new Person()
-                    {
-                    LastName = "Moysan",
-                    FirstName = "Alex",
-                    Address = "addr",
-                    Mail = "alex.moysan@mail.com",
-                    TelephoneNumber = "0761006692",
-                    BirthDate = DateTime.Now,
-                    Login = "alex",
-                    PassWord = "password",
-                    Role = roles[0],
-                    },
-                new Person()
-                    {
-                    LastName = "Luu",
-                    FirstName = "Trang",
-                    Address = "addr",
-                    Mail = "trang.luu@mail.com",
-                    TelephoneNumber = "0761006692",
-                    BirthDate = DateTime.Now,
-                    Login = "trang",
-                    PassWord = "password",
-                    Role = roles[1],
-                    },
-                new Person()
-                    {
-                    LastName = "Yacaba",
-                    FirstName = "Yacouba",
-                    Address = "addr",
-                    Mail = "yacouba.yacaba@mail.com",
-                    TelephoneNumber = "0761006692",
-                    BirthDate = DateTime.Now,
-                    Login = "yacouba",
-                    PassWord = "password",
-                    Role = roles[1],
-                    },
-                new Person()
-                    {
-                    LastName = "Foursov",
-                    FirstName = "Fatumata",
-                    Address = "addr",
-                    Mail = "fatumata.foursov@mail.com",
-                    TelephoneNumber = "0761006692",
-                    BirthDate = DateTime.Now,
-                    Login = "fatumata",
-                    PassWord = "password",
-                    Role = roles[2],
-                    }
-                };
-
             List<StateProduct> stateProducts = new List<StateProduct>()
                 {
                 new StateProduct()
@@ -464,7 +412,6 @@ namespace EntityASP
                 };
 
             context.RoleDb.AddRange(roles);
-            context.PersonDb.AddRange(peoples);
             context.StateProductDb.AddRange(stateProducts);
             context.TvaDb.AddRange(tvas);
             context.ProductTypeTvaDb.AddRange(productTypeTVAs);
