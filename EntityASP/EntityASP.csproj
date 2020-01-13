@@ -57,6 +57,7 @@
     <Compile Include="AppDbContext.cs" />
     <Compile Include="EntityInitializer.cs" />
     <Compile Include="Entity\Order.cs" />
+    <Compile Include="Entity\OrderPerson.cs" />
     <Compile Include="Entity\Person.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\ProductOrder.cs" />

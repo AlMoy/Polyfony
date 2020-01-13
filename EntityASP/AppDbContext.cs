@@ -44,8 +44,8 @@ namespace EntityASP
             modelBuilder.Entity<ProductOrder>().HasRequired<Product>(po => po.Product).WithMany(p => p.ProductOrders);
             modelBuilder.Entity<ProductOrder>().HasRequired<Order>(po => po.Order).WithMany(o => o.ProductOrders);
             //Relation Many-To-Many => Order -To- Person
-            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(p => p.Order).WithRequired(o => o.Client);
-            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(p => p.Orders).WithRequired(o => o.Seller);
+            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(op => op.Order).WithMany(o => o.OrderPersons);
+            modelBuilder.Entity<OrderPerson>().HasRequired<Person>(op => op.Person).WithMany(o => o.OrderPersons);
             //Relation One-To-Many => Role -To- Person
             modelBuilder.Entity<Person>().HasRequired<Role>(p => p.Role).WithMany(r => r.People);
 

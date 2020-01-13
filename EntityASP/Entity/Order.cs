@@ -17,6 +17,7 @@ namespace EntityASP.Entity
         private float remise;
         private DateTime datePayment;
         private DateTime dateCreation;
+        private List<ProductOrder> productOrders;
         private List<OrderPerson> orderPersons;
         #endregion
 
@@ -79,7 +80,13 @@ namespace EntityASP.Entity
             set { dateCreation = value; }
             }
 
-        public List<OrderPerson> OrderPerson
+        public List<ProductOrder> ProductOrders
+            {
+            get { return productOrders; }
+            set { productOrders = value; }
+            }
+
+        public List<OrderPerson> OrderPersons
             {
             get { return orderPersons; }
             set { orderPersons = value; }

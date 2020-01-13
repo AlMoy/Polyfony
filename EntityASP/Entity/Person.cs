@@ -126,7 +126,7 @@ namespace EntityASP.Entity
             set { role = value; }
             }
 
-        public List<OrderPerson> OrderPerson
+        public List<OrderPerson> OrderPersons
         {
             get { return orderPersons; }
             set { orderPersons = value; }

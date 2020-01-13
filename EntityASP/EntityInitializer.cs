@@ -39,7 +39,7 @@ namespace EntityASP
                     Address = "addr",
                     Mail = "alex.moysan@mail.com",
                     TelephoneNumber = "0761006692",
-                    //BirthDate = DateTime.Now,
+                    BirthDate = DateTime.Now,
                     Login = "alex",
                     PassWord = "password",
                     Role = roles[0],
