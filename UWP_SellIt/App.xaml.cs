@@ -1,4 +1,5 @@
-﻿using System;
+﻿using UWP_SellIt.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -66,7 +67,11 @@ namespace UWP_SellIt
                     // Quand la pile de navigation n'est pas restaurée, accédez à la première page,
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
+<<<<<<< HEAD
                     rootFrame.Navigate(typeof(UC), e.Arguments);
+=======
+                    rootFrame.Navigate(typeof(OrderCheckPage), e.Arguments);
+>>>>>>> UWP-YY
                 }
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();

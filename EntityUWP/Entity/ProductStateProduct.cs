@@ -1,7 +1,7 @@
-﻿using System;
+
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +10,7 @@ namespace EntityUWP.Entity
     {
     public class ProductStateProduct : EntityBase<ProductStateProduct>
         {
+
         #region Attributs
         private long id;
         private Product product;
@@ -17,27 +18,26 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
-        [Required]
+        [NotNull]
         public Product Product
-            {
+        {
             get { return product; }
             set { product = value; OnPropertyChanged("Product"); }
-            }
+        }
 
-        [Required]
+        [NotNull]
         public StateProduct StateProduct
-            {
+        {
             get { return stateProduct; }
             set { stateProduct = value; OnPropertyChanged("StateProduct"); }
-            }
+        }
         #endregion
 
         #region Functions
@@ -49,6 +49,7 @@ namespace EntityUWP.Entity
             productStateProduct.StateProduct = this.StateProduct;
 
             return productStateProduct;
+
             }
 
         public override void CopyFrom(ProductStateProduct obj)

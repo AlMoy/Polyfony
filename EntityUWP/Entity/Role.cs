@@ -1,13 +1,12 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
-    {
+{
     public class Role : EntityBase<Role>
     {
         #region Attributs
@@ -17,43 +16,40 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]
         [Column("ro_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
-        [Required]
+        [NotNull]
         [Column("ro_name")]
-        [DataType(DataType.Text)]
-        [MinLength(4)]
-        [MaxLength(20)]
         public string Name
-            {
+        {
             get { return name; }
             set { name = value; OnPropertyChanged("Name"); }
             }
 
+        [Ignore]
         public List<Person> People
-            {
+        {
             get { return people; }
             set { people = value; OnPropertyChanged("People"); }
-            }
+        }
         #endregion
 
         #region Constructors
         public Role()
-            {
+        {
             this.people = new List<Person>();
-            }
+        }
         #endregion
 
         #region Functions
         public override Role Copy()
-            {
+        {
             Role role = new Role();
             role.Id = this.Id;
             role.Name = this.Name;
@@ -69,5 +65,5 @@ namespace EntityUWP.Entity
             this.People = obj.People;
             }
         #endregion
-        }
     }
+}

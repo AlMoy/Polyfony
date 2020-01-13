@@ -1,13 +1,12 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
-    {
+{
     public class TVA : EntityBase<TVA>
         {
         #region Attributs
@@ -18,38 +17,36 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]
         [Column("tva_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
-        [Required]
+        [NotNull]
         [Column("tva_endDate")]
-        [DataType(DataType.Date)]
         public DateTime EndDate
-            {
+        {
             get { return endDate; }
             set { endDate = value; }
-            }
+        }
 
-        [Required]
+        [NotNull]
         [Column("tva_rate")]
-        [Range(0, 100)]
         public float Rate
-            {
+        {
             get { return rate; }
             set { rate = value; }
-            }
+        }
 
+        [Ignore]
         public List<ProductTypeTVA> ProductTypeTVAs
-            {
+        {
             get { return productTypeTVAs; }
             set { productTypeTVAs = value; }
-            }
+        }
         #endregion
 
         #region Constructors
@@ -61,7 +58,7 @@ namespace EntityUWP.Entity
 
         #region Functions
         public override TVA Copy()
-            {
+        {
             TVA tva = new TVA();
             tva.Id = this.Id;
             tva.Rate = this.Rate;
@@ -69,15 +66,15 @@ namespace EntityUWP.Entity
             tva.ProductTypeTVAs = this.ProductTypeTVAs;
 
             return tva;
-            }
+        }
 
         public override void CopyFrom(TVA obj)
-            {
+        {
             this.Id = obj.Id;
             this.Rate = obj.Rate;
             this.EndDate = obj.EndDate;
             this.ProductTypeTVAs = obj.ProductTypeTVAs;
-            }
-        #endregion
         }
+        #endregion
     }
+}
