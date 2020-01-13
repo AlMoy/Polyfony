@@ -60,7 +60,6 @@ namespace EntityASP.Entity
         [Display(Name = "Poids(kg)")]
         [Column("pr_weight")]
         [Range(typeof(float), "0", "20")]
-        [DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
         public float Weight
             {
             get { return weight; }
