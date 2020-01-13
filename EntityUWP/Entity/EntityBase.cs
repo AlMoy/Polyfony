@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
     {
+
     public abstract class EntityBase<T> : INotifyPropertyChanged
         {
         public event PropertyChangedEventHandler PropertyChanged;

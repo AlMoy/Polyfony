@@ -25,7 +25,7 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
-        [NotNull]
+      
         [Column("tva_endDate")]
         public DateTime EndDate
         {

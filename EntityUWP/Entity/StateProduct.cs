@@ -24,6 +24,8 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
+
+        [Unique]
         [NotNull]
         [Column("sp_name")]
         public string Name

@@ -17,21 +17,21 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public long Id
         {
             get { return id; }
             set { id = value; }
         }
 
-        [NotNull]
+
         public ProductType ProductType
         {
             get { return productType; }
             set { productType = value; OnPropertyChanged("ProductType"); }
         }
 
-        [NotNull]
+
         public TVA TVA
         {
             get { return tva; }
