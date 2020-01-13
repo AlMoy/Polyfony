@@ -53,6 +53,15 @@ namespace ASP.Net_SellIt.Controllers
         {
             if (ModelState.IsValid)
             {
+                long idTVA;
+                long.TryParse(Request.Form.Get("TVA"), out idTVA);
+                TVA tva = await this.repositoryTVA.FindAsync(idTVA);
+                //Create a object ProductTypeTVA
+                ProductTypeTVA typeTVA = new ProductTypeTVA();
+                typeTVA.TVA = tva;
+                typeTVA.ProductType = productType;
+                //Create in database
+                db.ProductTypeTvaDb.Add(typeTVA);
                 db.ProductTypeDb.Add(productType);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
