@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +18,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey]
         [Column("pt_id")]
         public long Id
         {
@@ -28,7 +26,7 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
-        [Required]
+        [NotNull]
         [Column("pt_price")]
         public float Price
         {
@@ -36,14 +34,15 @@ namespace EntityUWP.Entity
             set { price = value; }
         }
 
-        [Required]
+        [NotNull]
         [Column("pt_name")]
-        [DataType(DataType.Text)]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
+
+        [Ignore]
 
         public List<ProductTypeTVA> ProductTypeTVAs
         {
@@ -51,6 +50,7 @@ namespace EntityUWP.Entity
             set { productTypeTVAs = value; }
         }
 
+        [Ignore]
         public List<Product> Products
         {
             get { return products; }

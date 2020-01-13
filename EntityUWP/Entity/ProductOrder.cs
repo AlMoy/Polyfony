@@ -1,7 +1,7 @@
-﻿using System;
+﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +17,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Required]
+        [NotNull]
         [Column("po_quantity")]
         public ulong Quantity
         {
@@ -25,7 +25,8 @@ namespace EntityUWP.Entity
             set { quantity = value; OnPropertyChanged("Quantity"); }
         }
 
-        [Required]
+        [OneToMany("ProductId")]
+        [NotNull]
         [Column("po_product")]
         public Product Product
         {
@@ -33,13 +34,33 @@ namespace EntityUWP.Entity
             set { product = value; OnPropertyChanged("Product"); }
         }
 
-        [Required]
+        private int productId;
+
+        [ForeignKey(typeof(Product))]
+        public int ProductId
+        {
+            get { return productId; }
+            set { productId = value; }
+        }
+
+        [OneToMany("OrderId")]
+        [NotNull]
         [Column("po_order")]
         public Order Order
         {
             get { return order; }
             set { order = value; OnPropertyChanged("Order"); }
         }
+
+        private int orderId;
+
+        [ForeignKey(typeof(Order))]
+        public int OrderId
+        {
+            get { return orderId; }
+            set { orderId = value; }
+        }
+
         #endregion
 
         #region Constructors

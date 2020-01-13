@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +24,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey, AutoIncrement]
         [Column("pe_id")]
         public long Id
         {
@@ -34,88 +32,78 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_lastName")]
-        [DataType(DataType.Text)]
         public string LastName
         {
             get { return lastName; }
             set { lastName = value; OnPropertyChanged("LastName"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_firstName")]
-        [DataType(DataType.Text)]
         public string FirstName
         {
             get { return firstName; }
             set { firstName = value; OnPropertyChanged("FirstName"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_address")]
-        [DataType(DataType.Text)]
         public string Address
         {
             get { return address; }
             set { address = value; OnPropertyChanged("Address"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_Mail")]
-        [DataType(DataType.EmailAddress)]
         public string Mail
         {
             get { return mail; }
             set { mail = value; OnPropertyChanged("Mail"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_telephoneNumber")]
-        [DataType(DataType.PhoneNumber)]
         public string TelephoneNumber
         {
             get { return telephoneNumber; }
             set { telephoneNumber = value; OnPropertyChanged("TelephoneNumber"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_birthDate")]
-        [DataType(DataType.Date)]
         public DateTime BirthDate
         {
             get { return birthDate; }
             set { birthDate = value; OnPropertyChanged("BirthDate"); }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_login")]
-        [DataType(DataType.Text)]
-        [MinLength(4)]
-        [MaxLength(10)]
         public string Login
         {
             get { return login; }
             set { login = value; }
         }
 
-        [Required]
+        [NotNull]
         [Column("pe_password")]
-        [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
-        [MaxLength(200)]
         public string PassWord
         {
             get { return passWord; }
             set { passWord = value; OnPropertyChanged("Password"); }
         }
 
+        [Ignore]
         public Role Role
         {
             get { return role; }
             set { role = value; OnPropertyChanged("Role"); }
         }
 
+        [Ignore]
         public List<Order> Orders
         {
             get { return orders; }

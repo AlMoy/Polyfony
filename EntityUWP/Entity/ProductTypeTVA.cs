@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,22 +16,21 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [PrimaryKey]
         public long Id
         {
             get { return id; }
             set { id = value; }
         }
 
-        [Required]
+        [NotNull]
         public ProductType ProductType
         {
             get { return productType; }
             set { productType = value; OnPropertyChanged("ProductType"); }
         }
 
-        [Required]
+        [NotNull]
         public TVA TVA
         {
             get { return tva; }
