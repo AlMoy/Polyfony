@@ -4,31 +4,22 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="d-flex flex-column">
+    <div>
+        @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-secondary text-secondary" })
+        @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary text-primary" })
+    </div>
 
-<div>
-    <h4>TVA</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rate)
-        </dd>
-
-    </dl>
+    <div class="d-flex mt-3">
+        <div>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Rate)</strong>
+                @Html.DisplayFor(model => model.Rate)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.EndDate)</strong>
+                @Html.DisplayFor(model => model.EndDate)
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
