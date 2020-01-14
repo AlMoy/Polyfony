@@ -4,31 +4,31 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="d-flex flex-column">
+    <div>
+        @Html.ActionLink("Retour à la liste", "Index", new { }, new { @class = "btn btn-secondary text-secondary" })
+        @{
+            if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary text-primary" })
+            }
+        }
+    </div>
 
-<div>
-    <h4>ProductType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
+    <div class="d-flex mt-3">
+        <div>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Name)</strong>
+                @Html.DisplayFor(model => model.Name)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Price)</strong>
+                @Html.DisplayFor(model => model.Price)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.ProductTypeTVAs.Where(tva => tva.TVA.EndDate == null).FirstOrDefault().TVA.Rate)</strong>
+                @Html.DisplayFor(model => model.ProductTypeTVAs.Where(tva => tva.TVA.EndDate == null).FirstOrDefault().TVA.Rate)
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -45,7 +45,8 @@ namespace ASP.Net_SellIt.Controllers
         [Route("Create")]
         public async Task<ActionResult> Create()
         {
-            this.ViewBag.ListTVA = await this.tvaRepository.FindAllAsync();
+            List<TVA> listTVA = await this.tvaRepository.FindAllAsync();
+            this.ViewBag.ListTVA = listTVA.Where(tva => tva.EndDate == null);
             return View();
         }
 
@@ -57,17 +58,17 @@ namespace ASP.Net_SellIt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Price,Name")] ProductType productType)
         {
-            this.ViewBag.ListTVA = await this.tvaRepository.FindAllAsync();
+            List<TVA> listTVA = await this.tvaRepository.FindAllAsync();
+            this.ViewBag.ListTVA = listTVA.Where(tva => tva.EndDate == null);
 
             if (ModelState.IsValid)
             {
                 
                 long idTVA;
                 long.TryParse(Request.Form.Get("ProductTypeTVAs"), out idTVA);
-                TVA tva = await this.tvaRepository.FindAsync(idTVA);
                 //Create a object ProductTypeTVA
                 ProductTypeTVA typeTVA = new ProductTypeTVA();
-                typeTVA.TVA = tva;
+                typeTVA.TVA = await this.tvaRepository.FindAsync(idTVA);
                 typeTVA.ProductType = productType;
 
                 //Create in database
@@ -84,14 +85,15 @@ namespace ASP.Net_SellIt.Controllers
         public async Task<ActionResult> Edit(long? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             ProductType productType = await db.ProductTypeDb.FindAsync(id);
             if (productType == null)
-            {
                 return HttpNotFound();
-            }
+
+            List<TVA> listTVA = await this.tvaRepository.FindAllAsync();
+            this.ViewBag.ListTVA = listTVA.Where(tva => tva.EndDate == null);
+
             return View(productType);
         }
 
@@ -102,6 +104,8 @@ namespace ASP.Net_SellIt.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include = "Id,Price,Name")] ProductType productType)
         {
+            List<TVA> listTVA = await this.tvaRepository.FindAllAsync();
+            this.ViewBag.ListTVA = listTVA.Where(tva => tva.EndDate == null);
             if (ModelState.IsValid)
             {
                 db.Entry(productType).State = EntityState.Modified;
