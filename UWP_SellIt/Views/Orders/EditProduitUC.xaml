@@ -25,38 +25,36 @@
             <ColumnDefinition MaxWidth="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition MaxWidth="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+           
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition MaxHeight="10"/>
+            <RowDefinition MaxHeight="20"/>
             <RowDefinition MaxHeight="35"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition MaxHeight="5"/>
+            <RowDefinition MaxHeight="20"/>
+            <RowDefinition MaxHeight="35"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Pdt</TextBlock>
-        <ComboBox Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2">
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Pdt</TextBlock>
+        <ComboBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <ComboBoxItem>A</ComboBoxItem>
             <ComboBoxItem>B</ComboBoxItem>
             <ComboBoxItem>C</ComboBoxItem>
         </ComboBox>
-        <TextBlock Grid.Column="3" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Type</TextBlock>
-        <TextBox Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-        <TextBlock Grid.Column="6" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Qty</TextBlock>
-        <TextBox Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-        <TextBlock Grid.Column="9" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">HT</TextBlock>
-        <TextBox Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-        <TextBlock Grid.Column="12" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TVA</TextBlock>
-        <TextBox Grid.Column="12" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-        <TextBlock Grid.Column="15" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TTC</TextBlock>
-        <TextBox Grid.Column="15" Grid.Row="3" Grid.ColumnSpan="2"></TextBox>
-        <Button x:Name="addOrder" Grid.Column="18" Grid.Row="3" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Ajouter</Button>
+        <TextBlock Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Type</TextBlock>
+        <TextBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="6" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Qty</TextBlock>
+        <TextBox Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="9" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Color</TextBlock>
+        <TextBox Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="12" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Taille</TextBlock>
+        <TextBox Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Prix HT</TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="3" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TVA</TextBlock>
+        <TextBox Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="6" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TTC</TextBlock>
+        <TextBox Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <Button x:Name="addOrder" Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch">Ajouter</Button>
 
     </Grid>
 </UserControl>
