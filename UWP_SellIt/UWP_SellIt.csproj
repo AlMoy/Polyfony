@@ -151,6 +151,12 @@
     <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
       <DependentUpon>CompleteOrder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Orders\NewOrder.xaml.cs">
+      <DependentUpon>NewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\OrderCheckPage.xaml.cs">
+      <DependentUpon>OrderCheckPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
       <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
@@ -294,6 +300,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Orders\CompleteOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\NewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\OrderCheckPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
