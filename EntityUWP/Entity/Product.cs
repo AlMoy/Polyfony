@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace EntityUWP.Entity
         private List<ProductStateProduct> productStateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
+        private long productTypeId;
         #endregion
 
         #region Properties
@@ -80,21 +82,30 @@ namespace EntityUWP.Entity
             set { toValid = value; OnPropertyChanged("ToValid"); }
             }
 
-        [Ignore]
+        [ManyToOne]
         public List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
             set { productStateProducts = value; OnPropertyChanged("ProductStateProducts"); }
         }
 
-        [Ignore]
+        [ManyToOne]
         public List<ProductOrder> ProductOrders
         {
             get { return productOrders; }
             set { productOrders = value; OnPropertyChanged("ProductOrders"); }
             }
 
-        [Ignore]
+
+        [ForeignKey(typeof(ProductType))]
+        public long ProductTypeId
+        {
+            get { return productTypeId; }
+            set { productTypeId = value; }
+        }
+
+
+        [ManyToOne("ProductTypeId")]
         public ProductType ProductType
         {
             get { return productType; }

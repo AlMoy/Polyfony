@@ -142,7 +142,31 @@ namespace UWP_SellIt.Services
         public void SaveWithChildren(Person item)
         {
             this.Save(item.Role);
-            this.sqliteConnection.InsertOrReplaceWithChildren(item);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.OrderPerson);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
+        }
+
+        public void SaveWithChildren(Product item)
+        {
+            this.Save(item.ProductType);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductOrders);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductStateProducts);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
+        }
+
+        public void SaveWithChildren(ProductType item)
+        {
+            this.Save(item);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductTypeTVAs);            
+            this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
+        }
+
+        public void SaveWithChildren(Order item)
+        {
+            this.Save(item);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.OrderPerson);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductOrders);
+            this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
         }
 
 
@@ -168,10 +192,10 @@ namespace UWP_SellIt.Services
                 this.sqliteConnection.CreateTable<ProductTypeTVA>();
                 this.sqliteConnection.CreateTable<StateProduct>();
                 this.sqliteConnection.CreateTable<Product>();
-                this.sqliteConnection.CreateTable<ProductStateProduct>();
-                this.sqliteConnection.CreateTable<Order>();
+                this.sqliteConnection.CreateTable<ProductStateProduct>();                
                 this.sqliteConnection.CreateTable<OrderPerson>();
                 this.sqliteConnection.CreateTable<ProductOrder>();
+                this.sqliteConnection.CreateTable<Order>();
                 eRF.Set();
             });
             eRF.WaitOne();

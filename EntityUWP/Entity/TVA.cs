@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace EntityUWP.Entity
             set { rate = value; }
         }
 
-        [Ignore]
+        [OneToMany]
         public List<ProductTypeTVA> ProductTypeTVAs
         {
             get { return productTypeTVAs; }
