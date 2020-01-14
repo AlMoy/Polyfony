@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Accueil";
+}
+
+@if (ViewBag.displayMenu == "Yes")
+    {@* user is admin*@
+    <div class="col-md-4">
+
+        @Html.ActionLink("Consulter les commandes", "Index", "Orders", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary" })
+
+        @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary mt-3" })
+
+        @Html.ActionLink("Produits non validés", "ProductNoValid", "Products", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary mt-3" })
+
+        @Html.ActionLink("Création d'un compte sur le site ASP.Net", "Register", "Account", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary mt-3" })
+
+        @Html.ActionLink("Fonctionnalités suivantes", "Divers", "Users", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary mt-3" })
+    </div>       
+    }
+else
+    { @* user is seller*@
+    <div class="col-md-4">
+        @Html.ActionLink("Consulter les commandes", "Index", "Orders", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary" })
+
+        @Html.ActionLink("Consulter le stock", "ProductsStock", "Products", null, new { @class = "btn btn-lg btn-block btn-secondary text-secondary" })
+    </div>
+    }
+
+
+
+
+
+
+
+

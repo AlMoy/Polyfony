@@ -18,8 +18,7 @@ namespace EntityASP.Entity
         private DateTime datePayment;
         private DateTime dateCreation;
         private List<ProductOrder> productOrders;
-        private Person client;
-        private Person seller;
+        private List<OrderPerson> orderPersons;
         #endregion
 
         #region Properties
@@ -34,6 +33,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("or_name")]
+        [Display(Name = "Nom")]
         [DataType(DataType.Text)]
         [MinLength(4)]
         [MaxLength(20)]
@@ -44,6 +44,7 @@ namespace EntityASP.Entity
             }
 
         [Column("or_description")]
+        [Display(Name = "Description")]
         [DataType(DataType.MultilineText)]
         public string Description
             {
@@ -52,6 +53,7 @@ namespace EntityASP.Entity
             }
 
         [Column("or_remise")]
+        [Display(Name = "Remise")]
         [DataType(DataType.Currency)]
         public float Remise
             {
@@ -60,6 +62,7 @@ namespace EntityASP.Entity
             }
 
         [Column("or_datePayment")]
+        [Display(Name = "Date de payement")]
         [DataType(DataType.Date)]
         public DateTime DatePayment
             {
@@ -69,6 +72,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("or_dateCreation")]
+        [Display(Name = "Date de création")]
         [DataType(DataType.Date)]
         public DateTime DateCreation
             {
@@ -82,23 +86,17 @@ namespace EntityASP.Entity
             set { productOrders = value; }
             }
 
-        public Person Client
+        public List<OrderPerson> OrderPersons
             {
-            get { return client; }
-            set { client = value; }
-            }
-
-        public Person Seller
-            {
-            get { return seller; }
-            set { seller = value; }
+            get { return orderPersons; }
+            set { orderPersons = value; }
             }
         #endregion
 
         #region Constructors
         public Order()
             {
-            this.productOrders = new List<ProductOrder>();
+            this.orderPersons = new List<OrderPerson>();
             }
         #endregion
         }

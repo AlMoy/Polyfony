@@ -1,24 +1,85 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿.bg-primary {
+    background-color: #558c2f !important;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.btn-primary {
+    background-color: #558c2f !important;
+    border-color: #558c2f !important;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.bg-primary-light {
+    background-color: #85bc5c !important;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.btn-primary-light {
+    background-color: #85bc5c !important;
+    border-color: #85bc5c !important;
 }
+
+.bg-primary-dark {
+    background-color: #255e00 !important;
+}
+
+.btn-primary-dark {
+    background-color: #255e00 !important;
+    border-color: #255e00 !important;
+}
+
+.bg-secondary {
+    background-color: #283593 !important;
+}
+
+.btn-secondary {
+    background-color: #283593 !important;
+    border-color: #283593 !important;
+}
+
+.bg-secondary-light {
+    background-color: #5f5fc4 !important;
+}
+
+.btn-secondary-light {
+    background-color: #5f5fc4 !important;
+    border-color: #5f5fc4 !important;
+}
+
+.bg-secondary-dark {
+    background-color: #001064 !important;
+}
+
+.btn-secondary-dark {
+    background-color: #001064 !important;
+    border-color: #001064 !important;
+}
+
+.text-primary, a.text-primary:hover, a.text-primary:focus {
+    color: #000000 !important;
+}
+
+.text-secondary, a.text-secondary:hover, a.text-secondary:focus {
+    color: #ffffff !important;
+}
+
+
+.link {
+    background-color: #5f5fc4;
+    color: black;
+}
+
+.link:hover {
+        background-color: #5f5fc4;
+        color: white;
+}
+
+.linkdivers {
+    background-color: #ff9900;
+    color: black;
+}
+
+    .linkdivers:hover {
+        background-color: #ff9900;
+        color: white;
+    }
+
+
+    

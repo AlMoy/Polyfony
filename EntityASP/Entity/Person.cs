@@ -21,7 +21,7 @@ namespace EntityASP.Entity
         private string login;
         private string passWord;
         private Role role;
-        private List<Order> orders;
+        private List<OrderPerson> orderPersons;
         #endregion
 
         #region Properties
@@ -36,6 +36,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_lastName")]
+        [Display(Name ="Nom")]
         [DataType(DataType.Text)]
         public string LastName
             {
@@ -45,6 +46,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_firstName")]
+        [Display(Name = "Prénom")]
         [DataType(DataType.Text)]
         public string FirstName
             {
@@ -54,6 +56,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_address")]
+        [Display(Name = "Adresse")]
         [DataType(DataType.Text)]
         public string Address
             {
@@ -63,15 +66,17 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_Mail")]
+        [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Mail
             {
             get { return mail; }
             set { mail = value; }
             }
-        
+
         [Required]
         [Column("pe_telephoneNumber")]
+        [Display(Name = "N° de téléphone")]
         [DataType(DataType.PhoneNumber)]
         public string TelephoneNumber
             {
@@ -81,6 +86,8 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_birthDate")]
+        //[Range(typeof(DateTime), "01/01/1900", "31/12/2020")]
+        [Display(Name = "Date de naissance")]
         [DataType(DataType.Date)]
         public DateTime BirthDate
             {
@@ -91,6 +98,7 @@ namespace EntityASP.Entity
         [Required]
         [Column("pe_login")]
         [DataType(DataType.Text)]
+        [Display(Name = "Login")]
         [MinLength(4)]
         [MaxLength(10)]
         public string Login
@@ -101,8 +109,9 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_password")]
+        [Display(Name = "Mot de passe")]
         [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
+        [MinLength(8, ErrorMessage = "Le mot de passe doit avoir 8 cractères miniment")]
         [MaxLength(200)]
         public string PassWord
             {
@@ -110,23 +119,24 @@ namespace EntityASP.Entity
             set { passWord = value; }
             }
 
-        public Role Role
+        [Display(Name = "Rôle")]
+        public virtual Role Role
             {
             get { return role; }
             set { role = value; }
             }
 
-        public List<Order> Orders
-            {
-            get { return orders; }
-            set { orders = value; }
+        public List<OrderPerson> OrderPersons
+        {
+            get { return orderPersons; }
+            set { orderPersons = value; }
             }
         #endregion
 
         #region Constructors
         public Person()
             {
-            this.orders = new List<Order>();
+            this.orderPersons = new List<OrderPerson>();
             }
         #endregion
         }

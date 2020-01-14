@@ -25,8 +25,9 @@ namespace EntityASP.Repository
         #endregion
 
         #region Constructors
-        public OrderRepository()
+        public OrderRepository(AppDbContext context) : base(context)
             {
+            this.dbSet = context.OrderDb;
             }
         #endregion
 
@@ -36,7 +37,7 @@ namespace EntityASP.Repository
         #region Functions
         public double PriceTVA(Order order)
             {
-            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
+            ProductOrderRepository productOrderRepository = new ProductOrderRepository(new AppDbContext());
             double price = 0;
             
             foreach (ProductOrder item in order.ProductOrders)
@@ -47,7 +48,7 @@ namespace EntityASP.Repository
 
         public double PriceHT(Order order)
             {
-            ProductOrderRepository productOrderRepository = new ProductOrderRepository();
+            ProductOrderRepository productOrderRepository = new ProductOrderRepository(new AppDbContext());
             double price = 0;
 
             foreach (ProductOrder item in order.ProductOrders)

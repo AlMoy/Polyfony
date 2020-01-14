@@ -28,6 +28,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("ro_name")]
+        [Display(Name = "Nom du rôle")]
         [DataType(DataType.Text)]
         [MinLength(4)]
         [MaxLength(20)]

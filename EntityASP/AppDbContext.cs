@@ -15,8 +15,10 @@ namespace EntityASP
         public DbSet<Order> OrderDb { get; set; }
         public DbSet<Person> PersonDb { get; set; }
         public DbSet<Product> ProductDb { get; set; }
-        public DbSet<ProductOrder> ProductOrdersDb { get; set; }
+        public DbSet<ProductOrder> ProductOrderDb { get; set; }
+        public DbSet<ProductStateProduct> ProductStateProductDb { get; set; }
         public DbSet<ProductType> ProductTypeDb { get; set; }
+        public DbSet<ProductTypeTVA> ProductTypeTvaDb { get; set; }
         public DbSet<Role> RoleDb { get; set; }
         public DbSet<StateProduct> StateProductDb { get; set; }
         public DbSet<TVA> TvaDb { get; set; }
@@ -28,7 +30,7 @@ namespace EntityASP
             }
         #endregion
 
-        #region function
+        #region Function
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {//Relation Many-To-Many => TVA -To- ProductType
             modelBuilder.Entity<ProductTypeTVA>().HasRequired<TVA>(ptt => ptt.TVA).WithMany(t => t.ProductTypeTVAs);
@@ -41,10 +43,9 @@ namespace EntityASP
             //Relation Many-To-Many => Product -To- Order
             modelBuilder.Entity<ProductOrder>().HasRequired<Product>(po => po.Product).WithMany(p => p.ProductOrders);
             modelBuilder.Entity<ProductOrder>().HasRequired<Order>(po => po.Order).WithMany(o => o.ProductOrders);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithRequired(o => o.Client);
-            //Relation Many-To-One => Order -To- Person
-            modelBuilder.Entity<Person>().HasMany<Order>(p => p.Orders).WithRequired(o => o.Seller);
+            //Relation Many-To-Many => Order -To- Person
+            modelBuilder.Entity<OrderPerson>().HasRequired<Order>(op => op.Order).WithMany(o => o.OrderPersons);
+            modelBuilder.Entity<OrderPerson>().HasRequired<Person>(op => op.Person).WithMany(o => o.OrderPersons);
             //Relation One-To-Many => Role -To- Person
             modelBuilder.Entity<Person>().HasRequired<Role>(p => p.Role).WithMany(r => r.People);
 

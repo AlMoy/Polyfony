@@ -12,11 +12,11 @@ namespace EntityASP.Entity
         {
         #region Attributs
         private long id;
-        private float size;
+        private string size;
         private string name;
         private float weight;
         private string color;
-        private ulong quantity;
+        private long quantity;
         private Boolean toValid;
         private List<ProductStateProduct> productStateProducts;
         private List<ProductOrder> productOrders;
@@ -35,9 +35,10 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_name")]
+        [Display(Name = "Nom")]
         [DataType(DataType.Text)]
         [MinLength(4)]
-        [MaxLength(20)]
+        [MaxLength(50)]
         public string Name
             {
             get { return name; }
@@ -45,15 +46,19 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Taille")]
         [Column("pr_size")]
-        public float Size
+        [DataType(DataType.Text)]
+        public string Size
             {
             get { return size; }
             set { size = value; }
             }
 
         [Required]
+        [Display(Name = "Masse")]
         [Column("pr_weight")]
+        [Range(typeof(float), "0", "20")]
         public float Weight
             {
             get { return weight; }
@@ -61,6 +66,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Couleur")]
         [Column("pr_color")]
         [DataType(DataType.Text)]
         public string Color
@@ -70,20 +76,24 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Quantité")]
         [Column("pr_quantity")]
-        public ulong Quantity
+        [Range(typeof(long), "0", "100000")]
+        public long Quantity
             {
             get { return quantity; }
             set { quantity = value; }
             }
 
         [Required]
+        [Display(Name = "Validé")]
         [Column("pr_toValid")]
         public Boolean ToValid
             {
             get { return toValid; }
             set { toValid = value; }
             }
+
         public List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
@@ -96,7 +106,8 @@ namespace EntityASP.Entity
             set { productOrders = value; }
             }
 
-        public ProductType ProductType
+        [Display(Name = "Type")]
+        public virtual ProductType ProductType
             {
             get { return productType; }
             set { productType = value; }

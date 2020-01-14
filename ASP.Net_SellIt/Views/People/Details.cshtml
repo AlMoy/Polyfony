@@ -1,82 +1,46 @@
 ﻿@model EntityASP.Entity.Person
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Informations détaillées d'un personnel";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Person</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+<div class="d-flex flex-column">
+    <div>
+        @Html.ActionLink("Retour à la liste", "Index", "People", new { @class = "btn btn-secondary text-secondary" })
+        @Html.ActionLink("Editer", "Edit",  "People", new { id = Model.Id }, new { @class = "btn btn-primary text-primary" })
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TelephoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TelephoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.BirthDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BirthDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Login)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Login)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PassWord)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PassWord)
-        </dd>
-
-    </dl>
+    <div class="d-flex mt-3">
+        <div>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.LastName)</strong>
+                @Html.DisplayFor(model => model.LastName)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.FirstName)</strong>
+                @Html.DisplayFor(model => model.FirstName)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.BirthDate)</strong>
+                @Html.DisplayFor(model => model.BirthDate)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Address)</strong>
+                @Html.DisplayFor(model => model.Address)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Mail)</strong>
+                @Html.DisplayFor(model => model.Mail)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.TelephoneNumber)</strong>
+                @Html.DisplayFor(model => model.TelephoneNumber)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Role.Name)</strong>
+                @Html.DisplayFor(model => model.Role.Name)
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

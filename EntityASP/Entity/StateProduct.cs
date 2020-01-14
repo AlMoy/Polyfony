@@ -27,6 +27,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Nom")]
         [Column("sp_name")]
         [DataType(DataType.Text)]
         [MinLength(4)]

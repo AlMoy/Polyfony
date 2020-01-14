@@ -26,14 +26,14 @@ namespace EntityASP.Entity
             }
 
         [Required]
-        public ProductType ProductType
+        public virtual ProductType ProductType
             {
             get { return productType; }
             set { productType = value; }
             }
 
         [Required]
-        public TVA TVA
+        public virtual TVA TVA
             {
             get { return tva; }
             set { tva = value; }

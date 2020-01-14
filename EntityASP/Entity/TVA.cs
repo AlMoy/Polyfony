@@ -13,8 +13,9 @@ namespace EntityASP.Entity
         #region Attributs
         private long id;
         private float rate;
-        private DateTime endDate;
+        private DateTime? endDate;
         private List<ProductTypeTVA> productTypeTVAs;
+
         #endregion
 
         #region Properties
@@ -27,16 +28,17 @@ namespace EntityASP.Entity
             set { id = value; }
             }
 
-        [Required]
         [Column("tva_endDate")]
+        [Display(Name = "Date de fin")]
         [DataType(DataType.Date)]
-        public DateTime EndDate
+        public DateTime? EndDate
             {
             get { return endDate; }
             set { endDate = value; }
             }
 
         [Required]
+        [Display(Name = "Taux de TVA")]
         [Column("tva_rate")]
         [Range(0,100)]
         public float Rate

@@ -29,6 +29,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Prix (€)")]
         [Column("pt_price")]
         public float Price
             {
@@ -37,6 +38,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Type de produit")]
         [Column("pt_name")]
         [DataType(DataType.Text)]
         public string Name
@@ -45,7 +47,8 @@ namespace EntityASP.Entity
             set { name = value; }
             }
 
-        public List<ProductTypeTVA> ProductTypeTVAs
+        [Display(Name = "TVA (%)")]
+        public virtual List<ProductTypeTVA> ProductTypeTVAs
         {
             get { return productTypeTVAs; }
             set { productTypeTVAs = value; }
