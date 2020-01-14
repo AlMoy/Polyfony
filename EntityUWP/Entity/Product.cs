@@ -17,11 +17,12 @@ namespace EntityUWP.Entity
         private float weight;
         private string color;
         private ulong quantity;
+        private long productTypeId;
         private Boolean toValid;
         private List<ProductStateProduct> productStateProducts;
         private List<ProductOrder> productOrders;
         private ProductType productType;
-        private long productTypeId;
+        
         #endregion
 
         #region Properties
@@ -82,14 +83,14 @@ namespace EntityUWP.Entity
             set { toValid = value; OnPropertyChanged("ToValid"); }
             }
 
-        [ManyToOne]
+        [Ignore]
         public List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
             set { productStateProducts = value; OnPropertyChanged("ProductStateProducts"); }
         }
 
-        [ManyToOne]
+        [OneToMany]
         public List<ProductOrder> ProductOrders
         {
             get { return productOrders; }
@@ -132,6 +133,7 @@ namespace EntityUWP.Entity
             product.Color = this.Color;
             product.Quantity = this.Quantity;
             product.ToValid = this.ToValid;
+            product.ProductTypeId = this.ProductTypeId;
             product.ProductStateProducts = this.ProductStateProducts;
             product.ProductOrders = this.ProductOrders;
             product.ProductType = this.ProductType;
@@ -148,6 +150,7 @@ namespace EntityUWP.Entity
             this.Color = obj.Color;
             this.Quantity = obj.Quantity;
             this.ToValid = obj.ToValid;
+            this.ProductTypeId = obj.ProductTypeId;
             this.ProductStateProducts = obj.ProductStateProducts;
             this.ProductOrders = obj.ProductOrders;
             this.ProductType = obj.ProductType;
