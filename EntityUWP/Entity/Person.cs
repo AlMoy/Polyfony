@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace EntityUWP.Entity
 {
     public class Person : EntityBase<Person>
-        {
+    {
         #region Attributs
         private long id;
         private string lastName;
@@ -22,7 +22,7 @@ namespace EntityUWP.Entity
         private string passWord;
         private Role role;
         private int roleId;
-        private List<Order> orders;
+        private List<OrderPerson> orderPerson;
         #endregion
 
         #region Properties
@@ -35,14 +35,14 @@ namespace EntityUWP.Entity
         }
 
 
-        [Unique]
+
         [NotNull]
         [Column("pe_lastName")]
         public string LastName
         {
             get { return lastName; }
             set { lastName = value; OnPropertyChanged("LastName"); }
-            }
+        }
 
         [NotNull]
         [Column("pe_firstName")]
@@ -50,7 +50,7 @@ namespace EntityUWP.Entity
         {
             get { return firstName; }
             set { firstName = value; OnPropertyChanged("FirstName"); }
-            }
+        }
 
         [NotNull]
         [Column("pe_address")]
@@ -58,7 +58,7 @@ namespace EntityUWP.Entity
         {
             get { return address; }
             set { address = value; OnPropertyChanged("Address"); }
-            }
+        }
 
         [Unique]
         [NotNull]
@@ -67,7 +67,7 @@ namespace EntityUWP.Entity
         {
             get { return mail; }
             set { mail = value; OnPropertyChanged("Mail"); }
-            }
+        }
 
         [Unique]
         [NotNull]
@@ -84,7 +84,7 @@ namespace EntityUWP.Entity
         {
             get { return birthDate; }
             set { birthDate = value; OnPropertyChanged("BirthDate"); }
-            }
+        }
 
         [Unique]
         [NotNull]
@@ -101,14 +101,21 @@ namespace EntityUWP.Entity
         {
             get { return passWord; }
             set { passWord = value; OnPropertyChanged("Password"); }
-            }
+        }
 
         [ManyToOne("RoleId")]
         public Role Role
         {
             get { return role; }
             set { role = value; OnPropertyChanged("Role"); }
-            }
+        }
+
+        [ForeignKey(typeof(Role))]
+        public int RoleId
+        {
+            get { return roleId; }
+            set { roleId = value; }
+        }
 
         [ManyToOne]
         public List<OrderPerson> OrderPerson
@@ -127,7 +134,7 @@ namespace EntityUWP.Entity
 
         #region Functions
         public override Person Copy()
-            {
+        {
             Person person = new Person();
             person.Id = this.Id;
             person.LastName = this.LastName;
@@ -139,10 +146,11 @@ namespace EntityUWP.Entity
             person.Login = this.Login;
             person.PassWord = this.PassWord;
             person.Role = this.Role;
+            person.RoleId = this.RoleId;
             person.OrderPerson = this.OrderPerson;
 
             return person;
-            }
+        }
 
         public override void CopyFrom(Person obj)
         {
@@ -156,6 +164,7 @@ namespace EntityUWP.Entity
             this.Login = obj.Login;
             this.PassWord = obj.PassWord;
             this.Role = obj.Role;
+            this.RoleId = obj.RoleId;
             this.OrderPerson = obj.OrderPerson;
         }
         #endregion

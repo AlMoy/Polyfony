@@ -26,6 +26,11 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
 
         });
 
+        public ICommand Ajoutbtn => new RelayCommand(() =>
+        {
+            this.navigationService.NavigateTo("NewClient");
+
+        });
 
         public ClientListPageViewModel(INavigationService navigationService)
         {
