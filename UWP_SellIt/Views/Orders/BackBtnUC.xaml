@@ -10,6 +10,14 @@
     d:DesignWidth="495.652">
 
     <Grid x:Name="mainGrid">
-        <Button >Back</Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0">Retour</Button>
     </Grid>
 </UserControl>

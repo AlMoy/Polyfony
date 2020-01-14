@@ -17,12 +17,11 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition MaxHeight="35"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" VerticalAlignment="Center">Ref Client</TextBlock>
-        <ComboBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2">
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Center">Ref Client</TextBlock>
+        <ComboBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2">
             <ComboBoxItem>Trang</ComboBoxItem>
             <ComboBoxItem>Alex</ComboBoxItem>
             <ComboBoxItem>Yacouba</ComboBoxItem>
