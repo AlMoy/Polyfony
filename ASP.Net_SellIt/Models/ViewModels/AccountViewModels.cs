@@ -8,7 +8,6 @@ namespace ASP.Net_SellIt.Models
     {
         [Required]
         [Display(Name = "Courrier électronique")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
