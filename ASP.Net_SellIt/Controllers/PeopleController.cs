@@ -10,51 +10,51 @@ using System.Web.Mvc;
 using EntityASP;
 using EntityASP.Entity;
 using EntityASP.Repository;
+using ASP.Net_SellIt.Models;
+using Microsoft.AspNet.Identity;
+using System.Text;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace ASP.Net_SellIt.Controllers
-{
-    [Authorize]
-    public class PeopleController : Controller
     {
+    [Authorize(Roles = "Admin")]
+    public class PeopleController : Controller
+        {
         private AppDbContext db = new AppDbContext();
         private PersonRepository personRepository;
         private RoleRepository roleRepository;
 
         public PeopleController()
-        {
+            {
             this.personRepository = new PersonRepository(this.db);
             this.roleRepository = new RoleRepository(this.db);
-        }
+            }
 
         // GET: People
         public async Task<ActionResult> Index()
-        {
-            List<Person> people = await this.personRepository.FindAllAsync();
-            return View("Index", people);
-        }
+            {
+            return View("Index", await this.personRepository.FindAllAsync());
+            }
 
         // GET: People/Details/5
         public async Task<ActionResult> Details(long? id)
-        {
-            if (id == null)
             {
+            if (id == null)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Person person = await db.PersonDb.FindAsync(id);
             if (person == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(person);
-        }
+            }
 
         // GET: People/Create
         public async Task<ActionResult> Create()
-
-        {
+            {
             this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             return View();
-        }
+            }
 
         // POST: People/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
@@ -62,18 +62,18 @@ namespace ASP.Net_SellIt.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,LastName,FirstName,Address,Mail,TelephoneNumber,BirthDate,Login,PassWord")] Person person)
-        {
+            {
             this.ViewBag.Roles = await this.roleRepository.FindAllAsync();
             if (ModelState.IsValid)
-            {
+                {
                 person.Role = await this.roleRepository.FindAsync(int.Parse(Request.Form["Role"]));
                 await this.personRepository.CreateAsync(person);
-                
+
                 return RedirectToAction("Index");
-            }
+                }
 
             return View(person);
-        }
+            }
 
         // GET: People/Edit/5
         public async Task<ActionResult> Edit(long? id)
@@ -106,31 +106,6 @@ namespace ASP.Net_SellIt.Controllers
                 return RedirectToAction("Index");
             }
             return View(person);
-        }
-
-        // GET: People/Delete/5
-        public async Task<ActionResult> Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = await db.PersonDb.FindAsync(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
-            return View(person);
-        }
-
-        // POST: People/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(long id)
-        {
-            Person person = await this.personRepository.FindAsync(id);
-            await this.personRepository.Remove(person);      
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

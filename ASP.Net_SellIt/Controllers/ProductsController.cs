@@ -63,7 +63,7 @@ namespace ASP.Net_SellIt.Controllers
 
         // GET: Products/Create
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [Route("Create")]
         public async Task<ActionResult> Create()
             {
@@ -75,7 +75,7 @@ namespace ASP.Net_SellIt.Controllers
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         [Route("Create")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,Name,Size,Weight,Color,ToValid")] Product product)

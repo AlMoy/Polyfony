@@ -23,7 +23,7 @@ namespace ASP.Net_SellIt.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Nom d'utilisateur")]
+        [Display(Name = "Nom")]
         public string UserName { get; set; }
 
         [Required]

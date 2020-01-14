@@ -36,7 +36,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pe_lastName")]
-        [Display(Name ="Nom de famille")]
+        [Display(Name ="Nom")]
         [DataType(DataType.Text)]
         public string LastName
             {

@@ -6,63 +6,41 @@
 
 
 <div class="d-flex flex-column">
-    <div class="mb-2">
-        @Html.ActionLink("Retour", "Index", "People", null, new { @class = "btn btn-primary" })
-
+    <div>
+        @Html.ActionLink("Retour à la liste", "Index", "People", new { @class = "btn btn-secondary text-secondary" })
+        @Html.ActionLink("Editer", "Edit",  "People", new { id = Model.Id }, new { @class = "btn btn-primary text-primary" })
     </div>
-    <table class="table table-striped table-bordered table-hover">
-        <thead class="thead-dark">
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.LastName)</th>
-                <th>@Html.DisplayNameFor(model => model.FirstName)</th>
-                <th>@Html.DisplayNameFor(model => model.BirthDate)</th>
-                <th>@Html.DisplayNameFor(model => model.Address)</th>
-                <th>@Html.DisplayNameFor(model => model.Mail)</th>
-                <th>@Html.DisplayNameFor(model => model.TelephoneNumber)</th>
-                <th>@Html.DisplayNameFor(model => model.Login)</th>
-                <th>@Html.DisplayNameFor(model => model.Role)</th>
-                <th>Action</th>
 
-            </tr>
-        </thead>
-        <tbody>            
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.FirstName)
-
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.BirthDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.Mail)
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.TelephoneNumber)
-                </td>
-
-                <td>
-                    @Html.DisplayFor(model => model.Login)
-                </td>
-                
-
-                <td>
-                    @Html.DisplayFor(model => model.Role.Name)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-                    @Html.ActionLink("Supprimer", "Delete", new { id = Model.Id })
-                </td>
-            </tr>
-            
-        </tbody>
-
-    </table>
+    <div class="d-flex mt-3">
+        <div>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.LastName)</strong>
+                @Html.DisplayFor(model => model.LastName)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.FirstName)</strong>
+                @Html.DisplayFor(model => model.FirstName)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.BirthDate)</strong>
+                @Html.DisplayFor(model => model.BirthDate)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Address)</strong>
+                @Html.DisplayFor(model => model.Address)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Mail)</strong>
+                @Html.DisplayFor(model => model.Mail)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.TelephoneNumber)</strong>
+                @Html.DisplayFor(model => model.TelephoneNumber)
+            </p>
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.Role.Name)</strong>
+                @Html.DisplayFor(model => model.Role.Name)
+            </p>
+        </div>
+    </div>
 </div>
-

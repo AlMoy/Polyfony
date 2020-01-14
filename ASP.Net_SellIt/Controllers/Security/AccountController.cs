@@ -10,6 +10,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ASP.Net_SellIt.Models;
 using EntityASP;
+using EntityASP.Entity;
+using EntityASP.Repository;
 
 namespace ASP.Net_SellIt.Controllers
 {
@@ -116,12 +118,13 @@ namespace ASP.Net_SellIt.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, UserRole = model.UserRole };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, EmailConfirmed = true, UserRole = model.UserRole };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
+                    await new PersonRepository(new AppDbContext()).CreateAsync(new Person() { FirstName = model.UserName, Mail = model.Email });
                     // Pour plus d'informations sur l'activation de la confirmation de compte et de la réinitialisation de mot de passe, visitez https://go.microsoft.com/fwlink/?LinkID=320771
                     // Envoyer un message électronique avec ce lien
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
