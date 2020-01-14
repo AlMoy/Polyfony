@@ -151,20 +151,13 @@
     <Compile Include="Views\Orders\NewOrder.xaml.cs">
       <DependentUpon>NewOrder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Orders.xaml.cs">
-      <DependentUpon>Orders.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC.xaml.cs">
-      <DependentUpon>UC.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
       <DependentUpon>CompleteOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
       <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\ProductPage\EditAdvanceUC.xaml.cs">
       <DependentUpon>EditAdvanceUC.xaml</DependentUpon>
     </Compile>
@@ -215,7 +208,6 @@
       <DependentUpon>ProductListPage3.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
-    <Compile Include="Views\OrderCheckPage.xaml.cs">
     <Compile Include="Views\Orders\OrderCheckPage.xaml.cs">
       <DependentUpon>OrderCheckPage.xaml</DependentUpon>
     </Compile>
@@ -296,10 +288,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MVVMLight\ClientPage\NewClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -346,10 +334,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DictionaryStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\MVVMLight\ClientPage\ClientListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -369,18 +353,6 @@
     <Page Include="Views\BasePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="NewOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Orders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\OrderCheckPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Orders\BackBtnUC.xaml">
       <Generator>MSBuild:Compile</Generator>
