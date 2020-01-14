@@ -248,6 +248,16 @@
       <DependentUpon>ShowRoleUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlBase.cs" />
+    <Compile Include="Views\ViewModels\Accessors\ClientPageAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientEditAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientListAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientShowAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Commons\ButtonAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Commons\ListViewAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\RolePageAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleEditAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleListAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleShowAccessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -483,6 +493,7 @@
       <Name>EntityUWP</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
