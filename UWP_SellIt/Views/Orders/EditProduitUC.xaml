@@ -1,0 +1,60 @@
+﻿<UserControl
+    x:Class="UWP_SellIt.Views.Orders.EditProduitUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_SellIt.Views.Orders"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MaxWidth="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MaxWidth="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MaxWidth="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition MaxWidth="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+           
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="20"/>
+            <RowDefinition MaxHeight="35"/>
+            <RowDefinition MaxHeight="5"/>
+            <RowDefinition MaxHeight="20"/>
+            <RowDefinition MaxHeight="35"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Pdt</TextBlock>
+        <ComboBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ComboBoxItem>A</ComboBoxItem>
+            <ComboBoxItem>B</ComboBoxItem>
+            <ComboBoxItem>C</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Type</TextBlock>
+        <TextBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="6" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Qty</TextBlock>
+        <TextBox Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="9" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Color</TextBlock>
+        <TextBox Grid.Column="9" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="12" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Taille</TextBlock>
+        <TextBox Grid.Column="12" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Prix HT</TextBlock>
+        <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="3" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TVA</TextBlock>
+        <TextBox Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Grid.Column="6" Grid.Row="3" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">TTC</TextBlock>
+        <TextBox Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2"></TextBox>
+        <Button x:Name="addOrder" Grid.Column="12" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Stretch">Ajouter</Button>
+
+    </Grid>
+</UserControl>

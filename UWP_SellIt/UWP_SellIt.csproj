@@ -119,27 +119,120 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\Order.cs" />
-    <Compile Include="Entities\Person.cs" />
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="Entities\ProductOrder.cs" />
-    <Compile Include="Entities\ProductType.cs" />
-    <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\StateProduct.cs" />
-    <Compile Include="Entities\TVA.cs" />
-    <Compile Include="Views\HomePage\HomePage.xaml.cs">
+    <Compile Include="BasePage.xaml.cs">
+      <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DatabaseService.cs" />
+    <Compile Include="Views\MVVMLight\ClientPage\ClientListPage.xaml.cs">
+      <DependentUpon>ClientListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ClientPage\ClientListPageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ClientPage\NewClient.xaml.cs">
+      <DependentUpon>NewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ClientPage\NewClientViewModel.cs" />
+    <Compile Include="Views\MVVMLight\CommonButton\DeconnectionButUC.xaml.cs">
+      <DependentUpon>DeconnectionButUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\CommonButton\DeconnectionButViewModel.cs" />
+    <Compile Include="Views\MVVMLight\CommonButton\ReturnButUC.xaml.cs">
+      <DependentUpon>ReturnButUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\CommonButton\ReturnButUCViewModel.cs" />
+    <Compile Include="Views\MVVMLight\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HomePage\HomePageUC.xaml.cs">
+    <Compile Include="Views\MVVMLight\HomePage\HomePageUC.xaml.cs">
       <DependentUpon>HomePageUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
+    <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Orders\NewOrder.xaml.cs">
+      <DependentUpon>NewOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC.xaml.cs">
+      <DependentUpon>UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
+      <DependentUpon>CompleteOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
+      <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ProductPage\EditAdvanceUC.xaml.cs">
+      <DependentUpon>EditAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\EditUC.xaml.cs">
+      <DependentUpon>EditUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ListAdvanceUC.xaml.cs">
+      <DependentUpon>ListAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ListUC.xaml.cs">
+      <DependentUpon>ListUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ShowAdvanceUC.xaml.cs">
+      <DependentUpon>ShowAdvanceUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductPage\ShowUC.xaml.cs">
+      <DependentUpon>ShowUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\HomePage\HomePageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductUC3.xaml.cs">
+      <DependentUpon>MenuProductUC3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductUC3ViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\ProductEnfantPageUC.xaml.cs">
+      <DependentUpon>ProductEnfantPageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProduct2ViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductPageUC.xaml.cs">
+      <DependentUpon>MenuProductPageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductPageViewModel.cs" />
+    <Compile Include="Views\MVVMLight\ProductPage\MenuProductUC2.xaml.cs">
+      <DependentUpon>MenuProductUC2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductHommePageUC.xaml.cs">
+      <DependentUpon>ProductHommePageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductFemmePageUC.xaml.cs">
+      <DependentUpon>ProductFemmePageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage2.xaml.cs">
+      <DependentUpon>ProductListPage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage3.xaml.cs">
+      <DependentUpon>ProductListPage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
+    <Compile Include="Views\OrderCheckPage.xaml.cs" />
+    <Compile Include="Views\Orders\OrderCheckPage.xaml.cs">
+      <DependentUpon>OrderCheckPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\BackBtnUC.xaml.cs">
+      <DependentUpon>BackBtnUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\EditProduitUC.xaml.cs">
+      <DependentUpon>EditProduitUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListProduitsUC.xaml.cs">
+      <DependentUpon>ListProduitsUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\RefClientUC.xaml.cs">
+      <DependentUpon>RefClientUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ResumeOrderUC.xaml.cs">
+      <DependentUpon>ResumeOrderUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\People\EditPersonUC.xaml.cs">
       <DependentUpon>EditPersonUC.xaml</DependentUpon>
@@ -153,7 +246,7 @@
     <Compile Include="Views\People\ShowPersonUC.xaml.cs">
       <DependentUpon>ShowPersonUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProductListPage.xaml.cs">
+    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RolePage.xaml.cs">
@@ -176,8 +269,14 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\images\trot_homme_elect_blanc.png" />
-    <Content Include="Assets\images\trot_homme_elect_noir.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_blanc.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_bleumarin.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_maron.png" />
+    <Content Include="Assets\images\trothomelec\Trot_homme_elec_noir.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_blanc.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_bleu.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_maron.png" />
+    <Content Include="Assets\images\trothomsim\Trot_homme_sim_noir.png" />
     <Content Include="Assets\logo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -196,24 +295,142 @@
     <Page Include="DictionaryStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ClientPage\NewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\CommonButton\DeconnectionButUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\CommonButton\ReturnButUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\CompleteOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\People\EditAdvancePersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\EditAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\EditUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ListAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ListUC.xaml">
+    </Page>
+    <Page Include="Views\ProductPage\ShowAdvanceUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductPage\ShowUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DictionaryStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ClientPage\ClientListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\HomePage\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\HomePage\HomePageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HomePage\HomePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\HomePage\HomePageUC.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\BasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Orders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrderCheckPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\BackBtnUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\EditProduitUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\ListProduitsUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\RefClientUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Orders\ResumeOrderUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\MenuProductUC3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductEnfantPageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\MenuProductPageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\MenuProductUC2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductHommePageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductFemmePageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductListPage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\ProductPage\ProductListPage3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,7 +450,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProductListPage.xaml">
+    <Page Include="Views\MVVMLight\ProductPage\ProductListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -261,6 +478,44 @@
     <PackageReference Include="MvvmLight">
       <Version>5.4.1.1</Version>
     </PackageReference>
+    <PackageReference Include="sqlite">
+      <Version>3.13.0</Version>
+    </PackageReference>
+    <PackageReference Include="SQLiteNetExtensions">
+      <Version>2.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Owin.Security.Cookies">
+      <Version>4.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
+      <Version>2.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmLight">
+      <Version>5.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite">
+      <Version>3.13.0</Version>
+    </PackageReference>
+    <PackageReference Include="SQLiteNetExtensions">
+      <Version>2.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

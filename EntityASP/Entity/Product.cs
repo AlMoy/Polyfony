@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityASP.Entity
-    {
+{
     public class Product
-        {
+    {
         #region Attributs
         private long id;
         private string size;
@@ -28,10 +28,10 @@ namespace EntityASP.Entity
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("pr_id")]
         public long Id
-            {
+        {
             get { return id; }
             set { id = value; }
-            }
+        }
 
         [Required]
         [Column("pr_name")]
@@ -40,86 +40,86 @@ namespace EntityASP.Entity
         [MinLength(4)]
         [MaxLength(50)]
         public string Name
-            {
+        {
             get { return name; }
             set { name = value; }
-            }
+        }
 
         [Required]
         [Display(Name = "Taille")]
         [Column("pr_size")]
         [DataType(DataType.Text)]
         public string Size
-            {
+        {
             get { return size; }
             set { size = value; }
-            }
+        }
 
         [Required]
         [Display(Name = "Masse")]
         [Column("pr_weight")]
         [Range(typeof(float), "0", "20")]
         public float Weight
-            {
+        {
             get { return weight; }
             set { weight = value; }
-            }
+        }
 
         [Required]
         [Display(Name = "Couleur")]
         [Column("pr_color")]
         [DataType(DataType.Text)]
         public string Color
-            {
+        {
             get { return color; }
             set { color = value; }
-            }
+        }
 
         [Required]
         [Display(Name = "Quantité")]
         [Column("pr_quantity")]
         [Range(typeof(long), "0", "100000")]
         public long Quantity
-            {
+        {
             get { return quantity; }
             set { quantity = value; }
-            }
+        }
 
         [Required]
         [Display(Name = "Validé")]
         [Column("pr_toValid")]
         public Boolean ToValid
-            {
+        {
             get { return toValid; }
             set { toValid = value; }
-            }
+        }
 
         public List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
             set { productStateProducts = value; }
-            }
+        }
 
         public List<ProductOrder> ProductOrders
-            {
+        {
             get { return productOrders; }
             set { productOrders = value; }
-            }
+        }
 
         [Display(Name = "Type")]
         public virtual ProductType ProductType
-            {
+        {
             get { return productType; }
             set { productType = value; }
-            }
+        }
         #endregion
 
         #region Constructors
         public Product()
-            {
+        {
             this.productStateProducts = new List<ProductStateProduct>();
             this.productOrders = new List<ProductOrder>();
-            }
-        #endregion
         }
+        #endregion
     }
+}
