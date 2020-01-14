@@ -35,7 +35,7 @@ namespace EntityUWP.Entity
         }
 
 
-        [Unique]
+      
         [NotNull]
         [Column("pe_lastName")]
         public string LastName
@@ -146,6 +146,7 @@ namespace EntityUWP.Entity
             person.Login = this.Login;
             person.PassWord = this.PassWord;
             person.Role = this.Role;
+            person.RoleId = this.RoleId;
             person.OrderPerson = this.OrderPerson;
 
             return person;
@@ -163,6 +164,7 @@ namespace EntityUWP.Entity
             this.Login = obj.Login;
             this.PassWord = obj.PassWord;
             this.Role = obj.Role;
+            this.RoleId = obj.RoleId;
             this.OrderPerson = obj.OrderPerson;
         }
         #endregion

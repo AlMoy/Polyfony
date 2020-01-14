@@ -1,16 +1,12 @@
 ﻿<Page
-    x:Class="UWP_SellIt.Views.MVVMLight.ProductPage.ProductListPage"
+    x:Class="UWP_SellIt.Views.Orders.CompleteOrder"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:hommeUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
-    xmlns:femmeUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
-     xmlns:menuUc="using:UWP_SellIt.Views.MVVMLight.ProductPage"
-     xmlns:DecUc="using:UWP_SellIt.Views.MVVMLight.CommonButton"
+    xmlns:local="using:UWP_SellIt.Views.Orders"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    >
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -28,7 +24,7 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -41,29 +37,12 @@
             <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
             <!--Textbox pour Titre-->
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Catalogues Produits</TextBlock>
-            <Grid Grid.Column="2">
-                <DecUc:DeconnectionButUC x:Name="DeconnectionUC"/>
-            </Grid>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}"></TextBlock>
         </Grid>
 
-        <Grid x:Name="menuGrid" Grid.Column="0" Grid.Row="1">
-            <menuUc:MenuProductPageUC x:Name="MenuProductPageUc"/>
-        </Grid>
-
-
-
-        <ScrollViewer Grid.Column="1" Grid.Row="1">
+        <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="1">
             <!--les élements de la page-->
-            <hommeUc:ProductHommePageUC x:Name="ProductHommepageUC"/>
-            <!--<femmeUc:ProductFemmePageUC x:Name="ProductFemmepageUC"/>
-<local1:ProductHommePageUC x:Name="ProductpageUC"/> -->
-
-           
         </ScrollViewer>
-
-        
-
 
 
         <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>

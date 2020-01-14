@@ -131,6 +131,14 @@
       <DependentUpon>NewClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ClientPage\NewClientViewModel.cs" />
+    <Compile Include="Views\MVVMLight\CommonButton\DeconnectionButUC.xaml.cs">
+      <DependentUpon>DeconnectionButUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\CommonButton\DeconnectionButViewModel.cs" />
+    <Compile Include="Views\MVVMLight\CommonButton\ReturnButUC.xaml.cs">
+      <DependentUpon>ReturnButUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MVVMLight\CommonButton\ReturnButUCViewModel.cs" />
     <Compile Include="Views\MVVMLight\HomePage\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -146,12 +154,15 @@
     <Compile Include="Orders.xaml.cs">
       <DependentUpon>Orders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrdersUc.xaml.cs">
-      <DependentUpon>OrdersUc.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC.xaml.cs">
       <DependentUpon>UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
+      <DependentUpon>CompleteOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
+      <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductPage\EditAdvanceUC.xaml.cs">
       <DependentUpon>EditAdvanceUC.xaml</DependentUpon>
@@ -196,15 +207,12 @@
     <Compile Include="Views\MVVMLight\ProductPage\ProductFemmePageUC.xaml.cs">
       <DependentUpon>ProductFemmePageUC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage2ViewModel.cs" />
     <Compile Include="Views\MVVMLight\ProductPage\ProductListPage2.xaml.cs">
       <DependentUpon>ProductListPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MVVMLight\ProductPage\ProductListPage3.xaml.cs">
       <DependentUpon>ProductListPage3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MVVMLight\ProductPage\ProductListPage3ViewModel.cs" />
-    <Compile Include="Views\MVVMLight\ProductPage\ProductPageViewModel.cs" />
     <Compile Include="Views\MVVMLight\ViewModelLocator.cs" />
     <Compile Include="Views\OrderCheckPage.xaml.cs">
       <DependentUpon>OrderCheckPage.xaml</DependentUpon>
@@ -294,6 +302,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MVVMLight\CommonButton\DeconnectionButUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MVVMLight\CommonButton\ReturnButUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\CompleteOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\People\EditAdvancePersonUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ProductPage\EditAdvanceUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -345,10 +369,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Orders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="OrdersUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

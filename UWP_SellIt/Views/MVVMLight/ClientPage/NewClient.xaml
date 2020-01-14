@@ -4,6 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWP_SellIt.Views.MVVMLight.ClientPage"
     xmlns:editpersonUc="using:UWP_SellIt.Views.People"
+    xmlns:returnUc="using:UWP_SellIt.Views.MVVMLight.CommonButton"
+        xmlns:DecUc="using:UWP_SellIt.Views.MVVMLight.CommonButton"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -43,14 +45,17 @@
             <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
             <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
             <!--Textbox pour Titre-->
-            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Liste des Clients</TextBlock>
-            <Button x:Name="Deconnectionbtn" Command="{Binding Deconnectionbtn}" Grid.Column="2" Style="{StaticResource Logoutbutton}">Déconnextion</Button>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource Titletext}">Ajouter un nouveau client</TextBlock>
+            <Grid Grid.Column="2">
+                <DecUc:DeconnectionButUC x:Name="DeconnectionUC"/>
+            </Grid>
         </Grid>
 
         <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" >
-            <editpersonUc:EditPersonUC x:Name="personUc" x:FieldModifier="public" />
+            <editpersonUc:EditAdvancePersonUC x:Name="personUc" x:FieldModifier="public" />
         </ScrollViewer>
-        <Button x:Name="Returnbtn" Command="{Binding Returnbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
+        <returnUc:ReturnButUC x:Name="returnUC" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="Validebtn" Command="{Binding Validebtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Valider</Button>
         <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

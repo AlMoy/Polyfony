@@ -28,9 +28,9 @@ namespace UWP_SellIt.Views.ProductPage
             this.InitializeComponent();
 
             this.ProductList = new ObservableCollection<Product>();
-            this.ProductList.Add(new Product() { Id = 1, Name = "Produit 1", Color = "Blue", Size = 2, Weight = 3, Quantity = 10, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
-            this.ProductList.Add(new Product() { Id = 2, Name = "Produit 2", Color = "Rouge", Size = 1.2F, Weight = 2.5F, Quantity = 15, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
-            this.ProductList.Add(new Product() { Id = 3, Name = "Produit 3", Color = "Jaune", Size = 3.2F, Weight = 1.5F, Quantity = 0, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
+            this.ProductList.Add(new Product() { Id = 1, Name = "Produit 1", Color = "Blue", Size = "S", Weight = 3, Quantity = 10, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
+            this.ProductList.Add(new Product() { Id = 2, Name = "Produit 2", Color = "Rouge", Size = "M", Weight = 2.5F, Quantity = 15, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
+            this.ProductList.Add(new Product() { Id = 3, Name = "Produit 3", Color = "Jaune", Size = "L", Weight = 1.5F, Quantity = 0, ToValid = true, ProductOrders = new List<ProductOrder>(), ProductStateProducts = new List<ProductStateProduct>(), ProductType = null });
 
             this.DataContext = this;
             }

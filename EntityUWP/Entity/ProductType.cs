@@ -18,7 +18,7 @@ namespace EntityUWP.Entity
         #endregion
 
         #region Properties
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         [Column("pt_id")]
         public long Id
         {

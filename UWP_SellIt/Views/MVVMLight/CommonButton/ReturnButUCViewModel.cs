@@ -8,20 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace UWP_SellIt.Views.MVVMLight.ProductPage
+namespace UWP_SellIt.Views.MVVMLight.CommonButton
 {
-    public class ProductListPage2ViewModel : ViewModelBase
+    public class ReturnButUCViewModel : ViewModelBase
     {
+
         private INavigationService navigationService;
 
-        public ICommand Deconnectionbtn2 => new RelayCommand(() =>
+
+        public ICommand Returnbtn => new RelayCommand(() =>
         {
-            this.navigationService.NavigateTo("MainPage");
+            this.navigationService.GoBack();
 
         });
 
-        public ProductListPage2ViewModel(INavigationService navigationService)
+        public ReturnButUCViewModel(INavigationService navigationService)
         {
+
             this.navigationService = navigationService;
 
         }

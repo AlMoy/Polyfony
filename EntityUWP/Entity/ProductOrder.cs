@@ -73,6 +73,8 @@ namespace EntityUWP.Entity
             productOrder.Quantity = this.Quantity;
             productOrder.Product = this.Product;
             productOrder.Order = this.Order;
+            productOrder.ProductId = this.ProductId;
+            productOrder.OrderId = this.OrderId;
 
             return productOrder;
             }
@@ -82,6 +84,8 @@ namespace EntityUWP.Entity
             this.Quantity = obj.Quantity;
             this.Product = obj.Product;
             this.Order = obj.Order;
+            this.ProductId = obj.ProductId;
+            this.OrderId = obj.OrderId;
             }
         #endregion
     }

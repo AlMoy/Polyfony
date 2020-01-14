@@ -11,7 +11,7 @@ namespace EntityUWP.Entity
     {
         #region Attributs
         private long id;
-        private float size;
+        private string size;
         private string name;
         private float weight;
         private string color;
@@ -42,7 +42,7 @@ namespace EntityUWP.Entity
 
         [NotNull]
         [Column("pr_size")]
-        public float Size
+        public string Size
         {
             get { return size; }
             set { size = value; OnPropertyChanged("Size"); }
