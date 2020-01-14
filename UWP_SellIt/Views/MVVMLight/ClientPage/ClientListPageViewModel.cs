@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UWP_SellIt.Services;
 
 namespace UWP_SellIt.Views.MVVMLight.ClientPage
 {
     public class ClientListPageViewModel: ViewModelBase
     {
         private INavigationService navigationService;
+        private DatabaseService databaseService;
 
         public ICommand Deconnectionbtn => new RelayCommand(() =>
         {

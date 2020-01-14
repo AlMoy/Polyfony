@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UWP_SellIt.Services;
 
 namespace UWP_SellIt.Views.MVVMLight.ClientPage
 {
     public class NewClientViewModel : ViewModelBase
     {
         private INavigationService navigationService;
-      
-            public ICommand Deconnectionbtn => new RelayCommand(() =>
+        private DatabaseService databaseService;
+
+        public ICommand Deconnectionbtn => new RelayCommand(() =>
             {
                 this.navigationService.NavigateTo("MainPage");
 
@@ -29,8 +31,14 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
         public NewClientViewModel(INavigationService navigationService)
         {
             this.navigationService = navigationService;
+            this.databaseService = databaseService;
+            SetupDatas();
         }
 
+        private void SetupDatas()
+        {
+            throw new NotImplementedException();
+        }
     }
     
 }
