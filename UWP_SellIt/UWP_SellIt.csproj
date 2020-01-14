@@ -284,6 +284,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ProductPage\ListUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DictionaryStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -351,6 +354,7 @@
     <Page Include="Views\Orders\ResumeOrderUC.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MVVMLight\ProductPage\MenuProductUC3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="UWP_SellIt.NewOrder"
+    x:Class="UWP_SellIt.Views.Orders.NewOrder"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWP_SellIt"
