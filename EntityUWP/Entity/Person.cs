@@ -21,7 +21,8 @@ namespace EntityUWP.Entity
         private string login;
         private string passWord;
         private Role role;
-        private List<OrderPerson> orderPerson;
+        private int roleId;
+        private List<Order> orders;
         #endregion
 
         #region Properties
@@ -33,6 +34,8 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
+
+        [Unique]
         [NotNull]
         [Column("pe_lastName")]
         public string LastName
@@ -57,6 +60,7 @@ namespace EntityUWP.Entity
             set { address = value; OnPropertyChanged("Address"); }
             }
 
+        [Unique]
         [NotNull]
         [Column("pe_Mail")]
         public string Mail
@@ -65,6 +69,7 @@ namespace EntityUWP.Entity
             set { mail = value; OnPropertyChanged("Mail"); }
             }
 
+        [Unique]
         [NotNull]
         [Column("pe_telephoneNumber")]
         public string TelephoneNumber
@@ -81,6 +86,7 @@ namespace EntityUWP.Entity
             set { birthDate = value; OnPropertyChanged("BirthDate"); }
             }
 
+        [Unique]
         [NotNull]
         [Column("pe_login")]
         public string Login
@@ -97,7 +103,7 @@ namespace EntityUWP.Entity
             set { passWord = value; OnPropertyChanged("Password"); }
             }
 
-        [Ignore]
+        [ManyToOne("RoleId")]
         public Role Role
         {
             get { return role; }

@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace EntityUWP.Entity
-{
+    {
+    [Table("Role")]
     public class Role : EntityBase<Role>
     {
         #region Attributs
@@ -24,6 +25,7 @@ namespace EntityUWP.Entity
             set { id = value; }
         }
 
+        [Unique]
         [NotNull]
         [Column("ro_name")]
         public string Name

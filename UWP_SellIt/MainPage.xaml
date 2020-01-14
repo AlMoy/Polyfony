@@ -12,49 +12,49 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="./Views/Styles/DictionaryStyle.xaml"/>
+                <ResourceDictionary Source="/DictionaryStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
 
     <Grid x:Name="mainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="14*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="7*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
-            <Rectangle x:Name="header" Style="{StaticResource bandeau}"/>
-        </Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="20"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="5"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Grid x:Name="headerGrid" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Rectangle Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
+            <Image x:Name="headerLogo" Grid.Column="0" Grid.Row="0" Stretch="Uniform" Source="ms-appx:///Assets/logo.png"/>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" Foreground="#fff">Liste des commandes</TextBlock>
+        </Grid>
 
-            <TextBlock x:Name="TblockTitle" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Authentification" HorizontalAlignment="Center" FontSize="20"/>
-            <TextBlock x:Name="TblockMail" Grid.Row="2" Grid.Column="0" Text="Identifiant" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox x:Name="TboxMail" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch"/>
-            <TextBlock x:Name="TblockPassword" Grid.Row="4" Grid.Column="0" Text="Mot de passe" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <PasswordBox x:Name="TboxPassword" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" Width="200"/>
-            <Button x:Name="btnLogin" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">Connexion</Button>
+
+        <Grid Grid.Row="1" Grid.Column="0" Style="{StaticResource section}">
+            <StackPanel>
+                <TextBlock x:Name="TblockTitle" Text="Authentification" HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TblockMail" Text="Identifiant" VerticalAlignment="Center"/>
+                    <TextBox x:Name="TboxMail"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="TblockPassword" Text="Mot de passe" VerticalAlignment="Center"/>
+                    <TextBox x:Name="TboxPassword"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
-        <Grid Grid.Row="2" Grid.Column="0">
-            <Rectangle x:Name="footer" Style="{StaticResource bandeau}"/>
-        </Grid>
+
+        <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UWP_SellIt.Views;
+using UWP_SellIt.Views.MVVMLight.HomePage;
+using UWP_SellIt.Views.MVVMLight.ProductPage;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -69,7 +72,8 @@ namespace UWP_SellIt
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
 
-                    rootFrame.Navigate(typeof(OrderCheckPage), e.Arguments);
+                    rootFrame.Navigate(typeof(HomePage), e.Arguments);
+
                 }
                 // Vérifiez que la fenêtre actuelle est active
                 Window.Current.Activate();

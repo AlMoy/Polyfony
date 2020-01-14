@@ -24,6 +24,7 @@ namespace EntityUWP.Entity
 
         #region Properties
         [PrimaryKey, AutoIncrement]
+        [Column("or_id")]
         public long Id
         {
             get { return id; }
