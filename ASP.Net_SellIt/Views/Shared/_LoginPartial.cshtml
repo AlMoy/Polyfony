@@ -7,16 +7,18 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li class="mr-4">
-                @Html.ActionLink("Bonjour " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "header_link" })
+                @Html.ActionLink("Bonjour " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "text-primary" })
             </li>
-            <li class="mr-4"><a class = "header_link" href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a></li>
+            <li class="mr-4">
+                <a class = "text-primary" href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a>
+            </li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li class="mr-4">@Html.ActionLink("S'inscrire", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "header_link"})</li>
-        @*<li class="mr-4">@Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "header_link"})</li> *@
+        <li class="mr-4">@Html.ActionLink("S'inscrire", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "text-primary"})</li>
+        @*<li class="mr-4">@Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "text-primary"})</li> *@
     </ul>
 }

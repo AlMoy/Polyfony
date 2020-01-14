@@ -7,11 +7,11 @@
 
 <div class="d-flex flex-column">
     <div>
-        @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Retour à la liste", route, new { }, new { @class = "btn btn-secondary text-secondary" })
         @{
             if (User.IsInRole("Admin"))
                 {
-                @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary-dark" })
+                @Html.ActionLink("Editer", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary text-primary" })
                 }
         }
     </div>
@@ -19,29 +19,23 @@
     <div class="d-flex mt-3">
         <div>
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.Name)</strong>-->
-                <strong>Nom:</strong>
+                <strong>@Html.DisplayNameFor(model => model.Name)</strong>
                 @Html.DisplayFor(model => model.Name)
             </p>
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.ProductType)</strong>-->
-                <strong>Type:</strong>
-
+                <strong>@Html.DisplayNameFor(model => model.ProductType)</strong>
                 @Html.ActionLink(Model.ProductType.Name, "Details", new { controller = "ProductTypes", id = Model.ProductType.Id })
             </p>
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.Size)</strong>-->
-                <strong>Taille:</strong>
+                <strong>@Html.DisplayNameFor(model => model.Size)</strong>
                 @Html.DisplayFor(model => model.Size)
             </p>
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.Weight)</strong>-->
-                <strong>Masse:</strong>
+                <strong>@Html.DisplayNameFor(model => model.Weight)</strong>
                 @Html.DisplayFor(model => model.Weight)
             </p>
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.Color)</strong>-->
-                <strong>Couleur:</strong>
+                <strong>@Html.DisplayNameFor(model => model.Color)</strong>
                 @Html.DisplayFor(model => model.Color)
             </p>
 
@@ -49,16 +43,14 @@
                 if (Model.ToValid)
                 {
                     <p>
-                        <!--<strong>@Html.DisplayNameFor(model => model.Quantity)</strong>-->
-                        <strong>Quantité:</strong>
+                        <strong>@Html.DisplayNameFor(model => model.Quantity)</strong>
                         @Html.DisplayFor(model => model.Quantity)
                     </p>
                 }
             }
 
             <p>
-                <!--<strong>@Html.DisplayNameFor(model => model.ToValid)</strong>-->
-                <strong>Validé:</strong>
+                <strong>@Html.DisplayNameFor(model => model.ToValid)</strong>
                 @{
                     if (Model.ToValid)
                     {

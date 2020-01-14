@@ -35,7 +35,7 @@ namespace EntityASP.Entity
 
         [Required]
         [Column("pr_name")]
-        [Display(Name = "Nom de produit")]
+        [Display(Name = "Nom")]
         [DataType(DataType.Text)]
         [MinLength(4)]
         [MaxLength(50)]
@@ -48,8 +48,7 @@ namespace EntityASP.Entity
         [Required]
         [Display(Name = "Taille")]
         [Column("pr_size")]
-        //[Range(typeof(float), "0", "20")]
-        //[DisplayFormat(DataFormatString = "{0:0,00}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Text)]
         public string Size
             {
             get { return size; }
@@ -57,7 +56,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
-        [Display(Name = "Poids(kg)")]
+        [Display(Name = "Masse")]
         [Column("pr_weight")]
         [Range(typeof(float), "0", "20")]
         public float Weight
@@ -87,12 +86,14 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [Display(Name = "Validé")]
         [Column("pr_toValid")]
         public Boolean ToValid
             {
             get { return toValid; }
             set { toValid = value; }
             }
+
         public List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
@@ -105,6 +106,7 @@ namespace EntityASP.Entity
             set { productOrders = value; }
             }
 
+        [Display(Name = "Type")]
         public virtual ProductType ProductType
             {
             get { return productType; }

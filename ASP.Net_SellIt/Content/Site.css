@@ -52,11 +52,11 @@
     border-color: #001064 !important;
 }
 
-.text-primary {
+.text-primary, a.text-primary:hover, a.text-primary:focus {
     color: #000000 !important;
 }
 
-.text-secondary {
+.text-secondary, a.text-secondary:hover, a.text-secondary:focus {
     color: #ffffff !important;
 }
 
@@ -80,15 +80,6 @@
         background-color: #ff9900;
         color: white;
     }
-
-
-.header_link{
-    color: white;
-}
-
-.header_link:hover {
-    color: white;
-}
 
 
     
