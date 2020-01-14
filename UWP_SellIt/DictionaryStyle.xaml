@@ -101,5 +101,15 @@
         <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
     </Style>
 
+    <Style x:Key="LoginUCTextblock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
+    </Style>
+
+    <Style x:Key="LoginUCButton" TargetType="Button">
+        <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
+    </Style>
+
+    
+
 
 </ResourceDictionary>

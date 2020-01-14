@@ -71,7 +71,7 @@ namespace UWP_SellIt
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
 
-                    rootFrame.Navigate(typeof(HomePage), e.Arguments);
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
                 }
                 // Vérifiez que la fenêtre actuelle est active
