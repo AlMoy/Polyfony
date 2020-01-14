@@ -19,8 +19,8 @@ namespace EntityUWP.Entity
         private ulong quantity;
         private long productTypeId;
         private Boolean toValid;
-        private List<ProductStateProduct> productStateProducts;
-        private List<ProductOrder> productOrders;
+        private List<StateProduct> productStateProducts;
+        private List<Order> productOrders;
         private ProductType productType;
         
         #endregion
@@ -83,15 +83,15 @@ namespace EntityUWP.Entity
             set { toValid = value; OnPropertyChanged("ToValid"); }
             }
 
-        [Ignore]
-        public List<ProductStateProduct> ProductStateProducts
+        [ManyToMany(typeof(ProductStateProduct))]
+        public List<StateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
             set { productStateProducts = value; OnPropertyChanged("ProductStateProducts"); }
         }
 
-        [OneToMany]
-        public List<ProductOrder> ProductOrders
+        [ManyToMany(typeof(ProductOrder))]
+        public List<Order> ProductOrders
         {
             get { return productOrders; }
             set { productOrders = value; OnPropertyChanged("ProductOrders"); }
@@ -117,8 +117,8 @@ namespace EntityUWP.Entity
         #region Constructors
         public Product()
             {
-            this.productStateProducts = new List<ProductStateProduct>();
-            this.productOrders = new List<ProductOrder>();
+            this.productStateProducts = new List<StateProduct>();
+            this.productOrders = new List<Order>();
         }
         #endregion
 

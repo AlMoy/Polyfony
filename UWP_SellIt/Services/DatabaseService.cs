@@ -191,8 +191,8 @@ namespace UWP_SellIt.Services
                 this.sqliteConnection.CreateTable<ProductStateProduct>();
                 this.sqliteConnection.CreateTable<Order>();
                 this.sqliteConnection.CreateTable<OrderPerson>();               
-                this.sqliteConnection.CreateTable<Product>();
-                this.sqliteConnection.CreateTable<ProductOrder>();
+                //this.sqliteConnection.CreateTable<Product>();
+                //this.sqliteConnection.CreateTable<ProductOrder>();
                                           
               
                 eRF.Set();
