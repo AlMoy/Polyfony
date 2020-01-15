@@ -7,7 +7,7 @@
 
     <Application.Resources>
         <ResourceDictionary>      
-            <vm:ViewModelLocator xmlns:vm="using:UWP_SellIt.Views.MVVMLight" x:Key="Locator" />
+            <vm:ViewModelLocator xmlns:vm="using:UWP_SellIt.Views.MVVMLight" x:Key="Locator"/>
         </ResourceDictionary>
     </Application.Resources>
 

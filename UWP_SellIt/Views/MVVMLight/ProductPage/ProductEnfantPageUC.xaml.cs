@@ -22,6 +22,11 @@ namespace UWP_SellIt.Views.MVVMLight.ProductPage
         public ProductEnfantPageUC()
         {
             this.InitializeComponent();
+            String path1 = Directory.GetCurrentDirectory() + @"\Assets\images\trothomelec";
+            fvtrothomelec.ItemsSource = Directory.GetFiles(path1).Select(p => "ms-appx:///" + p);
+
+            String path2 = Directory.GetCurrentDirectory() + @"\Assets\images\trothomsim";
+            fvtrothomsim.ItemsSource = Directory.GetFiles(path2).Select(p => "ms-appx:///" + p);
         }
     }
 }

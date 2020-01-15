@@ -21,11 +21,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Center">Ref Client</TextBlock>
-        <ComboBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2">
+        <ComboBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" x:Name="comboboxDataBinding" ItemsSource="{Binding Clients}" PlaceholderText="Selectionner client">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LastName}"/>                        
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        
+        
+        
+        <!--<ComboBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2">
             <ComboBoxItem>Trang</ComboBoxItem>
             <ComboBoxItem>Alex</ComboBoxItem>
             <ComboBoxItem>Yacouba</ComboBoxItem>
             <ComboBoxItem>Fatumata</ComboBoxItem>
-        </ComboBox>
+        </ComboBox>-->
     </Grid>
 </UserControl>

@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local1="using:UWP_SellIt.Views.ProductPage"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding MainPageInstance, Source={StaticResource Locator}}">
 
     <Page.Resources>
         <ResourceDictionary>
@@ -62,6 +63,7 @@
             <TextBlock Style="{StaticResource LoginUCTextblock}" x:Name="txtBPassword" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Mot de passe</TextBlock>
             <PasswordBox x:Name="inputPassword" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Center"></PasswordBox>
             <Button  Style="{StaticResource LoginUCButton}" x:Name="btnConnexion" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" MaxWidth="200" HorizontalAlignment="Stretch" VerticalAlignment="Center">Connexion</Button>
+            <Button  Style="{StaticResource LoginUCButton}" x:Name="btnsuivant" Command="{Binding suivantbtn}" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" MaxWidth="200" HorizontalAlignment="Stretch" VerticalAlignment="Center">Suivant</Button>
         </Grid>
         <Rectangle  Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>

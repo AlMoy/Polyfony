@@ -37,7 +37,7 @@
         </Grid.ColumnDefinitions>
 
         <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="7" Style="{StaticResource leftbandeau}"></Rectangle>
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" TextDecorations="Underline" FontWeight="Bold" >Type de produit</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="17" TextDecorations="Underline" FontWeight="Bold" >Type de produit</TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="1" x:Name="TrotHom" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#990033" FontWeight="Bold">Trottinette Homme</TextBlock>
         <TextBlock Grid.Row="3" Grid.Column="1" x:Name="TrotFem" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#990033" FontWeight="Bold">Trottinette Femme</TextBlock>
         <TextBlock Grid.Row="4" Grid.Column="1" x:Name="TrotEnf" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#990033" FontWeight="Bold">Trottinette Enfant</TextBlock>

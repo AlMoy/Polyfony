@@ -14,16 +14,19 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="listView" x:FieldModifier="public" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}">
+        <ListView x:Name="listView" x:FieldModifier="public" Grid.Column="1" Grid.Row="1" 
+                  ItemsSource="{Binding Clients}"
+                  SelectedItem="{Binding ListView.SelectedItem, Mode=TwoWay}">
+           
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock MinWidth="200" Text="Prénom"/>
-                        <TextBlock MinWidth="200" Text="Nom de famille"/>
-                        <TextBlock MinWidth="200" Text="Adresse"/>
-                        <TextBlock MinWidth="200" Text="Email"/>
-                        <TextBlock MinWidth="200" Text="Téléphone"/>
-                        <TextBlock MinWidth="200" Text="Date de naissance"/>
+                        <TextBlock MinWidth="150" Text="Prénom"/>
+                        <TextBlock MinWidth="150" Text="Nom de famille"/>
+                        <TextBlock MinWidth="150" Text="Adresse"/>
+                        <TextBlock MinWidth="150" Text="Email"/>
+                        <TextBlock MinWidth="150" Text="Téléphone"/>
+                        <TextBlock MinWidth="150" Text="Date de naissance"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.HeaderTemplate>
@@ -37,12 +40,12 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock MinWidth="200" Text="{Binding Firstname}"/>
-                        <TextBlock MinWidth="200" Text="{Binding Lastname}"/>
-                        <TextBlock MinWidth="200" Text="{Binding Address}"/>
-                        <TextBlock MinWidth="200" Text="{Binding Mail}"/>
-                        <TextBlock MinWidth="200" Text="{Binding TelephoneNumber}"/>
-                        <TextBlock MinWidth="200" Text="{Binding BirthDate}"/>
+                        <TextBlock MinWidth="150" Text="{Binding FirstName}"/>
+                        <TextBlock MinWidth="150" Text="{Binding LastName}"/>
+                        <TextBlock MinWidth="150" Text="{Binding Address}"/>
+                        <TextBlock MinWidth="150" Text="{Binding Mail}"/>
+                        <TextBlock MinWidth="150" Text="{Binding TelephoneNumber}"/>
+                        <TextBlock MinWidth="150" Text="{Binding BirthDate}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

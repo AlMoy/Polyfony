@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml.Navigation;
 
-namespace UWP_SellIt.Views.MVVMLight.HomePage
+namespace UWP_SellIt.Views.MVVMLight.HomePage1
 {
     public class HomePageViewModel : ViewModelBase
     {
@@ -34,7 +34,7 @@ namespace UWP_SellIt.Views.MVVMLight.HomePage
 
         public ICommand ButtonOrder => new RelayCommand(() =>
         {
-            this.navigationService.NavigateTo("MainPage");
+            this.navigationService.NavigateTo("ListOrder");
 
         });
         public HomePageViewModel(INavigationService navigationService)

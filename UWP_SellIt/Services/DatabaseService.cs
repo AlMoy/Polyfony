@@ -107,8 +107,6 @@ namespace UWP_SellIt.Services
             get { return this.sqliteConnection.GetAllWithChildren<Order>(); }
         }
 
-
-
         public List<StateProduct> StateProductsEager
         {
             get { return this.sqliteConnection.GetAllWithChildren<StateProduct>(); }
@@ -157,7 +155,7 @@ namespace UWP_SellIt.Services
         public void SaveWithChildren(ProductType item)
         {
             this.Save(item);
-            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductTypeTVAs);            
+            this.sqliteConnection.InsertOrReplaceWithChildren(item.ProductTypeTVAs);
             this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
         }
 
@@ -178,24 +176,25 @@ namespace UWP_SellIt.Services
                 StorageFolder localFolder = ApplicationData.Current.LocalFolder;
                 StorageFile myDb = await localFolder.CreateFileAsync("mydb.sqlite",
                         CreationCollisionOption.OpenIfExists);
-                this.sqliteConnection = new SQLiteConnection(myDb.Path);
+                this.sqliteConnection = new SQLiteConnection(myDb.Path, SQLiteOpenFlags.ReadWrite);
+                Task.Delay(TimeSpan.FromMilliseconds(50)).Wait();
                 while (this.sqliteConnection == null)
                 {
-
+                    Task.Delay(TimeSpan.FromMilliseconds(50)).Wait();
                 }
-            }).ContinueWith((s) =>
-            {
                 this.sqliteConnection.CreateTable<Role>();
                 this.sqliteConnection.CreateTable<Person>();
                 this.sqliteConnection.CreateTable<TVA>();
                 this.sqliteConnection.CreateTable<ProductType>();
                 this.sqliteConnection.CreateTable<ProductTypeTVA>();
                 this.sqliteConnection.CreateTable<StateProduct>();
-                this.sqliteConnection.CreateTable<Product>();
-                this.sqliteConnection.CreateTable<ProductStateProduct>();                
-                this.sqliteConnection.CreateTable<OrderPerson>();
-                this.sqliteConnection.CreateTable<ProductOrder>();
+                this.sqliteConnection.CreateTable<ProductStateProduct>();
                 this.sqliteConnection.CreateTable<Order>();
+                this.sqliteConnection.CreateTable<OrderPerson>();
+                //this.sqliteConnection.CreateTable<Product>();
+                //this.sqliteConnection.CreateTable<ProductOrder>();
+
+
                 eRF.Set();
             });
             eRF.WaitOne();

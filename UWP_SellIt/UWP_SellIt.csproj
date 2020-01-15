@@ -122,6 +122,10 @@
     <Compile Include="BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="MainPageViewModel.cs" />
+>>>>>>> UWP-TL
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Views\MVVMLight\ClientPage\ClientListPage.xaml.cs">
       <DependentUpon>ClientListPage.xaml</DependentUpon>
@@ -148,6 +152,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
       <DependentUpon>CompleteOrder.xaml</DependentUpon>
     </Compile>
@@ -157,6 +162,20 @@
     <Compile Include="Views\Orders\OrderCheckPage.xaml.cs">
       <DependentUpon>OrderCheckPage.xaml</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
+      <DependentUpon>CompleteOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListOrderPage.xaml.cs">
+      <DependentUpon>ListOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListOrderPageViewModel.cs" />
+    <Compile Include="Views\Orders\NewOrderPage.xaml.cs">
+      <DependentUpon>NewOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\NewOrderViewModel.cs" />
+>>>>>>> UWP-TL
     <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
       <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
@@ -240,19 +259,32 @@
     <Compile Include="Views\MVVMLight\ProductPage\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RolePage.xaml.cs">
-      <DependentUpon>RolePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Roles\EditRoleUC.xaml.cs">
       <DependentUpon>EditRoleUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Roles\RoleViewModel.cs" />
     <Compile Include="Views\Roles\ListRoleUC.xaml.cs">
       <DependentUpon>ListRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\RolePage.xaml.cs">
+      <DependentUpon>RolePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Roles\ShowRoleUC.xaml.cs">
       <DependentUpon>ShowRoleUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControlBase.cs" />
+    <Compile Include="Views\ViewModels\Accessors\ClientPageAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientEditAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientListAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Clients\ClientShowAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Commons\ButtonAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Commons\ListViewAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Orders\EditOrderAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Orders\OrderListAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\RolePageAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleEditAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleListAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Roles\RoleShowAccessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -284,8 +316,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="DictionaryStyle.xaml">
+<<<<<<< HEAD
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+=======
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+>>>>>>> UWP-TL
     </Page>
     <Page Include="Views\MVVMLight\ClientPage\NewClient.xaml">
       <SubType>Designer</SubType>
@@ -303,11 +340,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="Views\Orders\NewOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Orders\OrderCheckPage.xaml">
+=======
+    <Page Include="Views\Orders\ListOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\NewOrderPage.xaml">
+>>>>>>> UWP-TL
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -433,15 +478,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RolePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Roles\EditRoleUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Roles\ListRoleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Roles\RolePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -465,12 +510,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
-      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
-      <Name>EntityUWP</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
     </PackageReference>
@@ -492,7 +531,12 @@
       <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
       <Name>EntityUWP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

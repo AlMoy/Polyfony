@@ -7,7 +7,7 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="186e705e-d26a-462d-876f-ea6dbccb2ef1"
+    Name="SellIt"
     Publisher="CN=IB"
     Version="1.0.0.0" />
 

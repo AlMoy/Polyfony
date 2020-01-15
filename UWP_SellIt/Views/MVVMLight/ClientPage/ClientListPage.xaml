@@ -11,7 +11,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding ClientListPageInstance, Source={StaticResource Locator}}">
-    
+
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -28,11 +28,11 @@
             <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            
+
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>            
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="12*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -52,9 +52,9 @@
         </Grid>
 
         <ScrollViewer x:Name="contentScrollViewer" Grid.Column="1" Grid.Row="2" >
-            <personUc:ListPersonUC x:Name="personUc" x:FieldModifier="public" />
+            <personUc:ListPersonUC x:Name="personUc" x:FieldModifier="public" DataContext="{Binding Datas.ClientList}"/>
         </ScrollViewer>
-        <returnUc:ReturnButUC x:Name="returnUC" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button x:Name="Retourbtn" Command="{Binding retourbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Retour</Button>
         <Button x:Name="Ajoutbtn" Command="{Binding Ajoutbtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Ajouter</Button>
         <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
