@@ -22,7 +22,7 @@ namespace EntityUWP.Entity
         private List<StateProduct> productStateProducts;
         private List<Order> productOrders;
         private ProductType productType;
-        private long productTypeId;
+       
         #endregion
 
         #region Properties

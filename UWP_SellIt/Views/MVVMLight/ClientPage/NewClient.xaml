@@ -55,7 +55,7 @@
             <editpersonUc:EditAdvancePersonUC DataContext="{Binding Datas.ClientEdit, Mode=TwoWay}" x:Name="personUc" x:FieldModifier="public" />
         </ScrollViewer>
         <returnUc:ReturnButUC x:Name="returnUC" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button x:Name="Validebtn" Command="{Binding Validebtn}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}">Valider</Button>
+        
         <Rectangle  Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource bandeau}"/>
     </Grid>
 </Page>

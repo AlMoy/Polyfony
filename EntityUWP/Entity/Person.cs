@@ -33,7 +33,7 @@ namespace EntityUWP.Entity
             get { return id; }
             set { id = value; }
         }
-        private string login;
+        
 
         public string Login
         {
@@ -41,16 +41,14 @@ namespace EntityUWP.Entity
             set { login = value; }
         }
 
-        private string passWord;
+        
 
         public string PassWord
         {
             get { return passWord; }
             set { passWord = value; }
         }
-
-
-
+               
 
 
         [NotNull]
@@ -147,7 +145,7 @@ namespace EntityUWP.Entity
             person.PassWord = this.PassWord;
           //  person.Role = this.Role;
           //  person.RoleId = this.RoleId;
-            person.OrderPerson = this.OrderPerson;
+            //person.OrderPerson = this.OrderPerson;
 
             return person;
         }
@@ -165,7 +163,7 @@ namespace EntityUWP.Entity
             this.PassWord = obj.PassWord;
             //this.Role = obj.Role;
             //this.RoleId = obj.RoleId;
-           this.OrderPerson = obj.OrderPerson;
+           //this.OrderPerson = obj.OrderPerson;
         }
         #endregion
     }

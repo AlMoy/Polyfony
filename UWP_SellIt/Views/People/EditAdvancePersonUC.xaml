@@ -30,9 +30,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-
-
-
+            
         </Grid.RowDefinitions>
         <TextBlock x:Name="txtBFirstname" Text="Prénom" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBox x:Name="inputFirstname" Text="{Binding Client.FirstName, Mode=TwoWay}"  Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
@@ -48,6 +46,6 @@
         <TextBox  x:Name="inputBirthDate" Text="{Binding Client.BirthDate, Mode=TwoWay}"  Grid.Column="2" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
         <!-- <roleUc:ShowRoleUC x:Name="roleUc" x:FieldModifier="public" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="3"/> -->
-        <Button x:Name="Validebtn" Content="{Binding Button.Content}" Command="{Binding Button.Action}" x:FieldModifier="public" Grid.Column="2" Grid.Row="9" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}"/>
+        <Button x:Name="Validebtn" Content="{Binding Button.Content}" Command="{Binding Button.Action}" x:FieldModifier="public" Grid.Column="2" Grid.Row="10" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource Menuproductbutton}"/>
     </Grid>
 </UserControl>

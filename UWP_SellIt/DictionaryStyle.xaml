@@ -111,8 +111,5 @@
 
 
 
-    <Style x:Key="LoginUCButton" TargetType="Button">
-        <Setter Property="FontSize" Value="{StaticResource paragraphe}"/>
-    </Style>
 
 </ResourceDictionary>

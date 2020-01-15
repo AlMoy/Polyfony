@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 ﻿using GalaSoft.MvvmLight;
-=======
+
 ﻿using EntityUWP.Entity;
 using GalaSoft.MvvmLight;
->>>>>>> UWP-TL
+
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Views;
 using System;
@@ -12,21 +12,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-<<<<<<< HEAD
-=======
+
+
 using UWP_SellIt.Services;
 using UWP_SellIt.Views.ViewModels.Accessors;
 using Windows.UI.Xaml.Controls;
->>>>>>> UWP-TL
+
 
 namespace UWP_SellIt.Views.MVVMLight.ClientPage
 {
     public class NewClientViewModel : ViewModelBase
     {
         private INavigationService navigationService;
-<<<<<<< HEAD
-      
-            public ICommand Deconnectionbtn => new RelayCommand(() =>
+        private DatabaseService databaseService;
+        public ClientPageAccessor Datas { get; set; }
+
+
+        public ICommand Deconnectionbtn => new RelayCommand(() =>
             {
                 this.navigationService.NavigateTo("MainPage");
 
@@ -38,14 +40,10 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
 
         });
 
-        public NewClientViewModel(INavigationService navigationService)
-        {
-            this.navigationService = navigationService;
-        }
 
-=======
-        private DatabaseService databaseService;
-        public ClientPageAccessor Datas { get; set; }
+
+
+        
 
         public ICommand showlistbtn => new RelayCommand(() =>
         {
@@ -96,7 +94,7 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
                 contentDialog.ShowAsync();
             }
         }
->>>>>>> UWP-TL
+
     }
     
 }
