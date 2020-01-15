@@ -16,6 +16,7 @@ namespace ASP.Net_SellIt
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
             CreateRolesAndUsers();
         }
 

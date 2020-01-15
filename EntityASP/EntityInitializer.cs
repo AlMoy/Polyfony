@@ -30,6 +30,43 @@ namespace EntityASP
                     }
                 };
 
+            List<Person> people = new List<Person>()
+                {
+                new Person()
+                    {
+                    LastName = "Moysan",
+                    FirstName = "Alex",
+                    Login = "admin",
+                    PassWord = "Admin!123",
+                    Address = "addr",
+                    Mail ="admin@mail.com",
+                    TelephoneNumber = "0128846868",
+                    BirthDate = DateTime.Now
+                    },
+                new Person()
+                    {
+                    LastName = "Yattara",
+                    FirstName = "Yaccouba",
+                    Login = "vendeurYY",
+                    PassWord = "Vendeur!123",
+                    Address = "addr",
+                    Mail ="yy@mail.com",
+                    TelephoneNumber = "0128846868",
+                    BirthDate = DateTime.Now
+                    },
+                new Person()
+                    {
+                    LastName = "Luu",
+                    FirstName = "Trang",
+                    Login = "vendeurTL",
+                    PassWord = "Vendeur!123",
+                    Address = "addr",
+                    Mail ="tl@mail.com",
+                    TelephoneNumber = "0128846868",
+                    BirthDate = DateTime.Now
+                    }
+                };
+
             List<StateProduct> stateProducts = new List<StateProduct>()
                 {
                 new StateProduct()

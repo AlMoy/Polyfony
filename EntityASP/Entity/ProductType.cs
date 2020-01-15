@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -47,6 +48,7 @@ namespace EntityASP.Entity
             set { name = value; }
         }
 
+        [JsonIgnore]
         [Display(Name = "TVA (%)")]
         public virtual List<ProductTypeTVA> ProductTypeTVAs
         {
@@ -54,6 +56,7 @@ namespace EntityASP.Entity
             set { productTypeTVAs = value; }
         }
 
+        [JsonIgnore]
         public List<Product> Products
         {
             get { return products; }

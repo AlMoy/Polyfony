@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -26,6 +27,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
+        [JsonIgnore]
         public Product Product
             {
             get { return product; }
@@ -33,7 +35,7 @@ namespace EntityASP.Entity
             }
 
         [Required]
-        public StateProduct StateProduct
+        public virtual StateProduct StateProduct
             {
             get { return stateProduct; }
             set { stateProduct = value; }

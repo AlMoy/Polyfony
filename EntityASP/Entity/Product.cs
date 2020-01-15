@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -94,12 +95,13 @@ namespace EntityASP.Entity
             set { toValid = value; }
         }
 
-        public List<ProductStateProduct> ProductStateProducts
+        public virtual List<ProductStateProduct> ProductStateProducts
         {
             get { return productStateProducts; }
             set { productStateProducts = value; }
         }
 
+        [JsonIgnore]
         public List<ProductOrder> ProductOrders
         {
             get { return productOrders; }
@@ -120,6 +122,13 @@ namespace EntityASP.Entity
             this.productStateProducts = new List<ProductStateProduct>();
             this.productOrders = new List<ProductOrder>();
         }
+        #endregion
+
+        #region Functions
+        public override string ToString()
+            {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+            }
         #endregion
     }
 }
