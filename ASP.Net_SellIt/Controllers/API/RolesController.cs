@@ -13,95 +13,92 @@ using EntityASP;
 using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers.API
-{
-    public class RolesController : ApiController
     {
+    [RoutePrefix("api/Roles")]
+    public class RolesController : ApiController
+        {
         private AppDbContext db = new AppDbContext();
 
         // GET: api/Roles
+        [HttpGet]
+        [Route("")]
         public IQueryable<Role> GetRoleDb()
-        {
+            {
             return db.RoleDb;
-        }
+            }
 
         // GET: api/Roles/5
+        [HttpGet]
+        [Route("{id:long}")]
         [ResponseType(typeof(Role))]
         public async Task<IHttpActionResult> GetRole(long id)
-        {
+            {
             Role role = await db.RoleDb.FindAsync(id);
             if (role == null)
-            {
                 return NotFound();
-            }
 
             return Ok(role);
-        }
+            }
 
         // PUT: api/Roles/5
+        [HttpPut]
+        [Route("{id:long}")]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutRole(long id, Role role)
-        {
-            if (!ModelState.IsValid)
             {
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
 
             if (id != role.Id)
-            {
                 return BadRequest();
-            }
 
             db.Entry(role).State = EntityState.Modified;
 
             try
-            {
+                {
                 await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!RoleExists(id))
-                {
-                    return NotFound();
                 }
-                else
+            catch (DbUpdateConcurrencyException)
                 {
+                if (!RoleExists(id))
+                    return NotFound();
+                else
                     throw;
                 }
-            }
 
             return StatusCode(HttpStatusCode.NoContent);
-        }
+            }
 
         // POST: api/Roles
+        [HttpPost]
+        [Route("")]
         [ResponseType(typeof(Role))]
         public async Task<IHttpActionResult> PostRole(Role role)
-        {
-            if (!ModelState.IsValid)
             {
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
 
             db.RoleDb.Add(role);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = role.Id }, role);
-        }
+            }
 
         // DELETE: api/Roles/5
+        [HttpDelete]
+        [Route("{id:long}")]
         [ResponseType(typeof(Role))]
         public async Task<IHttpActionResult> DeleteRole(long id)
-        {
+            {
             Role role = await db.RoleDb.FindAsync(id);
             if (role == null)
-            {
                 return NotFound();
-            }
 
             db.RoleDb.Remove(role);
             await db.SaveChangesAsync();
 
             return Ok(role);
-        }
+            }
 
         protected override void Dispose(bool disposing)
         {

@@ -13,95 +13,92 @@ using EntityASP;
 using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers.API
-{
-    public class StateProductsController : ApiController
     {
+    [RoutePrefix("api/StateProduct")]
+    public class StateProductsController : ApiController
+        {
         private AppDbContext db = new AppDbContext();
 
         // GET: api/StateProducts
+        [HttpGet]
+        [Route("")]
         public IQueryable<StateProduct> GetStateProductDb()
-        {
+            {
             return db.StateProductDb;
-        }
+            }
 
         // GET: api/StateProducts/5
+        [HttpGet]
+        [Route("{id:long}")]
         [ResponseType(typeof(StateProduct))]
         public async Task<IHttpActionResult> GetStateProduct(long id)
-        {
+            {
             StateProduct stateProduct = await db.StateProductDb.FindAsync(id);
             if (stateProduct == null)
-            {
                 return NotFound();
-            }
 
             return Ok(stateProduct);
-        }
+            }
 
         // PUT: api/StateProducts/5
+        [HttpPut]
+        [Route("{id:long}")]
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutStateProduct(long id, StateProduct stateProduct)
-        {
-            if (!ModelState.IsValid)
             {
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
 
             if (id != stateProduct.Id)
-            {
                 return BadRequest();
-            }
 
             db.Entry(stateProduct).State = EntityState.Modified;
 
             try
-            {
+                {
                 await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StateProductExists(id))
-                {
-                    return NotFound();
                 }
-                else
+            catch (DbUpdateConcurrencyException)
                 {
+                if (!StateProductExists(id))
+                    return NotFound();
+                else
                     throw;
                 }
-            }
 
             return StatusCode(HttpStatusCode.NoContent);
-        }
+            }
 
         // POST: api/StateProducts
+        [HttpPost]
+        [Route("")]
         [ResponseType(typeof(StateProduct))]
         public async Task<IHttpActionResult> PostStateProduct(StateProduct stateProduct)
-        {
-            if (!ModelState.IsValid)
             {
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            }
 
             db.StateProductDb.Add(stateProduct);
             await db.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", new { id = stateProduct.Id }, stateProduct);
-        }
+            }
 
         // DELETE: api/StateProducts/5
+        [HttpDelete]
+        [Route("{id:long}")]
         [ResponseType(typeof(StateProduct))]
         public async Task<IHttpActionResult> DeleteStateProduct(long id)
-        {
+            {
             StateProduct stateProduct = await db.StateProductDb.FindAsync(id);
             if (stateProduct == null)
-            {
                 return NotFound();
-            }
 
             db.StateProductDb.Remove(stateProduct);
             await db.SaveChangesAsync();
 
             return Ok(stateProduct);
-        }
+            }
 
         protected override void Dispose(bool disposing)
         {

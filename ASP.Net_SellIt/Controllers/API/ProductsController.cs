@@ -20,7 +20,7 @@ namespace ASP.Net_SellIt.Controllers.API
         {
         private AppDbContext db = new AppDbContext();
 
-        // GET: api/Products/Stock
+        // GET: api/Products
         [HttpGet]
         [Route("")]
         public IQueryable<Product> GetProducts()
@@ -35,7 +35,7 @@ namespace ASP.Net_SellIt.Controllers.API
             return db.ProductDb.Where(p => p.ToValid == true);
             }
 
-        // GET: api/Products
+        // GET: api/Products/NoValid
         [HttpGet]
         [Route("NoValid")]
         public IQueryable<Product> GetProductsNoValid()
@@ -97,7 +97,7 @@ namespace ASP.Net_SellIt.Controllers.API
             db.ProductDb.Add(product);
             await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
+            return CreatedAtRoute("", new { id = product.Id }, product);
             }
 
         // DELETE: api/Products/5
