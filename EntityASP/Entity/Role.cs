@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -38,6 +39,7 @@ namespace EntityASP.Entity
             set { name = value; }
             }
 
+        [JsonIgnore]
         public List<Person> People
             {
             get { return people; }

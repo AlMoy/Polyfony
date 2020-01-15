@@ -41,7 +41,8 @@ namespace EntityASP
                     Address = "addr",
                     Mail ="admin@mail.com",
                     TelephoneNumber = "0128846868",
-                    BirthDate = DateTime.Now
+                    BirthDate = DateTime.Now,
+                    Role = roles[0]
                     },
                 new Person()
                     {
@@ -52,7 +53,8 @@ namespace EntityASP
                     Address = "addr",
                     Mail ="yy@mail.com",
                     TelephoneNumber = "0128846868",
-                    BirthDate = DateTime.Now
+                    BirthDate = DateTime.Now,
+                    Role = roles[1]
                     },
                 new Person()
                     {
@@ -63,7 +65,8 @@ namespace EntityASP
                     Address = "addr",
                     Mail ="tl@mail.com",
                     TelephoneNumber = "0128846868",
-                    BirthDate = DateTime.Now
+                    BirthDate = DateTime.Now,
+                    Role = roles[2]
                     }
                 };
 
@@ -449,6 +452,7 @@ namespace EntityASP
                 };
 
             context.RoleDb.AddRange(roles);
+            context.PersonDb.AddRange(people);
             context.StateProductDb.AddRange(stateProducts);
             context.TvaDb.AddRange(tvas);
             context.ProductTypeTvaDb.AddRange(productTypeTVAs);
