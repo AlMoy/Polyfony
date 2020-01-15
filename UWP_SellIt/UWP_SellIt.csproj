@@ -122,10 +122,7 @@
     <Compile Include="BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="MainPageViewModel.cs" />
->>>>>>> UWP-TL
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Views\MVVMLight\ClientPage\ClientListPage.xaml.cs">
       <DependentUpon>ClientListPage.xaml</DependentUpon>
@@ -152,21 +149,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
-      <DependentUpon>CompleteOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Orders\NewOrder.xaml.cs">
-      <DependentUpon>NewOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Orders\OrderCheckPage.xaml.cs">
-      <DependentUpon>OrderCheckPage.xaml</DependentUpon>
-    </Compile>
-=======
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
-      <DependentUpon>CompleteOrder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Orders\ListOrderPage.xaml.cs">
       <DependentUpon>ListOrderPage.xaml</DependentUpon>
     </Compile>
@@ -175,7 +158,6 @@
       <DependentUpon>NewOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Orders\NewOrderViewModel.cs" />
->>>>>>> UWP-TL
     <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
       <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
@@ -316,13 +298,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="DictionaryStyle.xaml">
-<<<<<<< HEAD
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-=======
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
->>>>>>> UWP-TL
     </Page>
     <Page Include="Views\MVVMLight\ClientPage\NewClient.xaml">
       <SubType>Designer</SubType>
@@ -336,23 +315,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Orders\CompleteOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-<<<<<<< HEAD
-    <Page Include="Views\Orders\NewOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Orders\OrderCheckPage.xaml">
-=======
     <Page Include="Views\Orders\ListOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Orders\NewOrderPage.xaml">
->>>>>>> UWP-TL
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
