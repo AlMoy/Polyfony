@@ -14,7 +14,7 @@ using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers.API
     {
-    [RoutePrefix("api/ProductType")]
+    [RoutePrefix("api/ProductTypes")]
     public class ProductTypesController : ApiController
         {
         private AppDbContext db = new AppDbContext();
