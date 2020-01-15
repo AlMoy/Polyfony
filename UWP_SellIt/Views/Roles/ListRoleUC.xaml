@@ -15,11 +15,11 @@
     <Grid.RowDefinitions>
         <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <ListView x:Name="listView" x:FieldModifier="public" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding}">
+        <ListView x:Name="listView" x:FieldModifier="public" Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Roles}">
         <ListView.HeaderTemplate>
             <DataTemplate>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock MinWidth="200" Text="Name"/>
+                    <TextBlock MinWidth="200" Text="RoleName"/>
                 </StackPanel>
             </DataTemplate>
         </ListView.HeaderTemplate>

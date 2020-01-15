@@ -122,6 +122,7 @@
     <Compile Include="BasePage.xaml.cs">
       <DependentUpon>BasePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainPageViewModel.cs" />
     <Compile Include="Services\DatabaseService.cs" />
     <Compile Include="Views\MVVMLight\ClientPage\ClientListPage.xaml.cs">
       <DependentUpon>ClientListPage.xaml</DependentUpon>
@@ -152,6 +153,14 @@
     <Compile Include="Views\Orders\CompleteOrder.xaml.cs">
       <DependentUpon>CompleteOrder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Orders\ListOrderPage.xaml.cs">
+      <DependentUpon>ListOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\ListOrderPageViewModel.cs" />
+    <Compile Include="Views\Orders\NewOrderPage.xaml.cs">
+      <DependentUpon>NewOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Orders\NewOrderViewModel.cs" />
     <Compile Include="Views\People\EditAdvancePersonUC.xaml.cs">
       <DependentUpon>EditAdvancePersonUC.xaml</DependentUpon>
     </Compile>
@@ -235,14 +244,15 @@
     <Compile Include="Views\MVVMLight\ProductPage\ProductListPage.xaml.cs">
       <DependentUpon>ProductListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RolePage.xaml.cs">
-      <DependentUpon>RolePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Roles\EditRoleUC.xaml.cs">
       <DependentUpon>EditRoleUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Roles\RoleViewModel.cs" />
     <Compile Include="Views\Roles\ListRoleUC.xaml.cs">
       <DependentUpon>ListRoleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Roles\RolePage.xaml.cs">
+      <DependentUpon>RolePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Roles\ShowRoleUC.xaml.cs">
       <DependentUpon>ShowRoleUC.xaml</DependentUpon>
@@ -254,6 +264,8 @@
     <Compile Include="Views\ViewModels\Accessors\Clients\ClientShowAccessor.cs" />
     <Compile Include="Views\ViewModels\Accessors\Commons\ButtonAccessor.cs" />
     <Compile Include="Views\ViewModels\Accessors\Commons\ListViewAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Orders\EditOrderAccessor.cs" />
+    <Compile Include="Views\ViewModels\Accessors\Orders\OrderListAccessor.cs" />
     <Compile Include="Views\ViewModels\Accessors\RolePageAccessor.cs" />
     <Compile Include="Views\ViewModels\Accessors\Roles\RoleEditAccessor.cs" />
     <Compile Include="Views\ViewModels\Accessors\Roles\RoleListAccessor.cs" />
@@ -305,6 +317,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Orders\CompleteOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\ListOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Orders\NewOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -430,15 +450,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\RolePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Roles\EditRoleUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Roles\ListRoleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Roles\RolePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -462,12 +482,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
-      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
-      <Name>EntityUWP</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>
     </PackageReference>
@@ -488,6 +502,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
+      <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
+      <Name>EntityUWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityUWP\EntityUWP.csproj">
       <Project>{4d122efc-7c71-4941-8489-946c68f84e8b}</Project>
       <Name>EntityUWP</Name>

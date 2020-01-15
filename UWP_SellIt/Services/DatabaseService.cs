@@ -139,8 +139,8 @@ namespace UWP_SellIt.Services
 
         public void SaveWithChildren(Person item)
         {
-            this.Save(item.Role);
-            this.sqliteConnection.InsertOrReplaceWithChildren(item.OrderPerson);
+            //this.Save(item.Role);
+            //this.sqliteConnection.InsertOrReplaceWithChildren(item.OrderPerson);
             this.sqliteConnection.InsertOrReplaceWithChildren(item, true);
         }
 

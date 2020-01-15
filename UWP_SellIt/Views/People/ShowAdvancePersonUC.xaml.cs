@@ -27,10 +27,10 @@ namespace UWP_SellIt.Views.People
             this.InitializeComponent();
             this.Person = new Person();
             this.DataContext = this.Person;
-            if (this.Person.Role != null)
-            {
-                this.roleUc.Role.CopyFrom(this.Person.Role);
-            }
+            //if (this.Person.Role != null)
+            //{
+            //    this.roleUc.Role.CopyFrom(this.Person.Role);
+            //}
         }
     }
 }

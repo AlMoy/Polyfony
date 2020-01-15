@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using UWP_SellIt.Services;
 using UWP_SellIt.Views.MVVMLight.ClientPage;
 using UWP_SellIt.Views.MVVMLight.CommonButton;
-using UWP_SellIt.Views.MVVMLight.HomePage;
+using UWP_SellIt.Views.MVVMLight.HomePage1;
 using UWP_SellIt.Views.MVVMLight.ProductPage;
+using UWP_SellIt.Views.Orders;
+using UWP_SellIt.Views.Roles;
 
 namespace UWP_SellIt.Views.MVVMLight
 {
@@ -33,20 +35,25 @@ namespace UWP_SellIt.Views.MVVMLight
                 navigationService.Configure("ProductFemmeList", typeof(ProductListPage2));
                 navigationService.Configure("ProductEnfantList", typeof(ProductListPage3));
                 navigationService.Configure("NewClient", typeof(NewClient));
-               
+                navigationService.Configure("NewOrder", typeof(NewOrderPage));
+                navigationService.Configure("ListOrder", typeof(ListOrderPage));
+                navigationService.Configure("HomePage", typeof(HomePage));
+
 
                 return navigationService;
             });
             SimpleIoc.Default.Register<HomePageViewModel>();
-            
+            SimpleIoc.Default.Register<MainPageViewModel>();
             SimpleIoc.Default.Register<MenuProductPageViewModel>();
             SimpleIoc.Default.Register<MenuProduct2ViewModel>();
             SimpleIoc.Default.Register<MenuProductUC3ViewModel>();
-            SimpleIoc.Default.Register<ClientListPageViewModel>();
-            
+            SimpleIoc.Default.Register<ClientListPageViewModel>();            
             SimpleIoc.Default.Register<NewClientViewModel>();
             SimpleIoc.Default.Register<DeconnectionButViewModel>();
             SimpleIoc.Default.Register<ReturnButUCViewModel>();
+            SimpleIoc.Default.Register<RoleViewModel>();
+            SimpleIoc.Default.Register<NewOrderViewModel>();
+            SimpleIoc.Default.Register<ListOrderPageViewModel>();
 
 
             SimpleIoc.Default.Register<DatabaseService>(() =>
@@ -61,7 +68,12 @@ namespace UWP_SellIt.Views.MVVMLight
             get { return ServiceLocator.Current.GetInstance<HomePageViewModel>(); }
         }
 
-       
+        public MainPageViewModel MainPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<MainPageViewModel>(); }
+        }
+
+
 
         public MenuProductPageViewModel MenuProductPageInstance
         {
@@ -77,7 +89,23 @@ namespace UWP_SellIt.Views.MVVMLight
             get { return ServiceLocator.Current.GetInstance<NewClientViewModel>(); }
         }
 
-       
+        public NewOrderViewModel NewOrderPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<NewOrderViewModel>(); }
+        }
+
+        public ListOrderPageViewModel ListOrderPageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<ListOrderPageViewModel>(); }
+        }
+
+
+        public RoleViewModel RolePageInstance
+        {
+            get { return ServiceLocator.Current.GetInstance<RoleViewModel>(); }
+        }
+
+
         public MenuProduct2ViewModel MenuProduct2Instance
         {
             get { return ServiceLocator.Current.GetInstance<MenuProduct2ViewModel>(); }

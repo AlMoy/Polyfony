@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UWP_SellIt.Views;
-using UWP_SellIt.Views.MVVMLight.HomePage;
+using UWP_SellIt.Views.MVVMLight.HomePage1;
 using UWP_SellIt.Views.MVVMLight.ProductPage;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using UWP_SellIt.Views.Orders;
+using UWP_SellIt.Views.Roles;
 
 namespace UWP_SellIt
 {
@@ -72,7 +73,7 @@ namespace UWP_SellIt
                     // puis configurez la nouvelle page en transmettant les informations requises en tant que
                     // paramètre
 
-                    rootFrame.Navigate(typeof(HomePage), e.Arguments);
+                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
                 }
                 // Vérifiez que la fenêtre actuelle est active

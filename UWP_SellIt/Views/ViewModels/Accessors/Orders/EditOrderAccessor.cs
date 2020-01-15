@@ -6,19 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using UWP_SellIt.Views.ViewModels.Accessors.Commons;
 
-namespace UWP_SellIt.Views.ViewModels.Accessors.Roles
+namespace UWP_SellIt.Views.ViewModels.Accessors.Orders
 {
-    public class RoleEditAccessor
+    public class EditOrderAccessor
     {
 
-        public Role Role { get; set; }
+        public Order Order { get; set; }
         public ButtonAccessor Button { get; set; }
-
-        public RoleEditAccessor()
+        public EditOrderAccessor()
         {
-            this.Role = new Role();
+            this.Order = new Order();
             this.Button = new ButtonAccessor();
         }
-
     }
 }

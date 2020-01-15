@@ -34,13 +34,17 @@
             <RowDefinition MaxHeight="20"/>
             <RowDefinition MaxHeight="35"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Pdt</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Produit</TextBlock>
         <ComboBox Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <ComboBoxItem>A</ComboBoxItem>
-            <ComboBoxItem>B</ComboBoxItem>
-            <ComboBoxItem>C</ComboBoxItem>
+            <ComboBoxItem>Trottinette électrique</ComboBoxItem>
+            <ComboBoxItem>Trottinette simple</ComboBoxItem>            
         </ComboBox>
         <TextBlock Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Type</TextBlock>
+        <ComboBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ComboBoxItem>Trottinette homme</ComboBoxItem>
+            <ComboBoxItem>Trottinette femme</ComboBoxItem>
+            <ComboBoxItem>Trottinette enfant</ComboBoxItem>
+        </ComboBox>
         <TextBox Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
         <TextBlock Grid.Column="6" Grid.Row="0" HorizontalTextAlignment="Center" VerticalAlignment="Bottom" Grid.ColumnSpan="2">Qty</TextBlock>
         <TextBox Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>

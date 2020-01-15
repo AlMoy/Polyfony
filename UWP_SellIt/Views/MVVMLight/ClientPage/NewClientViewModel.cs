@@ -20,14 +20,20 @@ namespace UWP_SellIt.Views.MVVMLight.ClientPage
         private DatabaseService databaseService;
         public ClientPageAccessor Datas { get; set; }
 
+        public ICommand showlistbtn => new RelayCommand(() =>
+        {
+            this.navigationService.NavigateTo("ClientList");
+
+        });
 
 
-        public NewClientViewModel(INavigationService navigationService)
+        public NewClientViewModel(INavigationService navigationService, DatabaseService databaseService)
         {
             this.navigationService = navigationService;
             this.databaseService = databaseService;
             SetupDatas();
         }
+
 
         private void SetupDatas()
         {
