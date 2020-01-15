@@ -14,7 +14,7 @@ using EntityASP.Entity;
 
 namespace ASP.Net_SellIt.Controllers.API
     {
-    [RoutePrefix("api/TVA")]
+    [RoutePrefix("api/TVAs")]
     public class TVAsController : ApiController
         {
         private AppDbContext db = new AppDbContext();
