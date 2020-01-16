@@ -1,0 +1,672 @@
+{
+    "version": 6,
+    "entities": [
+        {
+            "entity": {
+                "type": "Project",
+                "id": "54d4ebe7-6568-4359-9b2c-8a0cc2268c47",
+                "name": "Polyfony"
+            },
+            "children": [
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "7fff4e18-3d76-4233-af82-5518489de130",
+                        "name": "Orders"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Orders"
+                                },
+                                "id": "002ed18f-2e50-416a-9c8b-84c992545939",
+                                "name": "Liste des commandes",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Orders/1"
+                                },
+                                "id": "09a319cd-c51d-4a0a-9e35-af376daea4d0",
+                                "name": "Une commande par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "9e35b640-8d44-40bc-ac11-91948d5b82ef",
+                        "name": "People"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/People/Clients"
+                                },
+                                "id": "b124d4ba-364a-450e-98f8-85625ccef881",
+                                "name": "Liste des clients",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/People"
+                                },
+                                "id": "6a72a0ad-a468-49ab-ad56-f5159fad8185",
+                                "name": "Liste des personnes",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/People/Sellers"
+                                },
+                                "id": "42460a8a-0b41-49e8-a9c7-9d862d76e730",
+                                "name": "Liste des vendeurs",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/People/1"
+                                },
+                                "id": "d6c8f093-c8c5-4580-ad98-c02dc1d19d1f",
+                                "name": "Une personne par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "290d322a-4f0b-4642-8d8f-7009b6edab24",
+                        "name": "ProductTypes"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/ProductTypes"
+                                },
+                                "id": "47a90aa3-0908-4f96-8939-6a981cbf0941",
+                                "name": "Liste des types des produits",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/ProductTypes/3"
+                                },
+                                "id": "86d5a0ee-2c96-46bf-8a90-ed62084a8631",
+                                "name": "Un type de produit par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "7918070c-4dd7-4e4e-8503-e6f7d2c30c86",
+                        "name": "Products"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Products"
+                                },
+                                "id": "78f876ab-ec43-4bad-a27a-618a22f79eba",
+                                "name": "Liste des produits",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Products/Stock"
+                                },
+                                "id": "84bfcded-a95d-4c1e-ad7e-1e7ede792686",
+                                "name": "Liste des produits en stock",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Products/NoValid"
+                                },
+                                "id": "45e6d2d3-7f5c-4ae2-be43-a8a211de9eb2",
+                                "name": "Liste des produits non validé",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Products/2"
+                                },
+                                "id": "f32a283c-096e-41a0-81df-f536d6695bad",
+                                "name": "Un produit par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "fdd7bf5c-95ca-4225-b10b-f38e2d972efb",
+                        "name": "Roles"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Roles"
+                                },
+                                "id": "c056f513-1081-4406-a372-38b8aec74adf",
+                                "name": "Liste des rôles",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/Roles/3"
+                                },
+                                "id": "d1ad005b-a0a1-4a45-b7f2-a67b4777def3",
+                                "name": "Un rôle par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "bcb135f7-0a27-460c-8b6b-6a21f47acc96",
+                        "name": "StateProducts"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/StateProducts"
+                                },
+                                "id": "22950f5b-d547-47c0-9ed9-b8e0cbba00fb",
+                                "name": "Liste des états d'un produit",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/StateProducts/3"
+                                },
+                                "id": "6bc34fe0-6b82-4b56-ab69-65bea6acba4e",
+                                "name": "Un état de produit par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "description": "",
+                        "id": "e8cc7b93-cf64-4d28-8188-6f02fa401325",
+                        "name": "TVA"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/TVAs"
+                                },
+                                "id": "9d4afd43-2a35-45bc-b051-9ddd2da1ce46",
+                                "name": "Liste des TVA",
+                                "headers": []
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "secure": true,
+                                        "name": "https",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:44329",
+                                    "path": "/api/TVAs/2"
+                                },
+                                "id": "d929a51e-cff3-4f3c-bc50-bb5db04db583",
+                                "name": "Une TVA par son ID",
+                                "headers": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
